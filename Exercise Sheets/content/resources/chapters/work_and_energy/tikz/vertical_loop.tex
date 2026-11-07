@@ -1,0 +1,16 @@
+\begin{tikzpicture}[>=Latex]
+  \draw[thick] (0.42,4.24) .. controls (1.72,4.24) and (0.89,3.54) .. (1.94,3.05)
+    .. controls (2.86,2.58) and (2.57,2.20) .. (3.30,1.94)
+    .. controls (4.15,1.72) and (4.27,1.78) .. (4.27,1.29);
+  \draw[thick] (5.56,1.29) circle[radius=1.29];
+  \draw[thick] (5.56,0) -- (10.4,0);
+  \draw[black!50] (0,4.24) -- (0.42,4.24) (0,0) -- (5.56,0);
+  \draw[<->] (0.04,0.09) -- (0.04,4.14) node[midway,left] {$h$};
+  \draw[<->] (5.56,1.29) -- (5.56,0) node[midway,right=3pt,fill=white,inner sep=1pt] {$R$};
+  \foreach \x/\y in {0.77/4.42,5.56/2.58,9.60/0.17}{
+    \filldraw[draw=black!75,fill=black!23] (\x,\y) circle[radius=0.16];
+  }
+  \node[right] at (0.96,4.50) {$m$};
+  \node at (6.10,2.08) {$m$};
+  \node[right] at (9.80,0.26) {$m$};
+\end{tikzpicture}

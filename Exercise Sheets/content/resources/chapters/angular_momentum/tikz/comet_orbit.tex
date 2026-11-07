@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+  \draw[thick] (0,0) ellipse [x radius=3.3,y radius=1.9];
+  \draw[densely dashed] (-3.3,0) -- (3.3,0);
+  \draw[densely dashed,gray] (-3.3,0) -- (-3.3,2.28) (2.70,0) -- (2.70,2.28) (3.3,0) -- (3.3,2.28);
+  \draw[<->] (-3.3,2.2) -- node[above] {$r_A$} (2.70,2.2);
+  \draw[<->] (2.70,2.2) -- node[above] {$r_P$} (3.3,2.2);
+  \filldraw[fill=yellow!85,draw=orange!65,line width=0.4pt] (2.70,0) circle[radius=0.15];
+  \fill (-3.3,0) circle[radius=1.4pt] node[left] {$A$};
+  \fill (3.3,0) circle[radius=1.4pt] node[right] {$P$};
+  % The tail fans out away from the Sun.
+  \fill[black!12] (3.14,0.52) .. controls (3.35,0.92) and (3.64,1.20) .. (3.83,1.40)
+    .. controls (3.90,1.24) and (4.00,1.18) .. (4.12,1.12)
+    .. controls (3.72,0.98) and (3.44,0.71) .. (3.22,0.47) -- cycle;
+  \draw[black!40,line width=0.7pt] (3.18,0.50) .. controls (3.43,0.81) and (3.66,1.08) .. (3.86,1.29);
+  \draw[black!25] (3.18,0.50) .. controls (3.51,0.76) and (3.72,1.02) .. (4.00,1.14);
+  \filldraw[fill=black!65,draw=black!80] (3.18,0.50) circle[radius=0.055];
+\end{tikzpicture}

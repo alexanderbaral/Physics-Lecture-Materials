@@ -10,6 +10,7 @@ if ($Status) { $commandArgs += 'status' } else { $commandArgs += 'update' }
 $commandArgs += @('--product',$Target)
 if ($Wait) { $commandArgs += '--wait' }
 if ($Cloze) { $commandArgs += '--cloze' }
+if (-not $Status -and $Target -eq 'all') { $commandArgs += '--open-preview' }
 & python @commandArgs
 exit $LASTEXITCODE
 

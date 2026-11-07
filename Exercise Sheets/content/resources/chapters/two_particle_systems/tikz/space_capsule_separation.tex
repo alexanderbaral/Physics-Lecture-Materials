@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=Latex]
+  \filldraw[fill=black!6,thick] (0,0.16) -- (0.73,0.49) -- (0.73,1.10)
+    -- (0,1.45) -- cycle;
+  \filldraw[fill=black!11,thick] (0.73,0.15) rectangle (5.52,1.47);
+  \node at (3.12,0.81) {$m_1$};
+  \filldraw[fill=black!9,thick] (7.2,0.15) -- (8.11,0.15)
+    .. controls (8.98,-0.19) and (9.23,1.56) .. (8.11,1.47)
+    -- (7.2,1.47) -- cycle;
+  \draw[thick] (8.11,0.15) -- (8.11,1.47);
+  \node at (7.64,0.81) {$m_2$};
+  \draw[THMBlue,thick,->] (5.60,0.81) -- (7.05,0.81) node[midway,above] {$v_\mathrm{rel}$};
+\end{tikzpicture}

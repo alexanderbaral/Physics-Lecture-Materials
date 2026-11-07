@@ -1,10 +1,10 @@
 # Übernahme der Physik-2-Übungsblätter
 
-Die Blattnummern 1 bis 8 geben die Arbeitsreihenfolge in `common/config.tex` an. Die technischen Pfade eignen sich als Zuordnung für die entsprechenden Abschnitte im späteren Gesamtskript. Bei der Ergänzung von Physik 1 wird die Nummerierung im Register angepasst.
+Die Blattnummern 1 bis 8 in diesem Protokoll entsprechen dem Stand des Imports. Im gemeinsamen Register für Physik 1 und 2 sind dies die Blätter 8 bis 15. Die Kapitelpfade bleiben als Zuordnung für das spätere Gesamtskript erhalten.
 
 ## Herkunft und Lösungen
 
-Die Quellen liegen unter `../../_shared/legacy/Exercise Sheets/`. Seitenangaben zählen ab der ersten PDF-Seite. Die 30 extrahierten Lösungsdateien enthalten zusammen 52 Originalseiten. Die gesetzten Lösungen und Antwortschlüssel stehen in `Solution` in der zugehörigen Aufgabendatei.
+Die importierten Quell-PDFs lagen im inzwischen auf Autorenwunsch entfernten Ordner `_shared/legacy/Exercise Sheets`. Die folgende Tabelle bewahrt Dateinamen und Seitenzuordnung. Seitenangaben zählen ab der ersten PDF-Seite. Die 30 weiterhin eingebundenen, extrahierten Lösungsdateien unter `content/resources/chapters/` enthalten zusammen 52 Originalseiten. Gesetzte Musterlösungen stehen in `Solution` in der zugehörigen Aufgabendatei. Bei Verständnisfragen steht der schaltbare Wahrheitswert direkt hinter der jeweiligen Aussage. Die benachbarten Originalordner `Physik 1` und `Physik 2` wurden bei der Bereinigung nicht verändert.
 
 | Blatt | Verzeichnis | Quell-PDF | Eingebundene Originalseiten je Aufgabe |
 | --- | --- | --- | --- |
@@ -36,4 +36,12 @@ Zwei gesetzte Hinweise ergänzen die jeweiligen Originalseiten in der Lösungsfa
 
 Die Aufgabenabbildungen und die gesetzte Skizze zur Endgeschwindigkeit sind als externe TikZ-Dateien übernommen. Die Messkurven wurden aus den Vorlagen abgelesen und als Vektorkurven nachgezeichnet. Tabellen sind als editierbare LaTeX-Tabellen gesetzt. Abbildungen innerhalb handschriftlicher Lösungen bleiben Bestandteil der Originalseiten.
 
-Der Bildvergleich stellt 17 TikZ-Abbildungen und drei Labortabellen den jeweiligen Originalausschnitten gegenüber. [Abbildungsvergleich](abbildungsvergleich_physik_2.pdf)
+17 TikZ-Abbildungen und drei Labortabellen wurden mit den jeweiligen Originalausschnitten verglichen. Die gemeinsame Nachprüfung mit Astra und die anschließende Autorenprüfung umfassten 45 Originalvergleiche für 42 unterschiedliche TikZ-Abbildungen. Alle Abbildungen sind freigegeben; siehe [Freigabestand](abbildungen_freigabestand.md). Die Vergleichs-PDFs wurden nach Abschluss der Prüfung auf Autorenwunsch gelöscht.
+
+### Rückmeldungen zum Abbildungsvergleich
+
+Die früheren Vergleiche 26/31 und 27/32 verwenden jeweils dieselbe TikZ-Quelle (`damped_displacement.tex` bzw. `disk_and_springs.tex`); lediglich die Originalvorlagen aus Physik 1 und 2 unterscheiden sich.
+
+Beim Flötenmodell sind Mundstück und festes bzw. loses Ende für die Luftauslenkung ausdrücklich dargestellt. Die Begriffe entsprechen dem [Vorlesungsexperiment der Universität Mainz](https://vorlesungsexperimente.fb08.uni-mainz.de/versuch-109-reflexion-einer-welle-am-festen-und-losen-ende/). Die Randbedingungen der Vorlage bleiben erhalten; die Zeichnung beschreibt das vereinfachte Aufgabenmodell.
+
+Das Wärmespektrum verwendet relative Intensität ohne den unnötigen Faktor 10^11. Kurvenform, Wellenlängenskala und die für die Aufgabe benötigte Lage des Maximums bleiben erhalten. Lichtstrahlen sind goldfarben; die Doppelspaltgrafik zeigt die ebene einfallende Welle als Fläche, den Gangunterschied als bemaßte Strecke B–Q und beide geometrisch gleichen Winkel. Die Punkte B und Q sind technische Koordinatennamen der TikZ-Quelle.

@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=Latex]
+  \filldraw[fill=black!15,thick] (0.1,-1.66) rectangle (8.15,0);
+  \node[text=black!70] at (4.12,-0.85) {Tisch};
+  \foreach \x in {0,8.25}{
+    \filldraw[fill=black!22,thick] (\x,0.26) circle[radius=0.29];
+    \fill (\x,0.26) circle[radius=1.2pt];
+  }
+  \filldraw[fill=black!7,thick] (2.85,0) rectangle (4.62,0.95);
+  \node at (3.735,0.475) {$m$};
+  \filldraw[fill=black!7,thick] (-0.65,-2.55) rectangle (0.07,-1.96);
+  \node[left] at (-0.68,-2.25) {$3m$};
+  \filldraw[fill=black!7,thick] (8.20,-1.26) rectangle (8.88,-0.67);
+  \node[right] at (8.94,-0.98) {$6m$};
+  \draw[black,thick] (-0.29,-1.96) -- (-0.29,0.26)
+    arc[start angle=180,end angle=90,radius=0.29] -- (2.85,0.55);
+  \draw[black,thick] (4.62,0.55) -- (8.25,0.55)
+    arc[start angle=90,end angle=0,radius=0.29] -- (8.54,-0.67);
+  \draw[black!45,dotted] (4.72,0.55) -- (4.72,1.40) (7.89,0.55) -- (7.89,1.40);
+  \draw[<->] (4.72,1.30) -- (7.89,1.30) node[midway,above=3pt] {$s$};
+\end{tikzpicture}

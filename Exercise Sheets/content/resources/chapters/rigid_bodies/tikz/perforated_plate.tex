@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \draw[fill=gray!25,thick] (-2.2,-0.99) rectangle (2.2,0.99);
+  \draw[fill=white,thick] (1.09,0) circle[radius=0.63];
+  \draw[->] (-2.99,0) -- (2.84,0) node[below left] {$x$};
+  \draw[->] (0,-1.75) -- (0,1.72) node[left] {$y$};
+  \draw[densely dashed,gray] (1.09,-2.0) -- (1.09,1.16);
+  \draw[->] (1.09,0) -- ++(35:0.63);
+  \node at (1.25,0.38) {$r$};
+  \draw[fill=white] (0,0) circle[radius=2.3pt];
+  \fill (0,0) circle[radius=0.85pt] node[above left] {$z$};
+  \draw[densely dashed,gray] (-2.2,-1.60) -- (-2.2,-0.99) (2.2,-1.60) -- (2.2,-0.99)
+    (-2.2,-0.99) -- (-3.10,-0.99) (-2.2,0.99) -- (-3.10,0.99);
+  \draw[<->] (-2.2,-1.52) -- node[fill=white,inner sep=1.5pt,below] {$a$} (2.2,-1.52);
+  \draw[<->] (0,-1.90) -- node[below,fill=white,inner sep=1pt] {$c$} (1.09,-1.90);
+  \draw[<->] (-3.0,-0.99) -- node[left] {$b$} (-3.0,0.99);
+\end{tikzpicture}

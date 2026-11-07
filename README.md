@@ -1,7 +1,7 @@
 # Physics Lecture Materials
 
 Das Physikprojekt verwendet lokale Kopien der aus Mathematik übernommenen gemeinsamen Infrastruktur.
-Der aktuelle Blattbestand umfasst die aus Physik 2 übernommenen Übungsblätter. [Übernahmeprotokoll](Exercise%20Sheets/docs/physics_2_migration.md)
+Das Blattregister führt 15 Übungsblätter aus Physik 1 und 2 in einer gemeinsamen Reihenfolge. [Physik 1](Exercise%20Sheets/docs/physics_1_migration.md) · [Physik 2](Exercise%20Sheets/docs/physics_2_migration.md)
 
 Dieser Ordner bündelt Skript, Exercise Sheets und den gemeinsamen Bereich _shared.
 
@@ -29,9 +29,9 @@ Poppler dient der visuellen Prüfung. Die Arbeitsregeln stehen in [AGENTS.md](AG
 ## VS Code
 
 Strg+Shift+B startet in diesem Hauptordner sowie in `Skript` und `Exercise Sheets` denselben
-gemeinsamen Bau. Die feste Datei `build/Vorschau.pdf` im Hauptordner enthält geänderte
+gemeinsamen Bau. Die Datei `Vorschau.pdf` im lokalen Physik-Cache außerhalb von Google Drive enthält geänderte
 Abschnitte des deutschen Vollskripts und betroffene Übungsblätter, jeweils ohne und mit
-Lösungen direkt hintereinander. Beim nächsten Auftrag werden die Änderungen seit der letzten
+Lösungen direkt hintereinander. Sie liegt unter `%USERPROFILE%/AppData/Local/Temp/Physics-Skript-def15e3b6ea5/updates/joint-preview/Vorschau.pdf` und wird beim Editor-Bau automatisch geöffnet. Die vollständigen PDFs bleiben in `Skript/build` und `Exercise Sheets/build` innerhalb von Google Drive. Beim nächsten Auftrag werden die Änderungen seit der letzten
 erfolgreichen gemeinsamen Vorschau betrachtet. Ohne Inhaltsänderung bleibt die Vorschau erhalten.
 
 Die zusätzliche VS-Code-Aufgabe „Lecture Materials: Vorschau zusätzlich mit Lückenfassung“
@@ -50,6 +50,8 @@ Vorschau und Vollbau teilen bei Übungsblättern den geschützten Blatt-Cache. E
 laufender Blattbau kann deshalb die Blattvorschau kurz verzögern.
 
 ## Gemeinsame Infrastruktur
+
+Die projektweiten Regeln und Nachweise stehen im gemeinsamen Dokumentationsordner. [Befehlsübersicht](_shared/docs/COMMANDS.md) · [Infrastrukturabgleich](_shared/docs/SHARED_SYNC.md) · [Änderungen an Stil und Bau](_shared/docs/STYLE_CHANGES.md)
 
 Beide Produkte laden die gemeinsamen LaTeX-Befehle aus `_shared/commands` und
 die gemeinsame Gestaltung aus `_shared/style`. Ihre `common`-Ordner enthalten

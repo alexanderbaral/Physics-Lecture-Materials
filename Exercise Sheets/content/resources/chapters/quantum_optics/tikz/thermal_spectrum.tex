@@ -1,5 +1,5 @@
 % Die Koordinaten folgen der Kurve im Original-PDF, Seite 9.
-\begin{tikzpicture}[>=Latex,x=0.0055cm,y=0.64cm]
+\begin{tikzpicture}[>=Latex,x=0.005cm,y=0.90cm]
   \foreach \x in {250,500,...,2000} {
     \draw[black!16] (\x,0) -- (\x,7);
     \node[below] at (\x,0) {\num[group-digits=none]{\x}};
@@ -8,9 +8,9 @@
     \draw[black!16] (150,\y) -- (2000,\y);
     \node[left] at (150,\y) {\num{\y}};
   }
-  \draw[->] (150,0) -- (2070,0) node[right] {$\lambda$ in \unit{\nano\metre}};
-  \draw[->] (150,0) -- (150,7.38) node[above right] {Spektrale Intensität ($10^{11}$ rel. Einheiten)};
-  \draw[THMBlue,very thick] plot coordinates {
+  \draw[->] (150,0) -- (2070,0) node[below right=3pt] {$\lambda$ in \unit{\nano\metre}};
+  \draw[->] (150,0) -- (150,7.38) node[above right] {Spektrale Intensität (rel. Einheiten)};
+  \draw[black,very thick] plot coordinates {
     (196.000,0.0000) (200.563,0.0332) (210.450,0.0332) (220.337,0.0332) (230.224,0.0332) (240.111,0.0332) (249.998,0.0332)
     (259.885,0.0332) (269.772,0.0332) (279.659,0.0332) (289.546,0.0498) (299.433,0.0498) (309.320,0.0498) (319.207,0.0664)
     (329.094,0.0664) (338.981,0.0829) (348.868,0.1161) (358.755,0.1327) (368.642,0.1493) (378.529,0.1825) (388.416,0.2488)

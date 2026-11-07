@@ -1,0 +1,29 @@
+\begin{tikzpicture}[>=Latex]
+  \draw[->] (-2.15,0) -- (6.85,0) node[right] {$x$};
+  \draw[->] (0,-0.40) -- (0,5.25) node[above] {$y$};
+  \coordinate (A) at (1.20,1.92);
+  \coordinate (B) at (5.80,4.68);
+  \coordinate (M) at (3.40,3.24);
+  \draw[black!65,dashed] (-2,0) -- (6.25,4.95) node[above right] {$g(x)$};
+  \draw[very thick] (A) -- (B);
+  \draw[black!40,dotted] (0,1.92) node[left,black] {$y_A$} -- (A) -- (1.20,0) node[below,black] {$x_A$};
+  \draw[black!40,dotted] (0,4.68) node[left,black] {$y_B$} -- (B) -- (5.80,0) node[below,black] {$x_B$};
+  \fill (A) circle[radius=1.5pt] node[above left=3pt] {$A$};
+  \fill (B) circle[radius=1.5pt] node[above left=3pt] {$B$};
+  \filldraw[fill=black!15,thick] (M) circle[radius=0.17] node[above left=6pt] {$m$};
+  % Orthogonal projections of gravity onto the incline and its normal.
+  \coordinate (H) at ($(M)+(-0.970588,-0.582353)$);
+  \coordinate (N) at ($(M)+(0.970588,-1.617647)$);
+  \coordinate (G) at ($(M)+(0,-2.20)$);
+  \draw[green!50!black,densely dashed] (H) -- (G) -- (N);
+  \draw[green!50!black,very thick,->] (M) -- (H)
+    node[above left=2pt] {$\vec F_{\mathrm G}^{\parallel}$};
+  \draw[green!50!black,very thick,->] (M) -- (N)
+    node[right=5pt] {$\vec F_{\mathrm G}^{\perp}$};
+  \draw[green!50!black,very thick,->] (M) -- (G) node[below=3pt] {$\vec F_\mathrm G$};
+  \draw (-0.55,0) arc[start angle=0,end angle=30.964,radius=1.45];
+  \node at ($(-2,0)+(15.482:0.96)$) {$\alpha$};
+  \draw ($(M)+(270:1.42)$) arc[start angle=270,end angle=300.964,radius=1.42];
+  \node at ($(M)+(285.482:0.98)$) {$\alpha$};
+  \RightAngleMark{(M)}{210.964}{300.964}{0.32}
+\end{tikzpicture}

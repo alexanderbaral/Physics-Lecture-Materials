@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1.35cm,y=1.35cm]
+  \coordinate (tip) at (0,0);
+  \coordinate (mass) at (0.96,2.02);
+  \draw[thick] (-1.55,3.25) -- (tip) -- (1.55,3.25);
+  \draw[thick] (0,3.25) ellipse[x radius=1.55,y radius=0.31];
+  \draw[densely dashed] (0,2.02) ellipse[x radius=0.96,y radius=0.20];
+  \draw[densely dotted] (0,0) -- (0,0.47) (0,0.97) -- (0,3.20);
+  \draw[densely dotted] (-1.80,2.02) -- (mass) (-1.80,0) -- (1.04,0);
+  \draw[<->] (-1.74,0) -- node[right] {$h_0$} (-1.74,2.02);
+  \draw (115.5:1.12) arc[start angle=115.5,end angle=64.5,radius=1.12];
+  \node[fill=white,inner sep=1pt] at (0,0.73) {$\alpha$};
+  \fill (mass) circle[radius=2pt] node[right] {$m$};
+\end{tikzpicture}

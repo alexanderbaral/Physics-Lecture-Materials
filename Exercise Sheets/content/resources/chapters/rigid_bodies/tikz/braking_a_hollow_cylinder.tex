@@ -1,0 +1,13 @@
+\begin{tikzpicture}[x=1.4cm,y=1.4cm]
+  \draw[thick] (-1.55,0) -- (-0.33,0);
+  \draw[fill=gray!25,thick] (0.12,1.25) -- (1.01,1.25) -- (1.01,-1.25) -- (0.12,-1.25)
+    arc[start angle=-90,end angle=-270,x radius=0.23,y radius=1.25] -- cycle;
+  \draw[fill=gray!43,thick] (1.01,0) ellipse[x radius=0.23,y radius=1.25];
+  \draw[THMBlue,->,thick] (1.01,0) -- (2.55,0) node[right] {$\omega$};
+  \draw[<->] (-0.86,0) -- node[left] {$R$} (-0.86,1.25);
+  \draw[densely dotted] (-0.92,1.25) -- (0.12,1.25);
+  \draw[densely dotted] (0.12,-1.25) -- (0.12,-1.52) (1.01,-1.25) -- (1.01,-1.52);
+  \draw[<->] (0.12,-1.48) -- node[below] {$h$} (1.01,-1.48);
+  \draw[fill=gray!15,thick,rounded corners=2pt] (-0.92,1.32) rectangle (2.02,2.02);
+  \node at (0.55,1.67) {Bremsscheibe};
+\end{tikzpicture}

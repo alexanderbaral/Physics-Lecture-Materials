@@ -1,5 +1,5 @@
 % Die Koordinaten folgen der Kurve im Original-PDF, Seite 6.
-\begin{tikzpicture}[>=Latex,x=0.51cm,y=0.22cm]
+\begin{tikzpicture}[>=Latex,x=0.43cm,y=0.34cm]
   \foreach \x in {0,2,...,20} {
     \draw[black!15] (\x,-10) -- (\x,10);
     \node[below] at (\x,-10) {\num{\x}};
@@ -9,9 +9,9 @@
     \node[left] at (0,\y) {\num{\y}};
   }
   \draw[black!45] (0,0) -- (20,0);
-  \draw[->] (0,-10) -- (20.7,-10) node[right] {$t$ in \unit{\milli\second}};
+  \draw[->] (0,-10) -- (20.7,-10) node[below right=3pt] {$t$ in \unit{\milli\second}};
   \draw[->] (0,-10) -- (0,11.4) node[above] {$x$ in \unit{\centi\metre}};
-  \draw[THMBlue,very thick] plot coordinates {
+  \draw[black,very thick] plot coordinates {
     (0.000,10.0000) (0.063,9.6800) (0.189,8.8400) (0.315,7.7600) (0.442,6.1600) (0.568,4.0000) (0.694,1.7200)
     (0.820,-0.1600) (0.946,-2.3200) (1.073,-4.2800) (1.199,-5.6800) (1.325,-7.3200) (1.451,-8.0400) (1.577,-8.4000)
     (1.703,-8.2400) (1.830,-7.7600) (1.956,-6.6800) (2.082,-5.2000) (2.208,-3.5600) (2.334,-2.0800) (2.461,-0.1600)

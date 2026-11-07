@@ -71,9 +71,14 @@ class PreviewTests(unittest.TestCase):
     def test_failed_preview_preserves_previous_pdf_and_baseline(self):
         self.exercise_update(fail=True)
 
-    def exercise_update(self, fail=False):
+    def test_open_uses_only_the_preview_in_the_external_cache(self):
+        self.exercise_update(open_requested=True)
+
+    def exercise_update(self, fail=False, open_requested=False):
         with tempfile.TemporaryDirectory(prefix='joint-preview-test-') as temp:
-            root = Path(temp)
+            root = Path(temp) / 'project'
+            root.mkdir()
+            cache = Path(temp) / 'local-cache'
             events = []
             content = pdf()
             section = {'path': 'section.tex', 'chapter': 5, 'section': 1}
@@ -93,32 +98,39 @@ class PreviewTests(unittest.TestCase):
             def sheet_preview(snapshot, request):
                 events.append(('sheet-preview', request['options']))
                 return {'pdfs': {'build/de/off.pdf': content, 'build/de_solutions/on.pdf': content}}
-            script = SimpleNamespace(UPDATE_CACHE=root/'cache', capture=lambda: script_snapshot,
+            script = SimpleNamespace(UPDATE_CACHE=cache, capture=lambda: script_snapshot,
                 control=lambda: control, snapshots=lambda: snapshots, sections=lambda s: [section],
                 affected=lambda s, b: ([] if s['revision'] == b['revision'] else [section], False),
                 preview=script_preview)
-            sheets = SimpleNamespace(CACHE=root/'cache', capture=lambda: sheet_snapshot, control=lambda: control,
+            sheets = SimpleNamespace(CACHE=cache, capture=lambda: sheet_snapshot, control=lambda: control,
                                      snapshots=lambda: snapshots, run_full=sheet_preview)
             def schedule(*args):
-                self.assertTrue((root/'build/Vorschau.pdf').exists())
+                self.assertTrue(target.exists())
                 events.append(('background',))
                 return None, None, False
-            target = root/'build/Vorschau.pdf'
+            target = cache/'joint-preview/Vorschau.pdf'
             if fail:
                 target.parent.mkdir(parents=True)
                 target.write_bytes(content)
             with patch.object(preview, 'adapters', return_value=(script, sheets)), \
                  patch.object(preview, 'module', return_value=SimpleNamespace(sheet_output_filename=lambda s,l,m: m+'.pdf')), \
-                 patch.object(preview, 'schedule', side_effect=schedule):
+                 patch.object(preview, 'schedule', side_effect=schedule), \
+                 patch.object(preview.os, 'startfile', create=True) as open_file:
                 if fail:
                     with self.assertRaisesRegex(RuntimeError, 'TeX error'):
-                        preview.update(root)
+                        preview.update(root, open_preview=True)
                     self.assertEqual(target.read_bytes(), content)
                     self.assertNotIn(('background',), events)
-                    self.assertFalse((root/'cache/joint-preview/state.json').exists())
+                    self.assertFalse((cache/'joint-preview/state.json').exists())
+                    open_file.assert_not_called()
                     return
-                preview.update(root)
-                state = json.loads((root/'cache/joint-preview/state.json').read_text(encoding='utf-8'))
+                preview.update(root, open_preview=open_requested)
+                if open_requested:
+                    open_file.assert_called_once_with(str(target))
+                else:
+                    open_file.assert_not_called()
+                self.assertFalse((root/'build').exists())
+                state = json.loads((cache/'joint-preview/state.json').read_text(encoding='utf-8'))
                 self.assertEqual(len(state['blocks']), 3)
                 self.assertEqual(state['sheets'], ['alpha'])
                 self.assertEqual(state['sheet_baseline'], 'sheets-new')
@@ -129,7 +141,7 @@ class PreviewTests(unittest.TestCase):
                 self.assertEqual(events, [('background',), ('background',)])
                 self.assertEqual(target.stat().st_mtime_ns, stamp)
                 preview.update(root, cloze=True)
-                state = json.loads((root/'cache/joint-preview/state.json').read_text(encoding='utf-8'))
+                state = json.loads((cache/'joint-preview/state.json').read_text(encoding='utf-8'))
                 self.assertEqual(len(state['blocks']), 4)
                 self.assertTrue(state['cloze'])
 

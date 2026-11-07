@@ -1,0 +1,10 @@
+\begin{tikzpicture}
+  \draw[fill=gray!10,thick] (0,0) -- (5.8,0) -- (0,2.03) -- cycle;
+  \draw (3.5,0) arc[start angle=180,end angle=160.7,radius=2.30];
+  \node at ($(5.8,0)+(170.35:1.65)$) {$\alpha$};
+  \draw[fill=gray!25,thick] (6.19,0.52) circle[radius=0.52];
+  \draw[fill=gray!15,densely dashed] (2.05,1.865) circle[radius=0.52];
+  \draw[densely dotted] (1.36,0.52) -- (5.11,0.52);
+  \draw[<->] (2.05,0.52) -- node[midway,left=6pt] {$h$} (2.05,1.865);
+  \draw[THMBlue,->,thick] (6.19,0.52) -- (5.18,0.52);
+\end{tikzpicture}

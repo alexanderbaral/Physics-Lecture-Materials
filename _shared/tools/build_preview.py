@@ -8,6 +8,7 @@ from io import BytesIO
 from pathlib import Path
 import importlib.util
 import json
+import os
 import re
 import time
 
@@ -206,11 +207,11 @@ def schedule(adapter, snapshot, options=None):
     return queue, request, needed
 
 
-def update(root=ROOT, cloze=False, wait=False):
+def update(root=ROOT, cloze=False, wait=False, open_preview=False):
     started = time.monotonic()
     script, sheets = adapters(root)
     cache = script.UPDATE_CACHE / 'joint-preview'
-    target = root / 'build/Vorschau.pdf'
+    target = cache / 'Vorschau.pdf'
     timing = common.BuildControl(root, cache, __file__, 'preview')
     # Serialize foreground requests only. Full workers keep their own locks and
     # frozen sources; they never write this PDF or block script preview rendering.
@@ -296,6 +297,11 @@ def update(root=ROOT, cloze=False, wait=False):
                     print('Dieser Vollstand ist fehlgeschlagen; kein automatischer Wiederholungsbau. Log: '
                           + failed.get('log', ''), flush=True)
                     return 1
+    if open_preview:
+        try:
+            os.startfile(str(target))
+        except (OSError, AttributeError) as error:
+            print(f'Vorschau bitte manuell öffnen: {target} ({error})', flush=True)
     if wait:
         for queue, request, needed in jobs:
             if not needed:

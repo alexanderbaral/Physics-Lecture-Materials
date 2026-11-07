@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \draw[fill=gray!10] (-3.4,0) -- (1.45,0) -- (3.4,1.45) -- (-1.45,1.45) -- cycle;
+  \draw[densely dashed] (0,0.72) ellipse[x radius=1.02,y radius=0.39];
+  \draw[fill=white] (0,0.72) ellipse[x radius=0.105,y radius=0.045];
+  \draw[thick] (0,0.70) -- (0,-1.73) -- (0.16,-1.74);
+  \draw[thick] (0,0.72) -- node[above=3pt,fill=gray!10,inner sep=1pt] {$r_0$} (-0.88335,0.915);
+  \draw[THMBlue,->,thick] (-0.88335,0.915) -- node[below left] {$v_0$} (-1.39335,0.57725);
+  \fill (-0.88335,0.915) circle[radius=2.5pt];
+  \fill[gray!75!black,rounded corners=1pt] (0.04,-1.73) -- (0.16,-1.59) -- (0.35,-1.58)
+    -- (0.46,-1.77) -- (0.97,-1.77) -- (1.03,-1.97) -- (1.00,-2.30)
+    -- (0.91,-2.30) -- (0.88,-2.04) -- (0.58,-2.02) -- (0.52,-2.29)
+    -- (0.43,-2.29) -- (0.40,-2.00) -- (0.29,-1.86) -- (0.11,-1.86) -- cycle;
+  \draw[gray!75!black,thick,line cap=round] (0.97,-1.83) to[out=10,in=240] (1.22,-1.65);
+  \draw[white,line width=0.5pt] (0.32,-1.64) to[out=-60,in=-90] (0.39,-1.73);
+  \fill[white] (0.19,-1.70) circle[radius=0.55pt];
+\end{tikzpicture}

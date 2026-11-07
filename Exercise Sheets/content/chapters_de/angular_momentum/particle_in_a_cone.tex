@@ -1,0 +1,39 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{06}{Massenpunkt im Trichter}{angular_momentum_particle_in_a_cone}
+Ein Punkt der Masse $m$ bewegt sich in einem Kreiskegel mit vollem Öffnungswinkel $\alpha$ reibungsfrei auf der
+Höhe $h_0$ über der Spitze des Kreiskegels (siehe Abbildung). Das System ist der Erdbeschleunigung
+$g$ ausgesetzt.
+
+\begin{center}
+	\CachedTikzFigure{content/resources/chapters/angular_momentum/tikz/particle_in_a_cone.tex}
+\end{center}
+
+\begin{enumerate}
+	\item Stellen Sie eine Formel für die Kreisbahngeschwindigkeit $v_K$ auf (in Abhängigkeit von $h_0$). \\
+	Hinweis: Zerlegen Sie zuerst die Gewichtskraft in Normal- und Hangabtriebskraft. Zerlegen Sie entsprechend die Zentrifugalkraft und überlegen Sie dann, welche Komponenten sich für eine stabile Kreisbahn aufheben müssen.
+
+	\item Drücken Sie die axiale Komponente $L_z$ des Drehimpulses auf dieser Kreisbahn durch die in der
+Aufgabenstellung angegebenen Parameter aus.
+
+	\item Nehmen wir an, dass der Massenpunkt auf Höhe $h_0$ eine Tangentialgeschwindigkeit $0 < v < v_K$ hat. Warum wird der Massenpunkt trotzdem nicht in die Spitze des Kegels (also auf Höhe $h = 0$) fallen? (Eine qualitative Begründung reicht!)
+
+	\item Berechnen Sie die minimale Höhe $h_\mathrm{min}$, wenn der Massenpunkt auf der Höhe $h_0$ mit der Tangentialgeschwindigkeit $v_K/2$ startet.
+	Hinweis. Verwenden Sie Energie- und Drehimpulserhaltung. Am unteren Umkehrpunkt ist die Geschwindigkeit rein tangential. Für $x=h_\mathrm{min}/h_0$ ergibt sich $8x^3-9x^2+1=0$. Nutzen Sie die bekannte Nullstelle $x=1$.
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\begin{RemarkBox}[title=Ergänzung zu Teilaufgabe d)]
+Auf Höhe $h$ ist der Bahnradius $r=h\tan(\alpha/2)$. Die axiale Drehimpulskomponente $L_z$ ist konstant. Am unteren Umkehrpunkt gilt daher
+\[
+ E=mgh+\frac{L_z^2}{2m h^2\tan^2(\alpha/2)}.
+\]
+Am Start ist $v=v_K/2=\sqrt{g h_0}/2$ und damit $E=9mgh_0/8$. Mit $L_z=m h_0\tan(\alpha/2)v$ folgt für $x=h/h_0$
+\[
+ \frac98=x+\frac{1}{8x^2},
+ \qquad
+ 8x^3-9x^2+1=(x-1)(8x^2-x-1)=0.
+\]
+Die Nullstelle $x=1$ beschreibt die Starthöhe. Von den beiden anderen Nullstellen ist nur $(1+\sqrt{33})/16$ positiv. Somit ist $h_\mathrm{min}=h_0(1+\sqrt{33})/16\approx 0{,}422\,h_0$.
+\end{RemarkBox}
+\end{Solution}
+\UseExerciseSolution{angular_momentum_particle_in_a_cone}

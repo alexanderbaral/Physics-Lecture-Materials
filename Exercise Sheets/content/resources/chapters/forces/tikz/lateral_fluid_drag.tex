@@ -1,0 +1,28 @@
+\begin{tikzpicture}[>=Latex]
+  % Guide rails and individual crosspieces, as in the original drawing.
+  % Leave a clear gap above the velocity tip for its label.
+  \foreach \y in {-2.30,-1.75,-1.20,-0.65,-0.10,0.45,1.00,1.55,2.10,2.65,3.40,3.75}
+    \filldraw[fill=black!22,draw=black!60,line width=0.35pt]
+      (-0.56,\y) rectangle (0.56,\y+0.09);
+  \draw[thick] (-0.59,-2.55) -- (-0.59,4.00) (0.59,-2.55) -- (0.59,4.00);
+  \foreach \y in {0.95,2.00,3.05}
+    \draw[THMBlue,->] (-3.75,\y) -- (-1.35,\y);
+  \foreach \y in {0.95,2.00,3.05}
+    \draw[THMBlue,->] (1.35,\y) -- (4.35,\y);
+  \node[anchor=west] at (1.35,3.60) {Seitliche Strömung};
+  \node[THMBlue] at (3.50,2.66) {$\vec v_\mathrm W$};
+  \node[THMBlue] at (-2.55,2.66) {$\vec v_\mathrm W$};
+  \filldraw[fill=black!16,thick] (0,0) circle[radius=1.30];
+  \node[align=center] at (0,0.52) {Rundes\\Objekt};
+  \draw[THMBlue,very thick,->] (0,1.30) -- (0,2.76)
+    node[above=2pt,inner sep=0pt] {$\vec v_\mathrm F$};
+  \draw[green!50!black,densely dashed] (0,-1.85) -- (2.80,-1.85) -- (2.80,0);
+  \draw[green!50!black,very thick,->] (0,0) -- (2.80,-1.85)
+    node[below right=3pt] {$\vec F_\mathrm R$};
+  \draw[green!50!black,very thick,->] (0,0) -- (2.80,0)
+    node[right=5pt] {$\vec F_{\mathrm R}^{\perp}$};
+  \draw[green!50!black,very thick,->] (0,0) -- (0,-1.85);
+  \node[green!50!black,anchor=east] at (-0.80,-1.95) {$\vec F_{\mathrm R}^{\parallel}$};
+  \draw[->] (-3.75,-2.25) -- (-2.20,-2.25) node[right] {$x_1$};
+  \draw[->] (-3.75,-2.25) -- (-3.75,-1.20) node[above left=4pt] {$x_2$};
+\end{tikzpicture}

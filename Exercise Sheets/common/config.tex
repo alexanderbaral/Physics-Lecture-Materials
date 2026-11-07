@@ -14,14 +14,21 @@
 }
 
 \ExplSyntaxOff
-\DeclareSheet{differential_equations}{differential_equations}{1}{Differentialgleichungen in der Mechanik}{Differential equations in mechanics}{differential_equations/_chapter.tex}
-\DeclareSheet{free_oscillations}{free_oscillations}{2}{Freie Schwingungen}{Free oscillations}{free_oscillations/_chapter.tex}
-\DeclareSheet{forced_oscillations}{forced_oscillations}{3}{Erzwungene Schwingungen}{Forced oscillations}{forced_oscillations/_chapter.tex}
-\DeclareSheet{wave_propagation}{wave_propagation}{4}{Mechanische und elektromagnetische Wellen}{Mechanical and electromagnetic waves}{wave_propagation/_chapter.tex}
-\DeclareSheet{doppler_and_interference}{doppler_and_interference}{5}{Doppler-Effekt und Interferenz}{Doppler effect and interference}{doppler_and_interference/_chapter.tex}
-\DeclareSheet{geometrical_and_wave_optics}{geometrical_and_wave_optics}{6}{Geometrische Optik und Wellenoptik}{Geometrical and wave optics}{geometrical_and_wave_optics/_chapter.tex}
-\DeclareSheet{quantum_optics}{quantum_optics}{7}{Quantenoptik und Laser}{Quantum optics and lasers}{quantum_optics/_chapter.tex}
-\DeclareSheet{laboratory_measurements}{laboratory_measurements}{8}{Messunsicherheit und Laborübungen}{Measurement uncertainty and laboratory exercises}{laboratory_measurements/_chapter.tex}
+\DeclareSheet{linear_kinematics}{linear_kinematics}{1}{Kinematik in einer Dimension}{One-dimensional kinematics}{linear_kinematics/_chapter.tex}
+\DeclareSheet{multidimensional_kinematics}{multidimensional_kinematics}{2}{Kinematik in mehreren Dimensionen}{Multidimensional kinematics}{multidimensional_kinematics/_chapter.tex}
+\DeclareSheet{forces}{forces}{3}{Kräfte}{Forces}{forces/_chapter.tex}
+\DeclareSheet{work_and_energy}{work_and_energy}{4}{Arbeit und Energie}{Work and energy}{work_and_energy/_chapter.tex}
+\DeclareSheet{two_particle_systems}{two_particle_systems}{5}{Zwei-Teilchen-Systeme und Stöße}{Two-particle systems and collisions}{two_particle_systems/_chapter.tex}
+\DeclareSheet{angular_momentum}{angular_momentum}{6}{Drehimpuls und Drehmoment}{Angular momentum and torque}{angular_momentum/_chapter.tex}
+\DeclareSheet{rigid_bodies}{rigid_bodies}{7}{Starre Körper}{Rigid bodies}{rigid_bodies/_chapter.tex}
+\DeclareSheet{differential_equations}{differential_equations}{8}{Differentialgleichungen in der Mechanik}{Differential equations in mechanics}{differential_equations/_chapter.tex}
+\DeclareSheet{free_oscillations}{free_oscillations}{9}{Freie Schwingungen}{Free oscillations}{free_oscillations/_chapter.tex}
+\DeclareSheet{forced_oscillations}{forced_oscillations}{10}{Erzwungene Schwingungen}{Forced oscillations}{forced_oscillations/_chapter.tex}
+\DeclareSheet{wave_propagation}{wave_propagation}{11}{Mechanische und elektromagnetische Wellen}{Mechanical and electromagnetic waves}{wave_propagation/_chapter.tex}
+\DeclareSheet{doppler_and_interference}{doppler_and_interference}{12}{Doppler-Effekt und Interferenz}{Doppler effect and interference}{doppler_and_interference/_chapter.tex}
+\DeclareSheet{geometrical_and_wave_optics}{geometrical_and_wave_optics}{13}{Geometrische Optik und Wellenoptik}{Geometrical and wave optics}{geometrical_and_wave_optics/_chapter.tex}
+\DeclareSheet{quantum_optics}{quantum_optics}{14}{Quantenoptik und Laser}{Quantum optics and lasers}{quantum_optics/_chapter.tex}
+\DeclareSheet{laboratory_measurements}{laboratory_measurements}{15}{Messunsicherheit und Laborübungen}{Measurement uncertainty and laboratory exercises}{laboratory_measurements/_chapter.tex}
 \ExplSyntaxOn
 \cs_new_protected:Npn \sheet_select:nnnnn #1#2#3#4#5 {
   \def\SheetChapter{#1}\def\SheetNumber{#2}
@@ -75,3 +82,62 @@
 \DeclareSolution{wave_propagation_python_wave_initial_conditions}{none}{}{}{unavailable}
 \DeclareSolution{doppler_and_interference_python_triangle_fourier_series}{none}{}{}{unavailable}
 \DeclareSolution{laboratory_measurements_umbrella_sales_regression}{none}{}{}{unavailable}
+\DeclareSolution{linear_kinematics_motion_diagrams}{pdf}{content/resources/chapters/linear_kinematics/solutions/motion_diagrams.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_sports_car_acceleration}{pdf}{content/resources/chapters/linear_kinematics/solutions/sports_car_acceleration.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_overtaking_vehicles}{pdf}{content/resources/chapters/linear_kinematics/solutions/overtaking_vehicles.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_runner_velocity_diagram}{pdf}{content/resources/chapters/linear_kinematics/solutions/runner_velocity_diagram.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_train_catches_up}{pdf}{content/resources/chapters/linear_kinematics/solutions/train_catches_up.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_average_speed}{pdf}{content/resources/chapters/linear_kinematics/solutions/average_speed.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_rear_end_collision}{pdf}{content/resources/chapters/linear_kinematics/solutions/rear_end_collision.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_linearly_increasing_acceleration}{pdf}{content/resources/chapters/linear_kinematics/solutions/linearly_increasing_acceleration.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_vertical_throw}{pdf}{content/resources/chapters/linear_kinematics/solutions/vertical_throw.pdf}{pages=-}{pending}
+\DeclareSolution{linear_kinematics_python_motion_diagrams}{none}{}{}{unavailable}
+\DeclareSolution{multidimensional_kinematics_projectile_over_wall}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/projectile_over_wall.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_catching_a_projectile}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/catching_a_projectile.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_optimal_launch_angle}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/optimal_launch_angle.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_ferry_crossing}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/ferry_crossing.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_circular_motion_orthogonality}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/circular_motion_orthogonality.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_uniform_circular_motion}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/uniform_circular_motion.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_braking_rotating_disk}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/braking_rotating_disk.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_centripetal_acceleration}{pdf}{content/resources/chapters/multidimensional_kinematics/solutions/centripetal_acceleration.pdf}{pages=-}{pending}
+\DeclareSolution{multidimensional_kinematics_python_angular_motion}{none}{}{}{unavailable}
+\DeclareSolution{forces_battering_ram}{pdf}{content/resources/chapters/forces/solutions/battering_ram.pdf}{pages=-}{pending}
+\DeclareSolution{forces_ski_friction}{pdf}{content/resources/chapters/forces/solutions/ski_friction.pdf}{pages=-}{pending}
+\DeclareSolution{forces_spring_force}{pdf}{content/resources/chapters/forces/solutions/spring_force.pdf}{pages=-}{pending}
+\DeclareSolution{forces_weight_on_mars}{pdf}{content/resources/chapters/forces/solutions/weight_on_mars.pdf}{pages=-}{pending}
+\DeclareSolution{forces_pulley_system}{pdf}{content/resources/chapters/forces/solutions/pulley_system.pdf}{pages=-}{pending}
+\DeclareSolution{forces_skydiver}{pdf}{content/resources/chapters/forces/solutions/skydiver.pdf}{pages=-}{pending}
+\DeclareSolution{forces_lateral_fluid_drag}{pdf}{content/resources/chapters/forces/solutions/lateral_fluid_drag.pdf}{pages=-}{pending}
+\DeclareSolution{forces_springs_in_series_and_parallel}{pdf}{content/resources/chapters/forces/solutions/springs_in_series_and_parallel.pdf}{pages=-}{pending}
+\DeclareSolution{forces_conical_pendulum}{pdf}{content/resources/chapters/forces/solutions/conical_pendulum.pdf}{pages=-}{pending}
+\DeclareSolution{forces_accelerating_railcar}{pdf}{content/resources/chapters/forces/solutions/accelerating_railcar.pdf}{pages=-}{pending}
+\DeclareSolution{forces_rotating_carousel}{pdf}{content/resources/chapters/forces/solutions/rotating_carousel.pdf}{pages=-}{pending}
+\DeclareSolution{forces_python_force_vectors}{none}{}{}{unavailable}
+\DeclareSolution{work_and_energy_spring_launcher}{pdf}{content/resources/chapters/work_and_energy/solutions/spring_launcher.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_stretching_an_ideal_spring}{pdf}{content/resources/chapters/work_and_energy/solutions/stretching_an_ideal_spring.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_escape_speed}{pdf}{content/resources/chapters/work_and_energy/solutions/escape_speed.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_vertical_loop}{pdf}{content/resources/chapters/work_and_energy/solutions/vertical_loop.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_masses_and_pulleys}{pdf}{content/resources/chapters/work_and_energy/solutions/masses_and_pulleys.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_friction_on_an_incline}{pdf}{content/resources/chapters/work_and_energy/solutions/friction_on_an_incline.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_path_dependent_friction_work}{pdf}{content/resources/chapters/work_and_energy/solutions/path_dependent_friction_work.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_work_of_an_overstretched_spring}{pdf}{content/resources/chapters/work_and_energy/solutions/work_of_an_overstretched_spring.pdf}{pages=-}{pending}
+\DeclareSolution{work_and_energy_lifting_a_cart}{pdf}{content/resources/chapters/work_and_energy/solutions/lifting_a_cart.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_elastic_collision_of_steel_balls}{pdf}{content/resources/chapters/two_particle_systems/solutions/elastic_collision_of_steel_balls.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_bullet_and_block}{pdf}{content/resources/chapters/two_particle_systems/solutions/bullet_and_block.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_space_capsule_separation}{pdf}{content/resources/chapters/two_particle_systems/solutions/space_capsule_separation.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_ballistic_pendulum}{pdf}{content/resources/chapters/two_particle_systems/solutions/ballistic_pendulum.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_stacked_balls}{pdf}{content/resources/chapters/two_particle_systems/solutions/stacked_balls.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_two_dimensional_car_collision}{pdf}{content/resources/chapters/two_particle_systems/solutions/two_dimensional_car_collision.pdf}{pages=-}{pending}
+\DeclareSolution{two_particle_systems_rotating_masses_and_spring}{pdf}{content/resources/chapters/two_particle_systems/solutions/rotating_masses_and_spring.pdf}{pages=-}{pending}
+\DeclareSolution{angular_momentum_angular_momentum_vector}{pdf}{content/resources/chapters/angular_momentum/solutions/angular_momentum_vector.pdf}{pages=-}{pending}
+\DeclareSolution{angular_momentum_figure_skater}{pdf}{content/resources/chapters/angular_momentum/solutions/figure_skater.pdf}{pages=-}{pending}
+\DeclareSolution{angular_momentum_comet_orbit}{pdf}{content/resources/chapters/angular_momentum/solutions/comet_orbit.pdf}{pages=-}{pending}
+\DeclareSolution{angular_momentum_inelastic_angular_collision}{pdf}{content/resources/chapters/angular_momentum/solutions/inelastic_angular_collision.pdf}{pages=-}{pending}
+\DeclareSolution{angular_momentum_dog_and_treat}{pdf}{content/resources/chapters/angular_momentum/solutions/dog_and_treat.pdf}{pages=-}{pending}
+\DeclareSolution{angular_momentum_particle_in_a_cone}{pdf}{content/resources/chapters/angular_momentum/solutions/particle_in_a_cone.pdf}{pages=-}{pending}
+\DeclareSolution{rigid_bodies_composite_cylinder_centre_of_mass}{pdf}{content/resources/chapters/rigid_bodies/solutions/composite_cylinder_centre_of_mass.pdf}{pages=-}{pending}
+\DeclareSolution{rigid_bodies_perforated_plate}{pdf}{content/resources/chapters/rigid_bodies/solutions/perforated_plate.pdf}{pages=-}{pending}
+\DeclareSolution{rigid_bodies_sphere_rolling_up_an_incline}{pdf}{content/resources/chapters/rigid_bodies/solutions/sphere_rolling_up_an_incline.pdf}{pages=-}{pending}
+\DeclareSolution{rigid_bodies_coupled_rotating_disks}{pdf}{content/resources/chapters/rigid_bodies/solutions/coupled_rotating_disks.pdf}{pages=-}{pending}
+\DeclareSolution{rigid_bodies_falling_mass_and_pulley}{pdf}{content/resources/chapters/rigid_bodies/solutions/falling_mass_and_pulley.pdf}{pages=-}{pending}
+\DeclareSolution{rigid_bodies_braking_a_hollow_cylinder}{pdf}{content/resources/chapters/rigid_bodies/solutions/braking_a_hollow_cylinder.pdf}{pages=-}{pending}

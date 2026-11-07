@@ -2,6 +2,8 @@
 
 Die Referenz ist der am 07.11.2026 direkt vom Datenträger gelesene lokale Arbeitsstand von Mathematik/Lecture Materials. Die Dateien wurden als eigenständige Physik-Kopien übernommen. Die Prüfung mit SHA-256 schließt Dateikodierung, Zeilenenden, Kommentare und Leerzeichen ein.
 
+Die Prüfsummen und Bauzahlen unten dokumentieren den damaligen Übernahmestand. Spätere beauftragte Abweichung: `_shared/tools/build_preview.py`, `build.py`, `build.ps1` und `test_build_preview.py` verlegen die Vorschau in den lokalen Physik-Cache und öffnen beim Editor-Bau ausschließlich diese Datei. Die vollständigen PDFs bleiben in Google Drive. Siehe [Änderungsprotokoll](STYLE_CHANGES.md).
+
 ## Physik-Konfiguration und lokale Anpassungen
 
 | Datei | Grund für die Abweichung |

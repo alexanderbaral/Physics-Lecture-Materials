@@ -1,0 +1,17 @@
+\begin{tikzpicture}
+  \foreach \x in {0,5.35} {
+    \draw[line width=3pt,black!45] (\x,-1.25) -- (\x,2.43);
+    \draw[fill=gray!33,thick] (\x,0) ellipse[x radius=1.14,y radius=0.24];
+  }
+  \draw[fill=gray!12,thick] (0,3.14) ellipse[x radius=0.76,y radius=0.14];
+  \draw (0,3.14) ellipse[x radius=0.12,y radius=0.045];
+  \draw[fill=gray!12,thick] (5.35,0.09) ellipse[x radius=0.76,y radius=0.14];
+  \foreach \x in {0,5.35}
+    \draw[line width=3pt,black!45] (\x,0.02) -- (\x,2.43);
+  \draw[THMBlue,->,thick] (-1.43,0.24) to[out=180,in=180,looseness=2.0]
+    node[left] {$\omega_0$} (-1.36,-0.16);
+  \draw[THMBlue,->,thick] (3.92,0.24) to[out=180,in=180,looseness=2.0]
+    node[left] {$\omega_1$} (3.99,-0.16);
+  \node[right] at (1.19,0) {$J_A$};
+  \node[right] at (0.85,3.14) {$J_B$};
+\end{tikzpicture}

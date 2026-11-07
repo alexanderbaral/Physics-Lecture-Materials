@@ -1,6 +1,8 @@
 % Die Koordinaten folgen beiden Kurven im Original-PDF, Seite 7.
+% Beide Teilbilder inklusive Beschriftungen nutzen die 18 cm Satzbreite.
+% Nur die horizontalen Koordinaten sind verbreitert, nicht die Schrift.
 \begin{tikzpicture}[>=Latex]
-  \begin{scope}[x=0.074cm,y=0.015cm]
+  \begin{scope}[x=0.0875cm,y=0.025cm]
     \foreach \x in {0,20,...,80} {
       \draw[black!16] (\x,0) -- (\x,300);
       \node[below] at (\x,0) {\num{\x}};
@@ -12,8 +14,8 @@
     \draw[->] (0,0) -- (83,0);
     \draw[->] (0,0) -- (0,314) node[above] {$A$ in \unit{\milli\metre}};
     \node[below] at (40,-29) {$\Omega$ in \unit{\per\second}};
-    \node[above] at (40,315) {Amplitudengang};
-    \draw[THMBlue,very thick] plot coordinates {
+    \node[above] at (40,337) {Amplitudengang};
+    \draw[black,very thick] plot coordinates {
     (0.351,24.8252) (0.702,24.8252) (1.053,24.8252) (1.404,24.8252) (1.754,24.8252) (2.105,24.8252) (2.456,24.8252)
     (2.807,24.8252) (3.158,24.8252) (3.509,24.8252) (3.860,25.1748) (4.211,25.5245) (4.561,25.5245) (4.912,25.5245)
     (5.263,25.5245) (5.614,25.5245) (5.965,25.5245) (6.316,25.5245) (6.667,25.5245) (7.018,25.8741) (7.368,26.2238)
@@ -49,7 +51,7 @@
     (78.947,8.7413) (79.298,8.3916) (79.649,8.3916)
     };
   \end{scope}
-  \begin{scope}[xshift=8.1cm,x=0.54cm,y=0.0225cm,shift={(-35,-100)}]
+  \begin{scope}[xshift=9.73cm,x=0.636cm,y=0.0375cm,shift={(-35,-100)}]
     \foreach \x in {36,38,...,46} {
       \draw[black!16] (\x,100) -- (\x,300);
       \node[below] at (\x,100) {\num{\x}};
@@ -61,8 +63,8 @@
     \draw[->] (35,100) -- (46.4,100);
     \draw[->] (35,100) -- (35,309.5) node[above] {$A$ in \unit{\milli\metre}};
     \node[below] at (40.5,80.7) {$\Omega$ in \unit{\per\second}};
-    \node[above] at (40.5,310) {Ausschnitt};
-    \draw[THMBlue,very thick] plot coordinates {
+    \node[above] at (40.5,325) {Vergrößerter Ausschnitt};
+    \draw[black,very thick] plot coordinates {
     (35.048,101.1655) (35.145,102.3310) (35.241,103.9627) (35.338,105.5944) (35.434,107.9254) (35.531,109.5571) (35.627,111.1888)
     (35.724,113.0536) (35.820,114.9184) (35.917,116.7832) (36.013,119.8135) (36.110,121.9114) (36.206,124.0093) (36.303,126.3403)
     (36.399,128.4382) (36.496,130.5361) (36.592,132.8671) (36.689,137.0629) (36.785,139.6270) (36.882,142.1911) (36.978,144.9883)

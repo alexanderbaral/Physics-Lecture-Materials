@@ -1,4 +1,4 @@
-\begin{tikzpicture}[>=Latex,x=10cm,y=3.0cm]
+\begin{tikzpicture}[>=Latex,x=9cm,y=5.8cm]
   \foreach \y in {0,0.2,0.4,0.6,0.8,1.0,1.2} {
     \draw[black!16] (0,\y) -- (1,\y);
     \node[left] at (0,\y) {\num{\y}};
@@ -18,5 +18,5 @@
     \draw[black!55,dashed,domain=0:1,samples=101]
       plot (\x,{\coefficient*sin(180*\harmonic*\x)});
   }
-  \draw[THMBlue,very thick] (0,0) -- (0.5,1.2337) -- (1,0);
+  \draw[black,very thick] (0,0) -- (0.5,1.2337) -- (1,0);
 \end{tikzpicture}

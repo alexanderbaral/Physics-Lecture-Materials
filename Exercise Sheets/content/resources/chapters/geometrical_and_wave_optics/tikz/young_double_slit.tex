@@ -1,27 +1,37 @@
 \begin{tikzpicture}[>=Latex]
-  \coordinate (A) at (0,1.65);
+  \coordinate (A) at (0,3.80);
   \coordinate (B) at (0,0);
-  \coordinate (S) at (10,3.10);
-  \coordinate (Q) at ($(B)!(A)!(S)$);
-  \fill[black!15] (9.99,-0.97) rectangle (10.27,3.66);
-  \node[above] at (10.13,3.66) {Schirm};
-  \draw[very thick] (0,-0.96) -- (0,-0.10);
-  \draw[very thick] (0,0.10) -- (0,1.55);
-  \draw[very thick] (0,1.75) -- (0,3.52) node[above] {Doppelspalt};
-  \foreach \y in {0,1.65}
-    \draw[THMBlue,thick,->] (-2.2,\y) -- (-0.16,\y);
-  \node[align=center,anchor=east] at (-0.97,0.82) {Einfallende\\ebene Welle};
-  \draw[<->] (-0.38,0) -- (-0.38,1.65) node[midway,left] {$d$};
-  \draw[densely dashed,black!55] (B) -- (3.55,0);
-  \draw[THMBlue,very thick,->] (A) -- (S) node[pos=0.48,sloped,above=2pt,black] {Strahl 1};
-  \draw[THMBlue,very thick,->] (B) -- (S) node[pos=0.48,sloped,below=2pt,black] {Strahl 2};
-  \draw[densely dashed] (A) -- (Q);
-  \draw (2.12,0) arc[start angle=0,end angle=17.22,radius=2.12];
-  \node at (8.6:1.78) {$\alpha$};
-  \begin{scope}[shift={(Q)},rotate=17.22]
-    \draw (0.25,0) arc[start angle=0,end angle=90,radius=0.25];
-    \fill (0.096,0.096) circle (0.65pt);
-  \end{scope}
-  \draw[decorate,decoration={brace,mirror,amplitude=2pt},yshift=-4pt] (B) -- (Q)
-    node[midway,below=3pt] {$\Delta s$};
+  \coordinate (U) at (8.60,{3.80+8.60*tan(25)});
+  \coordinate (V) at (8.60,{8.60*tan(25)});
+  \coordinate (Q) at ($(B)!(A)!(V)$);
+  % Plane incident wave: illuminated area and equal-phase wavefronts.
+  \fill[orange!35!yellow!35] (-3.0,-0.35) rectangle (-0.04,4.15);
+  \foreach \x in {-2.65,-1.15,-0.50}
+    \draw[orange!75!yellow!85!black,thin] (\x,-0.35) -- (\x,4.15);
+  \node[above,align=center] at (-1.65,4.35) {Einfallende\\ebene Welle};
+  \draw[<->] (-1.80,0) -- (-1.80,3.80) node[midway,left=4pt] {$d$};
+  \draw[very thick] (0,-0.85) -- (0,-0.10) (0,0.10) -- (0,3.70)
+    (0,3.90) -- (0,5.00);
+  \node[above] at (0.3,5.20) {Doppelspalt};
+  \fill[black!15] (8.65,3.20) rectangle (8.90,8.65);
+  \node[above,align=center] at (8.75,8.75) {Schirm\\im Fernfeld};
+  % Parallel rays are the far-field approximation used in the exercise.
+  \draw[orange!75!yellow!85!black,very thick,->] (A) -- (U)
+    node[pos=0.54,sloped,above=4pt,black] {Strahl 1};
+  \draw[orange!75!yellow!85!black,very thick,->] (B) -- (V)
+    node[pos=0.62,sloped,below=4pt,black] {Strahl 2};
+  \draw[black!65,densely dashed] (A) -- (Q);
+  \draw[black!45,densely dashed] (B) -- (3.40,0);
+  \draw (2.65,0) arc[start angle=0,end angle=25,radius=2.65];
+  \node at (12.5:1.92) {$\alpha$};
+  % The same angle occurs between the slit separation and the wavefront A-Q.
+  \draw ($(A)+(270:1.65)$) arc[start angle=270,end angle=295,radius=1.65];
+  \node at ($(A)+(282.5:1.18)$) {$\alpha$};
+  \RightAngleMark{(Q)}{115}{205}{0.24}
+  % The excess path is precisely B-Q. Offset dimension with visible end ticks.
+  \draw[thin] ($(B)+(-65:0.10)$) -- ($(B)+(-65:0.52)$)
+    ($(Q)+(-65:0.10)$) -- ($(Q)+(-65:0.52)$);
+  \draw[<->] ($(B)+(-65:0.40)$) -- ($(Q)+(-65:0.40)$)
+    node[midway,sloped,below=4pt] {$\Delta s$};
+  \fill (B) circle[radius=1.2pt] (Q) circle[radius=1.2pt];
 \end{tikzpicture}

@@ -1,0 +1,12 @@
+\begin{tikzpicture}
+  \fill[black!28] (-1.35,3.45) rectangle (1.35,3.64);
+  \draw[thick] (0,3.45) -- (0,3.12) -- (-0.19,3.05)
+    \foreach \y in {2.93,2.69,2.45} {-- (0.19,\y) -- (-0.19,\y-0.12)}
+    -- (0,2.26) -- (0,1.78) -- (-0.19,1.71)
+    \foreach \y in {1.59,1.35,1.11} {-- (0.19,\y) -- (-0.19,\y-0.12)}
+    -- (0,0.92) -- (0,0.45);
+  \node[right=4pt] at (0.19,2.66) {$D_1$};
+  \node[right=4pt] at (0.19,1.32) {$D_2$};
+  \filldraw[fill=black!12,thick] (-0.45,0) rectangle (0.45,0.45);
+  \node at (0,0.225) {$m$};
+\end{tikzpicture}

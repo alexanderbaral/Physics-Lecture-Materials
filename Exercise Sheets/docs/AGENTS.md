@@ -8,6 +8,7 @@
 ## Struktur und Darstellung
 - Ein `main.tex`, vier minimale Sprache/Lösung-Einstiege. `ShowSolutions` unabhängig von `ScriptLanguage`; Standard Deutsch ohne Lösungen.
 - Aufgaben einmal je Sprache; Lösungen über `Solution` oder registrierte `UseExerciseSolution` einbinden. Pro Aufgabe nur eine aktive Lösung. Keine Lösungen im Aufgabenmodus sichtbar lassen.
+- Bei Verständnisfragen steht `\TrueFalseAnswer{wahr}` bzw. `\TrueFalseAnswer{falsch}` direkt hinter der Aussage. `ShowSolutions` schaltet diese Kennzeichnung ein. Die Verständnisfragen erhalten keinen ausformulierten Lösungsblock.
 - Blatt-ID, Kapitelzuordnung und Reihenfolge zentral in `common/config.tex` über `DeclareSheet` registrieren. Mehrere Blätter pro Kapitel sind möglich.
 - Inhaltsnamen englisch, semantisch, snake_case; selbstständig vergeben. Kein Namensfreigabeprozess. `_chapter.tex` bündelt das Blatt; `_section.tex` bei tatsächlichen Abschnitten.
 - Der aus Mathematik übernommene Aufbau verwendet pro Blatt `content/chapters_de/<chapter>/_chapter.tex` als geordnete Liste von `\input`-Zeilen. Jede Aufgabe liegt in einer eigenen Datei `<exercise>.tex`. Aufgaben-IDs beginnen mit `<chapter>_`. Die Blattnummern im Register laufen über die gesamte Vorlesung fort. Beim Ergänzen von Physik 1 werden die Reihenfolge und Nummern im Register angepasst. Die Pfade bleiben dabei stabil.
@@ -18,7 +19,7 @@
 - Schrift, Listen, Grundmaße und Boxen verwenden eine gemeinsame Gestaltung. Die Skript-Titelseite und der Aufgabenblattkopf haben eigene Layoutregeln. Lückenfelder und Schreibraster gehören zum Lückenskript. Übungsblätter verwenden Aufgaben und Lösungen ohne diese Felder.
 - Logo unverzerrt, Kopf linksbündig, Lösungskennzeichnung reserviert denselben Platz. Keine Skript-Titelseite und kein Inhaltsverzeichnis in Einzelblättern.
 - Handschriftliche PDF-Lösungen standardmäßig 18 mm oben, 7 mm unten und seitlich 0 mm beschneiden. Wenn der Standardbeschnitt in die Handschrift reicht, im Lösungsregister pro PDF einen kleineren Beschnitt angeben. Originale behalten und proportional in die verfügbare Fläche einpassen.
-- TikZ extern unter `content/resources/chapters/<chapter>/tikz/` oder `content/resources/shared/tikz/`. Schrift wie Fließtext, keine verkleinernde Gesamtskalierung, Winkelbögen ohne Pfeilspitzen. Farben fachlich konsistent.
+- TikZ extern unter `content/resources/chapters/<chapter>/tikz/` oder `content/resources/shared/tikz/`. Schrift wie Fließtext, keine verkleinernde Gesamtskalierung, Winkelbögen ohne Pfeilspitzen, außer zur ausdrücklich dargestellten Drehrichtung. Winkelbezeichnungen mittig innerhalb des Bogens. Geschwindigkeiten blau (`THMBlue`), Kräfte und Beschleunigungen grün (`green!50!black`); übrige Geometrie neutral.
 - Fachliche Eingabestellen stehen als Tabellenzellen, Achsen oder direkte Arbeitsaufträge im Aufgabenblock.
 ## Bau und Prüfung
 - Gemeinsame Steuerung und Vorschau nach `../../AGENTS.md`. Blattweisen Cache und Einzel-PDFs erhalten. Gesamt-PDFs nur aus aktuellen freigegebenen Einzelständen zusammensetzen.

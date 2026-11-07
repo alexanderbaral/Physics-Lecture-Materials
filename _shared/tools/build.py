@@ -12,12 +12,13 @@ def main():
                    choices=["update","full","status","resume","ack"])
     p.add_argument("--product", choices=["script","sheets","all"], default="all")
     p.add_argument("--cloze", action="store_true", help="Include German cloze sections in the joint preview")
+    p.add_argument("--open-preview", action="store_true", help="Open only the joint preview in the local cache")
     args, extra = p.parse_known_args()
     if args.command == 'update' and args.product == 'all':
         if any(value != '--wait' for value in extra):
             p.error('Joint update supports --cloze and --wait. Use --product for specialist options.')
         from build_preview import update
-        return update(ROOT, cloze=args.cloze, wait='--wait' in extra)
+        return update(ROOT, cloze=args.cloze, wait='--wait' in extra, open_preview=args.open_preview)
     if args.command == 'full' and '--wait' not in extra:
         extra.append('--wait')
     products = ["script","sheets"] if args.product == "all" else [args.product]

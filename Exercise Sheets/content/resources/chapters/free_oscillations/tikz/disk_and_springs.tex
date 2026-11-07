@@ -3,10 +3,13 @@
   \draw[thick] (-0.58,0.88) -- (-0.58,2.6) arc[start angle=180,end angle=0,radius=0.58] -- (0.58,1.25);
   \filldraw[fill=white] (0,2.6) -- (-0.22,2.20) -- (0.22,2.20) -- cycle;
   \fill (0,2.6) circle (1.2pt);
-  \draw (0,2.6) -- ++(147:0.57) node[midway,below left,inner sep=1pt] {$R$};
-  \node at (0.28,2.84) {$J$};
-  \draw (-0.77,2.6) arc[start angle=180,end angle=128,radius=0.77];
-  \node at (-0.88,3.12) {$\varphi$};
+  \draw (0,2.6) -- ++(147:0.57);
+  \node[inner sep=0pt] at (-0.32,2.51) {$R$};
+  \node at (0.21,2.73) {$J$};
+  \draw[black!55,dotted] (-0.58,2.6) -- (-1.28,2.6)
+    ($(0,2.6)+(128:0.58)$) -- ($(0,2.6)+(128:1.28)$);
+  \draw[->] ($(0,2.6)+(128:1.18)$) arc[start angle=128,end angle=180,radius=1.18];
+  \node at ($(0,2.6)+(154:0.87)$) {$\varphi$};
   \draw[thick,->] (-1.07,1.45) -- (-1.07,0.90) node[midway,left] {$x$};
   \draw[thick,->] (1.07,0.72) -- (1.07,1.25) node[midway,right] {$x$};
   \draw[thick] (-0.58,0.88) -- (-0.76,0.80) -- (-0.40,0.68) -- (-0.76,0.56)

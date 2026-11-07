@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=Latex]
+  \foreach \x/\label in {0/A,4.12/B,8.4/C}
+    \node at (\x,2.87) {\textbf{\label}};
+  \foreach \x in {0,4.12,8.4} \fill[black!22] (\x-0.87,2.25) rectangle (\x+0.87,2.45);
+  \draw[thick] (0,2.25) -- (0,0.31) node[midway,right] {$l$};
+  \filldraw[fill=black!16,thick] (0,0) circle[radius=0.32] node {$M$};
+  \filldraw[fill=black!8] (-1.82,0) circle[radius=0.15] node[above=4pt] {$m$};
+  \draw[black!50,dotted] (-1.66,0) -- (-0.34,0);
+  \draw[THMBlue,thick,->] (-1.84,-0.50) -- (-0.69,-0.50) node[below] {$v_0$};
+  \draw[thick] (4.12,2.25) -- (4.12,0.31);
+  \filldraw[fill=black!16,thick] (4.12,0) circle[radius=0.32];
+  \filldraw[fill=black!30] (3.87,0.01) circle[radius=0.12];
+  \draw[THMBlue,thick,->] (3.66,-0.50) -- (4.78,-0.50) node[below] {$v_1$};
+  \draw[black,densely dashed] (8.4,2.25) -- (8.4,-0.12);
+  \draw[thick] (8.4,2.25) -- ++(-55:1.94) coordinate (end);
+  \filldraw[fill=black!16,thick] ($(end)+(-55:0.32)$) circle[radius=0.32];
+  \filldraw[fill=black!30] ($(end)+(-55:0.32)+(-0.21,-0.10)$) circle[radius=0.12];
+  \draw (8.4,1.00) arc[start angle=-90,end angle=-55,radius=1.25];
+  \node at ($(8.4,2.25)+(-72.5:0.87)$) {$\varphi$};
+\end{tikzpicture}

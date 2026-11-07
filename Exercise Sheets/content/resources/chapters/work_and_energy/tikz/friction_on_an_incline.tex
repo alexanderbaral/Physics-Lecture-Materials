@@ -1,0 +1,15 @@
+\begin{tikzpicture}[>=Latex]
+  \filldraw[fill=black!16,draw=black!60,thick] (0,-0.34) -- (0,2.72)
+    -- (6.30,0) -- (9.28,0) -- (9.28,-0.34) -- cycle;
+  \draw[black!55,dashed] (-0.66,2.72) -- (0.73,2.72) (-0.66,0) -- (6.30,0);
+  \draw[<->] (-0.48,0) -- (-0.48,2.72) node[midway,left] {$h$};
+  \draw (4.30,0) arc[start angle=180,end angle=156.65,radius=2.00];
+  \node at ($(6.30,0)+(168.325:1.35)$) {$\alpha$};
+  \filldraw[draw=black,fill=black!24] (0.82,2.63) circle[radius=0.21];
+  \node[above right=3pt] at (0.82,2.84) {$m$};
+  \filldraw[fill=black!25,thick] (9.28,-0.34) rectangle (9.64,1.55);
+  \draw[very thick] (7.26,0.02) -- (7.26,0.62);
+  \draw[thick] (7.26,0.27) -- (7.43,0.27) -- (7.56,0.46) -- (7.73,0.08)
+    -- (7.90,0.46) -- (8.07,0.08) -- (8.24,0.46) -- (8.41,0.08) -- (8.58,0.46)
+    -- (8.75,0.08) -- (8.92,0.27) -- (9.28,0.27);
+\end{tikzpicture}

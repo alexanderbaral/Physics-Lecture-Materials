@@ -1,0 +1,13 @@
+\begin{tikzpicture}[>=Latex]
+  \fill[black!28] (-1.45,2.85) rectangle (2.65,3.07);
+  \filldraw[fill=black!13,thick] (0,1.66) circle[radius=0.51];
+  \filldraw[fill=black!13,thick] (1.02,0.12) circle[radius=0.51];
+  \draw[thick] (0,1.66) -- (0,2.85) (1.02,0.12) -- (1.02,-0.89);
+  \fill (0,1.66) circle[radius=1.1pt] (1.02,0.12) circle[radius=1.1pt];
+  \draw[very thick] (-0.51,0.30) -- (-0.51,1.66)
+    arc[start angle=180,end angle=0,radius=0.51] -- (0.51,0.12)
+    arc[start angle=180,end angle=360,radius=0.51] -- (1.53,2.85);
+  \filldraw[fill=black!8,thick] (0.48,-0.89) rectangle (1.56,-1.44);
+  \node at (1.02,-1.16) {$m$};
+  \draw[green!50!black,very thick,->] (-0.51,0.30) -- (-0.51,-0.35) node[left] {$F_\mathrm Z$};
+\end{tikzpicture}

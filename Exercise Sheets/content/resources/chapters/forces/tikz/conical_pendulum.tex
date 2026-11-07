@@ -1,0 +1,20 @@
+\begin{tikzpicture}[>=Latex]
+  \fill[black!23] (-3.20,4.20) rectangle (3.40,4.44);
+  \filldraw[fill=black!6,draw=black!65,densely dashed] (0,0) ellipse (3.10 and 1.05);
+  \draw[densely dotted] (0,4.20) -- (0,0);
+  \draw[thick] (0,4.20) -- (3.10,0) node[pos=0.50,right=4pt] {$l$};
+  \draw (0,2.65) arc[start angle=-90,end angle=-53.57,radius=1.55];
+  \node at ($(0,4.20)+(-71.785:1.05)$) {$\alpha$};
+  % Two radial lines bound the azimuthal rotation. Omega belongs inside this arc.
+  \draw[black!65] (3.10,0) -- (0,0) -- (1.35,0.945);
+  % Flatten the arc in perspective; the tip is about 20 percent nearer the centre.
+  \draw[THMBlue,thick,->] (1.35,0)
+    arc[start angle=0,end angle=49.06,x radius=1.35,y radius=0.82];
+  \node[THMBlue] at (17.5:0.90) {$\omega$};
+  % Curved tangential direction follows the projected circular orbit exactly.
+  \draw[THMBlue,very thick,->] ({3.10*cos(20)},{1.05*sin(20)})
+    arc[start angle=20,end angle=50,x radius=3.10,y radius=1.05]
+    node[above left=3pt] {$v_\mathrm{t}$};
+  \fill (0,4.20) circle[radius=1.1pt] (0,0) circle[radius=1.1pt];
+  \filldraw[fill=black!13,thick] (3.10,0) circle[radius=0.34] node {$m$};
+\end{tikzpicture}
