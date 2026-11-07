@@ -1,0 +1,28 @@
+{
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.watch.pdf.delay": 500,
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Koordinierte Vorschau und Gesamt-PDFs",
+      "tools": [
+        "coordinated_build"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "coordinated_build",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "%DIR%/tools/build-update.ps1"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "first"
+}
+

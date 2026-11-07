@@ -1,0 +1,12 @@
+\begin{tikzpicture}[>=Latex,x=40cm,y=10cm]
+  \foreach \x in {0.05,0.10,0.15,0.20} {
+    \draw[black!15] (\x,0) -- (\x,0.35);
+    \node[below] at (\x,0) {\num{\x}};
+  }
+  \foreach \y in {0.05,0.10,0.15,0.20,0.25,0.30,0.35} {
+    \draw[black!15] (0,\y) -- (0.20,\y);
+    \node[left] at (0,\y) {\num{\y}};
+  }
+  \draw[->] (0,0) -- (0.222,0) node[right] {$m$ in \unit{\kilogram}};
+  \draw[->] (0,0) -- (0,0.39) node[above] {$\overline T^2$ in \unit{\second\squared}};
+\end{tikzpicture}

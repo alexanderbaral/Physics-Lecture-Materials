@@ -1,0 +1,26 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{03}{Harmonische Differentialgleichung}{differential_equations_harmonic_equation}
+Für $\omega_0>0$ ist die harmonische Bewegungsgleichung
+\[
+ \ddot x(t)+\omega_0^2x(t)=0.
+\]
+\begin{enumerate}
+\item Zeigen Sie durch Einsetzen, dass $x_1(t)=\cos(\omega_0t)$ und $x_2(t)=\sin(\omega_0t)$ reelle Lösungen sind.
+\item Zeigen Sie, dass auch $\widetilde x_1(t)=\mathrm e^{\mathrm i\omega_0t}$ und $\widetilde x_2(t)=\mathrm e^{-\mathrm i\omega_0t}$ die Gleichung lösen.
+\item Zeigen Sie, dass die Linearkombination $x=Ax_1+Bx_2$ eine Lösung ist. Begründen Sie, warum sich damit jede reelle Lösung darstellen lässt.
+\item Verwenden Sie die Euler-Formel, um eine Linearkombination der komplexen Lösungen als Linearkombination von Sinus und Kosinus zu schreiben.
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Zweimaliges Ableiten liefert $\ddot x_1=-\omega_0^2\cos(\omega_0t)$ und $\ddot x_2=-\omega_0^2\sin(\omega_0t)$. Damit erfüllen beide die Gleichung.
+\item Die zweite Ableitung multipliziert jede Exponentialfunktion mit $(\pm\mathrm i\omega_0)^2=-\omega_0^2$. Auch diese beiden Funktionen lösen die Gleichung.
+\item Für den linearen Operator $Lx=\ddot x+\omega_0^2x$ gilt $L(Ax_1+Bx_2)=0$. Die Konstanten $A=x(0)$ und $B=\dot x(0)/\omega_0$ erfassen jeden Anfangszustand.
+\item Aus der Euler-Formel folgt die Darstellung, die für $C_2=\overline{C_1}$ reell ist:
+\[
+ C_1\mathrm e^{\mathrm i\omega_0t}+C_2\mathrm e^{-\mathrm i\omega_0t}
+ =(C_1+C_2)\cos(\omega_0t)+\mathrm i(C_1-C_2)\sin(\omega_0t).
+\]
+\end{enumerate}
+\end{Solution}

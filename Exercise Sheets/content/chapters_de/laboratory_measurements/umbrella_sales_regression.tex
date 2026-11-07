@@ -1,0 +1,26 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{03}{Lineare Regression für Verkaufsdaten}{laboratory_measurements_umbrella_sales_regression}
+Die zugehörige Excel-Datei auf Moodle enthält monatliche Niederschlagsmengen und Verkaufszahlen für Regenschirme. Die Tabelle zeigt den in der Vorlage abgebildeten Auszug.
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+Monat & Niederschlag in \unit{\milli\metre} & Verkaufte Regenschirme\\
+\midrule
+Januar & 82 & 15\\
+Februar & 92,5 & 25\\
+März & 83,2 & 17\\
+April & 97,7 & 28\\
+Mai & 131,9 & 41\\
+Juni & 141,3 & 47\\
+Juli & 165,4 & 50\\
+August & 140 & 46\\
+September & 126,7 & 37\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item Verwenden Sie den bereitgestellten Python-Code, um die vollständigen Daten zu plotten. Schätzen Sie ein, ob ein linearer Zusammenhang plausibel ist. Bestimmen Sie die Steigung $m$ und den Achsenabschnitt $b$ der Regressionsgeraden und tragen Sie sie zusammen mit den Messpunkten auf.
+\item Prognostizieren Sie mit Ihrer Regressionsgeraden die Anzahl verkaufter Regenschirme bei \qty{162}{\milli\metre} Niederschlag.
+\end{enumerate}
+\end{ExerciseBlock}
+\UseExerciseSolution{laboratory_measurements_umbrella_sales_regression}

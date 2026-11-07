@@ -1,0 +1,50 @@
+\usepackage{iftex}
+\ifLuaTeX\else
+  \PackageError{preamble}{LuaLaTeX required}{Build this project with LuaLaTeX via latexmk.}
+\fi
+
+\input{../_shared/commands/language.tex}
+\IfEnglishTF
+  {\usepackage[ngerman,main=english]{babel}}
+  {\usepackage[english,main=ngerman]{babel}}
+\AtBeginDocument{\IfEnglishTF{\selectlanguage{english}}{\selectlanguage{ngerman}}}
+\usepackage{fontspec}
+\usepackage{mathtools}
+\usepackage{siunitx}
+\usepackage[warnings-off={mathtools-colon,mathtools-overbracket}]{unicode-math}
+% Bundled CD text font: identical in the document and standalone figures.
+\setsansfont{PlusJakartaSans-Regular.ttf}[
+  Path=../_shared/resources/fonts/plus_jakarta_sans/,
+  Renderer=HarfBuzz,
+  BoldFont=PlusJakartaSans-Bold.ttf,
+  ItalicFont=PlusJakartaSans-Italic.ttf,
+  BoldItalicFont=PlusJakartaSans-BoldItalic.ttf
+]
+\renewcommand{\familydefault}{\sfdefault}
+\ifdefined\StandaloneTikzBuild
+  \setmathfont{Libertinus Math}
+\else
+  \setmathfont{LibertinusMath-Regular.otf}
+\fi
+
+% `geometry` shifts the page origin and therefore conflicts with the cropped
+% page produced by the standalone TikZ cache builder.
+\ifdefined\StandaloneTikzBuild\else
+  \usepackage[left=1.5cm,right=1.5cm,top=1.0cm,bottom=1.0cm,includeheadfoot]{geometry}
+\fi
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{needspace}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\input{../_shared/style/branding_colors.tex}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc,decorations.pathreplacing,fit,matrix,positioning}
+\usepackage[most]{tcolorbox}
+\usepackage{csquotes}
+\ifdefined\StandaloneTikzBuild\else
+  \usepackage{scrlayer-scrpage}
+  \usepackage[hidelinks]{hyperref}
+\fi

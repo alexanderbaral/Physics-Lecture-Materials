@@ -1,0 +1,40 @@
+\input{../_shared/style/layout.tex}
+\AtBeginDocument{\IfEnglishTF{}{\sisetup{locale=DE}}}
+\hypersetup{pdftitle={\ScriptTitle: \SheetTitle}}
+\RedeclareSectionCommand[beforeskip=1.2\baselineskip,afterskip=.45\baselineskip]{subsection}
+\AddToHook{shipout/foreground}{%
+  \ifnum\value{page}>1\PlaceBrandPageDot{9mm}{4mm}\fi
+}
+\clearpairofpagestyles
+\newcommand{\SheetSolutionExercise}{}
+\newcommand{\SheetRunningHead}{%
+  \footnotesize\normalfont\color{black!45}%
+  \Lang{Übungsblatt}{Exercise sheet} \SheetNumber\enspace\textperiodcentered\enspace\SheetTitle%
+  \IfSolutionsTF{\enspace\textperiodcentered\enspace%
+    \SheetSolutionExercise\Lang{mit Lösungen}{with solutions}}{}%
+}
+\ihead*{\SheetRunningHead}
+\ohead*{}
+\ifoot*{\LectureFooter}
+\ofoot*{\LecturePageMark}
+\pagestyle{scrheadings}
+\newcommand{\MakeSheetHeader}{%
+  \thispagestyle{plain.scrheadings}%
+  \ihead[ ]{\SheetRunningHead}%
+  % First pages use the otherwise empty running-header area.
+  \vspace*{-\dimexpr\headheight+\headsep+\topskip\relax}%
+  \noindent\begin{minipage}[t]{0.70\linewidth}
+    \vspace{0pt}\raggedright
+    {\color{THMBlue}\bfseries\large\Lang{Übungsblatt}{Exercise sheet} \SheetNumber\par}
+    {\fontsize{28}{32}\selectfont\bfseries\SheetTitle\par}
+    {\bfseries\IfSolutionsTF{\Lang{Mit Musterlösungen}{With solutions}}%
+      {\phantom{\Lang{Mit Musterlösungen}{With solutions}}}\par}
+    {\small\color{black!60}\ScriptAuthor\par}
+  \end{minipage}\hfill
+  \begin{minipage}[t]{0.28\linewidth}
+    \vspace{0pt}\raggedleft
+    % Remove only the asset's white padding so its visible edge aligns right.
+    \BrandLogo[trim=15.36bp 16.56bp 14.88bp 17.28bp,clip]{4.1cm}{3cm}
+  \end{minipage}\par\smallskip
+  {\color{THMBlue}\hrule height 0.8pt}\par
+}

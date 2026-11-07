@@ -1,0 +1,24 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{01}{Exponentieller Zerfall und nichtlineare Differentialgleichung}{differential_equations_exponential_decay}
+Betrachten Sie die folgenden Differentialgleichungen erster Ordnung für $f(t)$.
+\begin{enumerate}
+\item Die lineare Gleichung $\dot f(t)=-kf(t)$ mit $k>0$ beschreibt einen exponentiellen Zerfallsprozess.
+\begin{enumerate}
+\item Bestimmen Sie mit dem Exponentialansatz $f(t)=C\mathrm e^{\lambda t}$ die allgemeine Lösung.
+\item Bestimmen Sie die spezielle Lösung mit $f(\qty{1}{\second})=f_0$.
+\end{enumerate}
+\item Bestimmen Sie die Halbwertszeit $T_\mathrm H$, für die bei $f(0)\neq0$ gilt: $f(T_\mathrm H)=f(0)/2$.
+\item Zeigen Sie, warum der Exponentialansatz bei $\dot f(t)=-kf(t)^2$ keine nichttriviale Lösung liefert.
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Für $C\neq0$ ergibt das Einsetzen $\lambda C\mathrm e^{\lambda t}=-kC\mathrm e^{\lambda t}$ und somit $\lambda=-k$. Die allgemeine Lösung lautet $f(t)=C\mathrm e^{-kt}$ und enthält für $C=0$ auch die Nulllösung. Aus $f(\qty{1}{\second})=f_0$ folgt
+\[
+ f(t)=f_0\,\mathrm e^{-k(t-\qty{1}{\second})}.
+\]
+\item Aus $f(T_\mathrm H)/f(0)=\mathrm e^{-kT_\mathrm H}=1/2$ folgt $T_\mathrm H=\ln(2)/k$.
+\item Für $C\neq0$ müsste $\lambda=-kC\mathrm e^{\lambda t}$ für alle $t$ gelten. Für $\lambda\ne0$ ist die rechte Seite zeitabhängig. Bei $\lambda=0$ folgt $0=-kC$, im Widerspruch zu $C\ne0$.
+\end{enumerate}
+\end{Solution}

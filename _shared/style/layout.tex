@@ -1,0 +1,32 @@
+\hypersetup{pdfauthor={\ScriptAuthor},pdfcreator={LuaLaTeX}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\KOMAoptions{headsepline=false,footsepline=false}
+\setkomafont{subsection}{\normalfont\sffamily\bfseries\large\color{black}}
+
+\setlist[enumerate]{leftmargin=2em,itemsep=.35em,topsep=.35em}
+\setlist[enumerate,1]{label=\alph*),ref=\alph*}
+\setlist[enumerate,2]{label=\arabic*),ref=\arabic*}
+\setlist[enumerate,3]{label=\roman*),ref=\roman*}
+\setlist[enumerate,4]{label=\Alph*),ref=\Alph*}
+\setlist[itemize,1]{
+  label=\textcolor{THMBlue}{\textbullet},
+  leftmargin=1.5em,
+  itemsep=.2em,
+  topsep=.35em
+}
+\setlist[itemize,2]{
+  label=\textcolor{black!55}{\small\textbullet},
+  leftmargin=1.5em,
+  itemsep=.15em,
+  topsep=.25em
+}
+
+\newcommand{\LectureFooter}{%
+  \footnotesize\color{THMBlack}\ScriptTitle\enspace\textperiodcentered
+  \enspace\LectureSemesterLabel\space\Semester}
+\newcommand{\LecturePageMark}{%
+  \footnotesize\color{THMBlack}\LecturePageLabel\space\pagemark}
+
+\input{../_shared/style/branding.tex}
+\input{../_shared/style/boxes.tex}

@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=Latex]
+  \fill[black!4] (-5.25,0) rectangle (5.25,2.75);
+  \fill[THMBlue!9] (-5.25,0) rectangle (5.25,-0.75);
+  \coordinate (A) at (-3.3,2.15);
+  \coordinate (P) at (0,0);
+  \coordinate (B) at (2.45,1.60);
+  \draw[->] (-5.25,0) -- (5.65,0) node[right] {$x$};
+  \draw[->] (-4.25,-0.75) -- (-4.25,2.86) node[above] {$y$};
+  \draw[densely dashed] (0,0) -- (0,2.55);
+  \draw[very thick,THMBlue,->] (A) -- (P);
+  \draw[very thick,THMBlue,->] (P) -- (B);
+  \foreach \point in {A,P,B} \fill[THMBlue] (\point) circle (1.5pt);
+  \node[above right] at (A) {$A(x_A,y_A)$};
+  \node[below right] at (P) {$P(x_P,0)$};
+  \node[above right] at (B) {$B(x_B,y_B)$};
+  \node[anchor=east] at (5.07,2.46) {Medium 1, $n_1$};
+  \node[anchor=east] at (5.07,-0.43) {Medium 2, $n_2$};
+  \draw (90:1.24) arc[start angle=90,end angle=147,radius=1.24];
+  \draw (33:1.24) arc[start angle=33,end angle=90,radius=1.24];
+  \node at (120:0.91) {$\vartheta_\mathrm E$};
+  \node at (60:0.91) {$\vartheta_\mathrm A$};
+\end{tikzpicture}

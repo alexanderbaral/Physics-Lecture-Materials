@@ -1,0 +1,22 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{04}{Wärmestrahlung eines glühenden Metallblocks}{quantum_optics_thermal_radiation}
+Ein Metallblock mit Oberfläche $A=\qty{0.5}{\metre\squared}$ wird in einem Hochtemperaturofen erhitzt. Sein mit einem Spektrometer aufgenommenes Emissionsspektrum ist unten dargestellt. Nähern Sie die glatte Einhüllende durch das Spektrum eines schwarzen Körpers an.
+\begin{center}
+\CachedTikzFigure{content/resources/chapters/quantum_optics/tikz/thermal_spectrum.tex}
+\end{center}
+\begin{enumerate}
+\item Lesen Sie die Wellenlänge $\lambda_\mathrm{max}$ des Intensitätsmaximums ab. Nennen Sie eine mögliche Ursache für die Einbrüche.
+\item Berechnen Sie die Temperatur des Metallblocks.
+\item Bestimmen Sie die abgestrahlte Leistung des Metallblocks.
+\item Um welchen Faktor ändert sich die Leistung, wenn die absolute Temperatur um 20 Prozent steigt?
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Die Einhüllende hat ihr Maximum bei ungefähr $\lambda_\mathrm{max}\approx\qty{1.05}{\micro\metre}$. Schmale Einbrüche können beispielsweise durch Absorption auf dem optischen Weg entstehen.
+\item Mit der Wienschen Konstanten $b\approx\qty{2.898e-3}{\metre\kelvin}$ folgt $T=b/\lambda_\mathrm{max}\approx\qty{2.76e3}{\kelvin}$.
+\item Das Stefan-Boltzmann-Gesetz liefert $P=\sigma AT^4\approx\qty{1.64}{\mega\watt}$.
+\item Für $T'=1{,}2T$ ist $P'/P=(T'/T)^4=1{,}2^4\approx2{,}07$. Mit dem abgelesenen Maximum erhält man $P'\approx\qty{3.4}{\mega\watt}$.
+\end{enumerate}
+\end{Solution}

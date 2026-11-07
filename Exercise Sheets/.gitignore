@@ -1,0 +1,12 @@
+/build/
+**/__pycache__/
+# Guard against accidentally generated root-level build artifacts.
+/*.aux
+/*.log
+/*.fls
+/*.fdb_latexmk
+/*.synctex.gz
+/*.out
+/main.pdf
+# Keep original reference PDFs, images and source files versionable.
+

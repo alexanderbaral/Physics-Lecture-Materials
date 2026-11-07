@@ -1,0 +1,44 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{02}{Absinken einer Kugel in einem zähflüssigen Medium}{differential_equations_viscous_fall}
+Eine Kugel der Masse $m$ sinkt in einer zähflüssigen Flüssigkeit. Die positive vertikale Richtung zeigt nach oben. Im Modell wirken die Gewichtskraft und die Stokes-Reibung $F_\mathrm R=-bv$. Vernachlässigen Sie den Auftrieb.
+\begin{center}
+\CachedTikzFigure{content/resources/chapters/differential_equations/tikz/viscous_fall_forces.tex}
+\end{center}
+Gesucht ist das Geschwindigkeit-Zeit-Gesetz $v(t)$.
+\begin{enumerate}
+\item Bestimmen Sie die Gesamtkraft $F_\mathrm{ges}=F_\mathrm R+F_\mathrm G$.
+\item Berechnen Sie die Geschwindigkeit $v_\mathrm{stat}$, bei der sich beide Kräfte aufheben. Welche physikalische Bedeutung hat sie?
+\item Bringen Sie die Bewegungsgleichung mit dem zweiten Newtonschen Axiom auf die Normalform $\dot v=F_\mathrm{ges}/m$.
+\item Setzen Sie $u(t)=v(t)-v_\mathrm{stat}$ und geben Sie die Differentialgleichung für $u$ an.
+\item Lösen Sie die Gleichung für $u(t)$ mit $u(t)=C\mathrm e^{\lambda t}$. Bestimmen Sie $\lambda$ und begründen Sie, warum die Lösung allgemein ist.
+\item Bestimmen Sie durch Rücksubstitution die allgemeine Lösung $v(t)$.
+\item Bestimmen Sie die spezielle Lösung mit $v(0)=v_0$. Skizzieren Sie $v(t)$ für $v_0>v_\mathrm{stat}$, $v_0=v_\mathrm{stat}$ und $v_0<v_\mathrm{stat}$.
+\item Für eine kleine Kugel bei kleiner Reynolds-Zahl gilt näherungsweise $b=6\pi\eta r$ mit dynamischer Viskosität $\eta$ und Radius $r$. Betrachten Sie eine Stahlkugel in Glycerin mit $m=\qty{100}{\gram}$, $\rho=\qty{7850}{\kilogram\per\metre\cubed}$ und $\eta=\qty{1.5}{\kilogram\per\metre\per\second}$. Berechnen Sie $r$, $b$ und $v_\mathrm{stat}$ im vorgegebenen Modell.
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Es gilt $F_\mathrm{ges}=-mg-bv$.
+\item Aus $0=-mg-bv_\mathrm{stat}$ folgt $v_\mathrm{stat}=-mg/b$. Das ist die vorzeichenbehaftete Endgeschwindigkeit.
+\item Die Normalform ist $\dot v=-(b/m)(v-v_\mathrm{stat})$.
+\item Weil $v_\mathrm{stat}$ konstant ist, gilt $\dot u=\dot v=-(b/m)u$.
+\item Einsetzen liefert für nichtverschwindende Lösungen $\lambda=-b/m$. Damit ist $u(t)=C\mathrm e^{-bt/m}$. Der freie Parameter $C=u(0)$ erfasst jede Anfangsbedingung.
+\item Rücksubstitution ergibt $v(t)=v_\mathrm{stat}+C\mathrm e^{-bt/m}$.
+\item Mit $C=v_0-v_\mathrm{stat}$ folgt
+\[
+ v(t)=v_\mathrm{stat}+(v_0-v_\mathrm{stat})\mathrm e^{-bt/m}.
+\]
+Die Geschwindigkeit nähert sich von oben oder unten der Endgeschwindigkeit. Für $v_0=v_\mathrm{stat}$ bleibt sie konstant.
+\begin{center}
+\CachedTikzFigure{content/resources/chapters/differential_equations/tikz/terminal_velocity.tex}
+\end{center}
+\item Mit $m=\rho\,(4\pi r^3/3)$ und $g=\qty{9.81}{\metre\per\second\squared}$ folgt
+\[
+ r=\left(\frac{3m}{4\pi\rho}\right)^{1/3}\approx\qty{1.45}{\centi\metre},
+ \quad b=6\pi\eta r\approx\qty{0.410}{\kilogram\per\second},
+ \quad v_\mathrm{stat}=-\frac{mg}{b}\approx\qty{-2.39}{\metre\per\second}.
+\]
+Die Werte folgen aus dem Modell. Seine quantitative Gültigkeit hängt von der Reynolds-Zahl und vom vernachlässigten Auftrieb ab.
+\end{enumerate}
+\end{Solution}

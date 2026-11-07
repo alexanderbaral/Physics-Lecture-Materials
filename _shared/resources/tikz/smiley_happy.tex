@@ -1,0 +1,9 @@
+% Reusable success symbol, independent of any chapter.
+\begin{tikzpicture}[line cap=round,line join=round]
+  \path[use as bounding box] (0,0) rectangle (0.42,0.42);
+  \draw[green!55!black,line width=0.8pt] (0.21,0.21) circle (0.17);
+  \fill[green!55!black] (0.15,0.26) circle (0.025)
+                        (0.27,0.26) circle (0.025);
+  \draw[green!55!black,line width=0.8pt]
+    (0.11,0.15) .. controls (0.16,0.08) and (0.26,0.08) .. (0.31,0.15);
+\end{tikzpicture}

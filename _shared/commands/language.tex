@@ -1,0 +1,23 @@
+\ExplSyntaxOn
+\str_case:VnF \ScriptLanguage {{de}{} {en}{}}
+  {\PackageError{lecture-language}{Unknown~ScriptLanguage}{Use~de~or~en.}}
+\bool_new:N \g_script_english_bool
+\str_if_eq:VnT \ScriptLanguage {en} {\bool_gset_true:N \g_script_english_bool}
+\NewExpandableDocumentCommand{\Lang}{m m}
+  {\bool_if:NTF \g_script_english_bool {#2} {#1}}
+\NewExpandableDocumentCommand{\IfEnglishTF}{+m +m}
+  {\bool_if:NTF \g_script_english_bool {#1} {#2}}
+\ExplSyntaxOff
+
+\NewDocumentCommand{\EnglishTerm}{m}{%
+  {\color{black!55}\itshape(engl.: #1)}%
+}
+\NewDocumentCommand{\GermanTerm}{m}{%
+  {\color{black!55}\itshape(German: #1)}%
+}
+
+\newcommand{\LecturePageLabel}{\Lang{Seite}{Page}}
+\newcommand{\LectureSemesterLabel}{\Lang{Semester}{Semester}}
+\newcommand{\LectureDefinitionLabel}{\Lang{Definition}{Definition}}
+\newcommand{\LectureExampleLabel}{\Lang{Beispiel}{Example}}
+\newcommand{\LectureTheoremLabel}{\Lang{Satz}{Theorem}}

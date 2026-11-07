@@ -1,0 +1,7 @@
+{
+  "script_languages": ["de"],
+  "sheet_languages": {
+    "de": ["*"],
+    "en": []
+  }
+}

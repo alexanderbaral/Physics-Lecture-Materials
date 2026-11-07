@@ -1,0 +1,83 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{02}{Spektrum von Wasserstoff}{quantum_optics_hydrogen_spectrum}
+Bestimmen Sie die Energieniveaus des Wasserstoffatoms und die Spektrallinien im Bohrschen Modell unter Berücksichtigung der reduzierten Masse.
+\begin{enumerate}
+\item Recherchieren Sie die Massen $m_\mathrm p$ und $m_\mathrm e$ in Kilogramm und nennen Sie Ihre Quellen. Bestimmen Sie die reduzierte Masse $\mu$ und vergleichen Sie sie mit $m_\mathrm e$.
+\item Bestimmen Sie den Bahnradius $r_0$ im Grundzustand $n=1$. Schätzen Sie daraus die Größe des Wasserstoffatoms ab.
+\item Bestimmen Sie die Rydberg-Energie $\mathrm{Ry}_\mu$ des Wasserstoffatoms in Elektronenvolt.
+\item Berechnen Sie die Energieniveaus $E_n$ für $n=1,\dots,6$ in Elektronenvolt.
+\item Berechnen Sie für alle Übergänge $n_i>n_f$ mit $n_i\le6$ und $n_f\le3$ die Photonenenergie $E_\mathrm{ph}=E_{n_i}-E_{n_f}$, die Frequenz $f$ und die Wellenlänge $\lambda$. Füllen Sie die Tabelle aus und markieren Sie die sichtbaren Linien. Welche Serien liegen hier im ultravioletten, sichtbaren und infraroten Spektralbereich?
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Serie & $n_i$ & $n_f$ & $E_\mathrm{ph}$ in \unit{\electronvolt} & $f$ in \unit{\hertz} & $\lambda$ in \unit{\nano\metre}\\
+\midrule
+Lyman & & & & & \\
+Lyman & & & & & \\
+Lyman & & & & & \\
+Lyman & & & & & \\
+Lyman & & & & & \\
+Balmer & & & & & \\
+Balmer & & & & & \\
+Balmer & & & & & \\
+Balmer & & & & & \\
+Paschen & & & & & \\
+Paschen & & & & & \\
+Paschen & & & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\item Ein Stern emittiert die H$\alpha$-Linie ($n_i=3$, $n_f=2$). Die Ruhewellenlänge $\lambda_0=\qty{656}{\nano\metre}$ wird auf der Erde als $\lambda_\mathrm{obs}=\qty{660}{\nano\metre}$ beobachtet. Bestimmen Sie unter Annahme einer reinen Dopplerverschiebung die relative Radialgeschwindigkeit. Nähert sich der Stern oder entfernt er sich?
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Die \href{https://www.physics.nist.gov/cuu/pdf/wall_2022.pdf}{CODATA-Werte von NIST} sind $m_\mathrm p\approx\qty{1.67262e-27}{\kilogram}$ und $m_\mathrm e\approx\qty{9.10938e-31}{\kilogram}$. Daraus folgt
+\[
+ \mu=\frac{m_\mathrm p m_\mathrm e}{m_\mathrm p+m_\mathrm e}
+ \approx\qty{9.10443e-31}{\kilogram}\approx0{,}99946\,m_\mathrm e.
+\]
+\item Der Bohrsche Grundzustand hat den Radius
+\[
+ r_0=\frac{4\pi\varepsilon_0\hbar^2}{\mu e^2}\approx\qty{5.295e-11}{\metre}.
+\]
+Der zugehörige Durchmesser ist von der Größenordnung \qty{0.1}{\nano\metre}.
+\item Aus $\mathrm{Ry}_\mu=\mu e^4/[2(4\pi\varepsilon_0)^2\hbar^2]$ folgt $\mathrm{Ry}_\mu\approx\qty{13.598}{\electronvolt}$.
+\item Mit $E_n=-\mathrm{Ry}_\mu/n^2$ erhält man für $n=1,\ldots,6$ die Werte \numlist{-13.598;-3.400;-1.511;-0.850;-0.544;-0.378}\,\unit{\electronvolt}.
+\item Für die Übergänge gilt
+\[
+ E_\mathrm{ph}=\mathrm{Ry}_\mu\left(\frac{1}{n_f^2}-\frac{1}{n_i^2}\right),
+ \qquad f=\frac{E_\mathrm{ph}}{h},\qquad \lambda=\frac{c}{f}.
+\]
+\begin{center}
+\begin{tabular}{lrrrrr}
+\toprule
+Serie & $n_i$ & $n_f$ & $E_\mathrm{ph}$ in \unit{\electronvolt} & $f$ in \unit{\hertz} & $\lambda$ in \unit{\nano\metre}\\
+\midrule
+Lyman & 2 & 1 & \num{10.199} & \num{2.47e15} & \num{121.6} \\
+Lyman & 3 & 1 & \num{12.087} & \num{2.92e15} & \num{102.6} \\
+Lyman & 4 & 1 & \num{12.748} & \num{3.08e15} & \num{97.3} \\
+Lyman & 5 & 1 & \num{13.054} & \num{3.16e15} & \num{95.0} \\
+Lyman & 6 & 1 & \num{13.220} & \num{3.20e15} & \num{93.8} \\
+Balmer & 3 & 2 & \num{1.889} & \num{4.57e14} & \num{656.5}\textsuperscript{*} \\
+Balmer & 4 & 2 & \num{2.550} & \num{6.16e14} & \num{486.3}\textsuperscript{*} \\
+Balmer & 5 & 2 & \num{2.856} & \num{6.90e14} & \num{434.2}\textsuperscript{*} \\
+Balmer & 6 & 2 & \num{3.022} & \num{7.31e14} & \num{410.3}\textsuperscript{*} \\
+Paschen & 4 & 3 & \num{0.661} & \num{1.60e14} & \num{1875.7} \\
+Paschen & 5 & 3 & \num{0.967} & \num{2.34e14} & \num{1282.2} \\
+Paschen & 6 & 3 & \num{1.133} & \num{2.74e14} & \num{1094.1} \\
+\bottomrule
+\end{tabular}
+\end{center}
+Die aufgeführten Lyman-Linien liegen im Ultravioletten, die mit Stern markierten Balmer-Linien im sichtbaren Bereich und die Paschen-Linien im Infraroten.
+\item Zählt $v$ positiv vom Beobachter weg, so ergibt der relativistische Doppler-Effekt
+\[
+ \frac{\lambda_\mathrm{obs}}{\lambda_0}=\sqrt{\frac{1+v/c}{1-v/c}}
+ \quad\Longleftrightarrow\quad
+ v=c\frac{\lambda_\mathrm{obs}^2-\lambda_0^2}{\lambda_\mathrm{obs}^2+\lambda_0^2}
+ \approx\qty{1.82e6}{\metre\per\second}.
+\]
+Die Linie ist rotverschoben. Der Stern entfernt sich.
+\end{enumerate}
+\end{Solution}

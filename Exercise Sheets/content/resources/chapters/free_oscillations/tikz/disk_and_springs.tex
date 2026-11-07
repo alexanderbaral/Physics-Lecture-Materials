@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=Latex]
+  \filldraw[fill=black!15,thick] (0,2.6) circle (0.58);
+  \draw[thick] (-0.58,0.88) -- (-0.58,2.6) arc[start angle=180,end angle=0,radius=0.58] -- (0.58,1.25);
+  \filldraw[fill=white] (0,2.6) -- (-0.22,2.20) -- (0.22,2.20) -- cycle;
+  \fill (0,2.6) circle (1.2pt);
+  \draw (0,2.6) -- ++(147:0.57) node[midway,below left,inner sep=1pt] {$R$};
+  \node at (0.28,2.84) {$J$};
+  \draw (-0.77,2.6) arc[start angle=180,end angle=128,radius=0.77];
+  \node at (-0.88,3.12) {$\varphi$};
+  \draw[thick,->] (-1.07,1.45) -- (-1.07,0.90) node[midway,left] {$x$};
+  \draw[thick,->] (1.07,0.72) -- (1.07,1.25) node[midway,right] {$x$};
+  \draw[thick] (-0.58,0.88) -- (-0.76,0.80) -- (-0.40,0.68) -- (-0.76,0.56)
+    -- (-0.40,0.44) -- (-0.76,0.32) -- (-0.58,0.25) -- (-0.58,0.10);
+  \draw[thick] (0.58,1.25) -- (0.40,1.11) -- (0.76,0.94) -- (0.40,0.77)
+    -- (0.76,0.60) -- (0.40,0.43) -- (0.58,0.29) -- (0.58,0.10);
+  \node[left] at (-0.83,0.53) {$D$};
+  \node[right] at (0.83,0.43) {$D$};
+  \filldraw[fill=black!20,thick] (-1.33,-0.12) rectangle (1.33,0.10);
+\end{tikzpicture}

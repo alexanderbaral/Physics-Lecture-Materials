@@ -1,0 +1,17 @@
+\begin{tikzpicture}[>=Latex]
+  \fill[black!3] (-4.2,0) rectangle (4.2,2.05);
+  \fill[THMBlue!9] (-4.2,0) rectangle (4.2,-2.20);
+  \draw[thick] (-4.2,0) -- (4.2,0);
+  \draw[densely dashed] (0,-2.2) -- (0,2.05);
+  \node[anchor=east,align=right] at (4.0,1.58) {Luft\\$n_\mathrm L$};
+  \node[anchor=east,align=right] at (4.0,-1.67) {Wasser\\$n_\mathrm W$};
+  \draw[THMBlue,very thick,->] (239:2.45) -- (0,0);
+  \draw[THMBlue,very thick,->] (0,0) -- (301:2.45);
+  \draw[THMBlue,very thick,->] (0,0) -- (43:2.65);
+  \draw (90:1.27) arc[start angle=90,end angle=43,radius=1.27];
+  \draw (239:1.74) arc[start angle=239,end angle=270,radius=1.74];
+  \draw (270:1.74) arc[start angle=270,end angle=301,radius=1.74];
+  \node at (66:0.91) {$\vartheta_\mathrm L$};
+  \node at (253:1.36) {$\vartheta_\mathrm W$};
+  \node at (287:1.36) {$\vartheta_\mathrm R$};
+\end{tikzpicture}

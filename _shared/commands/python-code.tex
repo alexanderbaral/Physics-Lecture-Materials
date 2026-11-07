@@ -1,0 +1,108 @@
+\usepackage{piton}
+\usepackage{markdown}
+\usepackage{attachfile2}
+
+\newtcbtheorem[number within=chapter]{CodeExampleBox}{\Lang{Codebeispiel}{Code example}}
+  {scriptbox,breakable,borderline west={1.2pt}{0pt}{THMBlack}}{code}
+
+\newfontfamily\ScriptPythonFont{DejaVuSansMono.ttf}[
+  BoldFont=DejaVuSansMono-Bold.ttf,
+  ItalicFont=DejaVuSansMono-Oblique.ttf,
+  BoldItalicFont=DejaVuSansMono-BoldOblique.ttf
+]
+\SetPitonStyle[Python]{
+  Keyword=\color[HTML]{234780}\bfseries,
+  Keyword.Governing=\color[HTML]{234780}\bfseries,
+  Keyword.Constant=\color[HTML]{234780}\bfseries,
+  Operator.Word=\color[HTML]{234780}\bfseries,
+  Name.Function=\color[HTML]{5A347A},
+  Name.Namespace=\color[HTML]{285E61},
+  Name.Builtin=\color[HTML]{285E61},
+  Comment=\color[HTML]{42654F}\itshape,
+  String=\color[HTML]{8B3B25},
+  String.Doc=\color[HTML]{8B3B25}\itshape,
+  Number=\color[HTML]{6C4679}
+}
+
+\ExplSyntaxOn
+\NewDocumentCommand{\ScriptPythonListing}{m}{
+  \group_begin:
+    % Write indentation as space glyphs so it is part of the PDF text.
+    \cs_set_protected:Npn \__piton_leading_space: {
+      \int_gincr:N \g__piton_indentation_int
+      \char_generate:nn { 32 } { 12 }
+    }
+    \cs_set_protected:Npn \__piton_tab: {
+      \int_gadd:Nn \g__piton_indentation_int \l__piton_tab_size_int
+      \prg_replicate:nn { \l__piton_tab_size_int } { \char_generate:nn { 32 } { 12 } }
+    }
+    \PitonInputFile[language=Python,font-command={\ScriptPythonFont\footnotesize},
+      left-margin=0.8em,tab-size=8,break-lines,splittable]{#1}
+  \group_end:
+}
+\ExplSyntaxOff
+
+\newcommand{\ScriptCellLabelFont}{\normalfont\sffamily\fontsize{6pt}{7pt}\selectfont}
+\NewDocumentCommand{\ScriptPythonSource}{m m}{%
+  {\ScriptCellLabelFont
+    \textattachfile[ucfilespec={#2},mimetype=text/x-python,color={black!55},
+      description={\Lang{Python-Quellcode}{Python source}}]{#1}{Python}}%
+}
+\NewDocumentCommand{\ScriptPythonFile}{m}{%
+  \ScriptPythonListing{#1}%
+  \par\noindent\hfill\ScriptPythonSource{#1}{\ScriptPythonListingTitle}\par
+}
+
+\newtcolorbox{ScriptNotebookCell}[1]{%
+  enhanced,frame hidden,colback=LectureBoxBackground,boxrule=0.25pt,
+  borderline={0.25pt}{0pt}{black!55},
+  sharp corners,boxsep=0pt,left=0pt,right=0.8em,top=3pt,bottom=10pt,
+  before skip=5pt,after skip=5pt,
+  overlay={
+    \node[anchor=south east,inner sep=0pt,text=black!55,
+      font=\ScriptCellLabelFont]
+      at ([xshift=-3pt,yshift=2.5pt]frame.south east) {#1};
+  }
+}
+\NewDocumentCommand{\ScriptNotebookCodeCell}{m m}{%
+  \begin{ScriptNotebookCell}{\ScriptPythonSource{#1}{#2}}
+    \ScriptPythonListing{#1}%
+  \end{ScriptNotebookCell}%
+}
+
+% Notebook headings are local to the box and do not change script numbering.
+\NewDocumentCommand{\ScriptNotebookHeading}{m}{\par\noindent\textbf{#1}\par}
+\NewDocumentCommand{\ScriptNotebookImage}{m m m m}{\emph{#1}}
+\NewDocumentCommand{\ScriptNotebookMarkdownCell}{m}{%
+  \begin{ScriptNotebookCell}{Markdown}
+    \small
+    \leftskip=0.8em
+    \let\markdownRendererHeadingOne\ScriptNotebookHeading
+    \let\markdownRendererHeadingTwo\ScriptNotebookHeading
+    \let\markdownRendererHeadingThree\ScriptNotebookHeading
+    \let\markdownRendererHeadingFour\ScriptNotebookHeading
+    \let\markdownRendererHeadingFive\ScriptNotebookHeading
+    \let\markdownRendererHeadingSix\ScriptNotebookHeading
+    \let\markdownRendererImage\ScriptNotebookImage
+    \markdownInput[hybrid=false,html=false,fencedCode=true]{#1}%
+    \par
+  \end{ScriptNotebookCell}%
+}
+
+% Source paths are relative to the document root in all build modes.
+\NewDocumentCommand{\PythonCode}{o m}{%
+  \begingroup
+    \directlua{
+      if not script_python_listing then
+        kpse.record_input_file("../_shared/commands/python-code.lua")
+        script_python_listing = dofile("../_shared/commands/python-code.lua")
+      end
+      local path = "\luaescapestring{#2}"
+      token.set_macro("ScriptPythonListingTitle", path:match("[^/]+$") or path)
+    }%
+    \begin{CodeExampleBox}{\IfNoValueTF{#1}{%
+      \texttt{\expandafter\detokenize\expandafter{\ScriptPythonListingTitle}}}{#1}}{}
+      \directlua{script_python_listing("\luaescapestring{#2}")}%
+    \end{CodeExampleBox}%
+  \endgroup
+}

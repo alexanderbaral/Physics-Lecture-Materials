@@ -1,0 +1,22 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{04}{Python: Amplitudengang plotten}{forced_oscillations_python_amplitude_response}
+Zeichnen Sie mit Python den Amplitudengang $A(\Omega)$ als Funktion der Erregerkreisfrequenz $\Omega$.
+\begin{enumerate}
+\item Zeichnen Sie eine senkrechte Linie bei $\omega_\mathrm{res}$ und waagerechte Linien bei $x_\mathrm{res}$ und $x_\mathrm{stat}$ ein.
+\item Variieren Sie die Abklingkonstante $\delta$ und die Kraftamplitude $F_0$. Beschreiben Sie, wie sich die Kurve ändert.
+\end{enumerate}
+Nutzen Sie das bereitgestellte Codebeispiel als Ausgangspunkt.
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+Die stationäre Amplitude, der statische Grenzwert und das Maximum für $\delta<\omega_0/\sqrt2$ lauten
+\[
+ A(\Omega)=\frac{F_0/m}{\sqrt{(\omega_0^2-\Omega^2)^2+(2\delta\Omega)^2}},
+ \qquad
+ x_\mathrm{stat}=\frac{F_0}{m\omega_0^2},
+ \qquad
+ \omega_\mathrm{res}=\sqrt{\omega_0^2-2\delta^2}.
+\]
+Größeres $F_0$ skaliert die gesamte Kurve. Größeres $\delta$ senkt und verbreitert das Maximum und verschiebt es zu kleineren Frequenzen. Die statische Auslenkung bleibt gleich.
+\PythonCode[Amplitudengang]{content/resources/chapters/forced_oscillations/python/amplitude_response.py}
+\end{Solution}

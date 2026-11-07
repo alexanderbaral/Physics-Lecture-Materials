@@ -1,0 +1,41 @@
+\input{../_shared/commands/math.tex}
+\input{../_shared/commands/figures.tex}
+\input{../_shared/commands/cloze.tex}
+
+% Uniform overview of the three possible solution types of a linear system.
+% The starred form crosses out the impossible "no solution" case and is used
+% for homogeneous systems.
+\NewDocumentCommand{\SolutionTypeBox}{m m}{%
+  \begin{tikzpicture}[baseline=(solutiontype.base)]
+    \node[
+      draw=black,
+      line width=0.4pt,
+      text width=0.24\linewidth,
+      inner xsep=0pt,
+      inner ysep=0.3em,
+      minimum height=2.1em,
+      align=center
+    ] (solutiontype) {#2};
+    \IfBooleanT{#1}{%
+      \draw[red!75!black,line width=1.6pt,shorten <=-5pt,shorten >=-5pt]
+        (solutiontype.south west) -- (solutiontype.north east);
+      \draw[red!75!black,line width=1.6pt,shorten <=-5pt,shorten >=-5pt]
+        (solutiontype.north west) -- (solutiontype.south east);
+    }%
+  \end{tikzpicture}%
+}
+\NewDocumentCommand{\SolutionTypeCases}{s}{%
+  \IfBooleanTF{#1}{\par\medskip}{\par\smallskip}%
+  \noindent
+  \SolutionTypeBox{\BooleanFalse}{\Lang{genau eine}{exactly one}}%
+  \hfill
+  \SolutionTypeBox{#1}{\Lang{keine}{none}}%
+  \hfill
+  \SolutionTypeBox{\BooleanFalse}{\Lang{$\infty$-viele}{$\infty$ many}}%
+  \IfBooleanTF{#1}{\par\medskip}{\par\smallskip}%
+}
+
+\NewDocumentCommand{\FrontMatterChapter}{m}{%
+  \chapter*{#1}%
+  \addcontentsline{toc}{chapter}{#1}%
+}

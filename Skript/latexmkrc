@@ -1,0 +1,8 @@
+use File::Path qw(make_path);
+use File::Spec;
+
+do '../_shared/tools/latexmk_common.pl' or die "Cannot load shared latexmk settings: $@ $!\n";
+$out_dir = $ENV{'LATEXMK_OUT_DIR'} || 'build';
+$aux_dir = $ENV{'LATEXMK_AUX_DIR'} || File::Spec->catdir(lecture_cache_root('script'), 'latex-aux');
+make_path($aux_dir) unless -d $aux_dir;
+@default_files = ('main.tex');

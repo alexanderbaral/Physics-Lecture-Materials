@@ -1,0 +1,80 @@
+\input{../_shared/style/layout.tex}
+\hypersetup{pdftitle={\ScriptTitle}}
+
+\setcounter{secnumdepth}{2}
+\setcounter{tocdepth}{1}
+\DeclareTOCStyleEntries[pagenumberwidth=2.2em,rightindent=3.2em]{tocline}{chapter,section}
+
+% Restrained TH Mannheim typography and hierarchy.
+\setkomafont{chapter}{\normalfont\sffamily\bfseries\Huge\color{black}}
+\setkomafont{section}{\normalfont\sffamily\bfseries\Large\color{black}}
+\renewcommand*{\chapterformat}{\thechapter\autodot\enskip}
+\renewcommand*{\sectionformat}{\thesection\autodot\enskip}
+\renewcommand*{\subsectionformat}{\thesubsection\autodot\enskip}
+\RedeclareSectionCommand[beforeskip=0pt,afterskip=1.25\baselineskip]{chapter}
+\RedeclareSectionCommands[beforeskip=1.7\baselineskip,afterskip=.6\baselineskip]{section,subsection}
+
+\AddToHook{shipout/foreground}{%
+  \ifBrandPageDotVisible\PlaceBrandPageDot{12mm}{5mm}\fi
+}
+
+\clearpairofpagestyles
+\manualmark
+\renewcommand*{\chaptermark}[1]{%
+  \markboth{\protect\hyperlink{chapter.\thechapter}{#1}}{}%
+}
+\renewcommand*{\sectionmark}[1]{%
+  \markright{\protect\hyperlink{section.\thesection}{#1}}%
+}
+\ihead[]{\footnotesize\normalfont\color{THMBlack}\leftmark:\enspace\rightmark}
+\ohead*{}
+\addtokomafont{pagenumber}{\color{THMBlack}}
+\ifoot*{\LectureFooter}
+\newcommand{\UseUnnumberedFrontMatter}{%
+  \hypersetup{pageanchor=false}%
+  \pagenumbering{gobble}%
+  \ofoot*{}%
+}
+\newcommand{\StartMainMatter}{%
+  \clearpage
+  \pagenumbering{arabic}%
+  \hypersetup{pageanchor=true}%
+  \ofoot*{\LecturePageMark}%
+}
+\ofoot*{\LecturePageMark}
+\pagestyle{scrheadings}
+
+% Section opening pages already show the full heading in the text body. Keep
+% their running head empty; subsequent pages carry the automatic section mark.
+\AddToHook{cmd/section/before}{\thispagestyle{plain.scrheadings}}
+
+\newcommand{\MakeScriptTitle}{%
+  \begin{titlepage}
+    \thispagestyle{empty}
+    \begin{tikzpicture}[remember picture,overlay]
+      \node[anchor=south east,inner sep=0pt]
+        at ([xshift=-5mm,yshift=5mm]current page.south east)
+        {\BrandTitleVisual};
+    \end{tikzpicture}
+
+    \noindent\begin{minipage}[t][0.94\textheight][t]{0.72\textwidth}
+      \BrandLogo{10.8cm}{4.8cm}
+      \vspace*{3.1cm}
+
+      {\color{THMBlue}\rule{\linewidth}{1.2pt}}\par
+      \vspace{1.0cm}
+      {\Huge\bfseries\color{THMBlue} \ScriptTitle\par}
+      \vspace{0.5cm}
+      {\Large \Lang{Vorlesungsskript}{Lecture Notes}%
+        \IfClozeTF{\space(\Lang{Lückenskript}{Fill-in-the-Blank Version})}{}\par}
+      \vspace{1.5cm}
+      {\large \ScriptAuthor\par}
+      \vfill
+      {\large \Institution\par}
+      {\large \Faculty\par}
+      \vspace{0.8cm}
+      {\large \LectureSemesterLabel\space\Semester\par}
+    \end{minipage}
+  \end{titlepage}
+  \global\BrandPageDotVisibletrue
+}

@@ -1,0 +1,18 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{06}{Python: Fourier-Reihe einer Dreiecksfunktion}{doppler_and_interference_python_triangle_fourier_series}
+Mit einer Fourier-Reihe lassen sich viele periodische Funktionen als gewichtete Summe von Sinus- und Kosinusfunktionen darstellen. Für die abgebildete Dreiecksfunktion gilt
+\[
+ y(x)=\sum_{n=1}^{\infty}
+ \frac{(-1)^{n-1}}{(2n-1)^2}
+ \sin\left((2n-1)\frac{\pi}{L}\,x\right).
+\]
+Die ersten Summanden sind gestrichelt eingezeichnet.
+\begin{center}
+\CachedTikzFigure{content/resources/chapters/doppler_and_interference/tikz/triangle_fourier_series.tex}
+\end{center}
+\begin{enumerate}
+\item Passen Sie den bereitgestellten Code so an, dass die Fourier-Reihe geplottet wird. Brechen Sie die Summe nach $n_\mathrm{max}$ Summanden ab.
+\item Variieren Sie $n_\mathrm{max}$ und beschreiben Sie, wie sich die Summenkurve ändert.
+\end{enumerate}
+\end{ExerciseBlock}
+\UseExerciseSolution{doppler_and_interference_python_triangle_fourier_series}

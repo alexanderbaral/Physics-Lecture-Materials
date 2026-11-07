@@ -1,0 +1,31 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{}{Verständnisfragen}{differential_equations_checks}
+Entscheiden Sie, welche Aussagen zutreffen, und begründen Sie Ihre Entscheidung.
+\begin{enumerate}
+\item Die Lösung einer Differentialgleichung ist immer eine Zahl.
+\item Eine Differentialgleichung beschreibt einen Zusammenhang zwischen einer Funktion und mindestens einer ihrer Ableitungen.
+\item Das zweite Newtonsche Axiom $m\ddot x(t)=F$ ist eine Differentialgleichung zweiter Ordnung für $x$.
+\item Hängt die Kraft nur von der Geschwindigkeit ab, genügt für die Geschwindigkeit eine Differentialgleichung erster Ordnung.
+\item Bei konstanter Kraft ist $v(t)$ eine exponentielle Funktion der Zeit.
+\item Die allgemeine Lösung einer Bewegungsgleichung kann freie Integrationskonstanten enthalten und mehrere Bewegungen beschreiben.
+\item Mit geeigneten Anfangsbedingungen lässt sich eine spezielle Lösung aus der allgemeinen Lösung auswählen.
+\item Bei Stokes-Reibung ist der Kraftbetrag proportional zum Quadrat der Geschwindigkeit.
+\item Die Gleichung $\dot v=-(b/m)v$ mit $b>0$ beschreibt einen exponentiellen Abfall des Geschwindigkeitsbetrags.
+\item Bei einem exponentiellen Zerfall hängt die Halbwertszeit vom Anfangswert ab.
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Falsch. Gesucht ist eine Funktion.
+\item Wahr. Die höchste auftretende Ableitung gibt die Ordnung an.
+\item Wahr. Die zweite Ableitung von $x$ ist die Beschleunigung.
+\item Wahr. Für die Geschwindigkeit gilt $m\dot v=F(v)$. Für den Ort muss $v$ anschließend integriert werden.
+\item Falsch. Es gilt $v(t)=v(0)+Ft/m$.
+\item Wahr. Die Konstanten unterscheiden die möglichen Anfangszustände.
+\item Wahr. Für die behandelten Bewegungsgleichungen legen geeignete Anfangswerte die Integrationskonstanten fest.
+\item Falsch. Der Kraftbetrag ist proportional zu $|v|$.
+\item Wahr. $|v(t)|=|v(0)|\,\mathrm e^{-(b/m)t}$.
+\item Falsch. Die Halbwertszeit ist $\ln(2)/k$ für Zerfallskonstante $k$.
+\end{enumerate}
+\end{Solution}

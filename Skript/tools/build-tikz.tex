@@ -1,0 +1,16 @@
+\providecommand{\ScriptLanguage}{de}
+\providecommand{\ClozeMode}{false}
+\providecommand{\TikzCacheVariant}{tikz-cache}
+\newcommand{\StandaloneTikzBuild}{}
+
+% The `tikz` option makes standalone crop to TikZ's complete bounding box.
+% Without it, content above or to the left of the TeX baseline can be clipped.
+\documentclass[12pt,tikz,border=0pt]{standalone}
+
+\input{common/config.tex}
+\input{common/preamble.tex}
+\input{common/commands.tex}
+
+\begin{document}
+\input{\TikzSource}
+\end{document}

@@ -1,0 +1,56 @@
+\ExplSyntaxOn
+\NewExpandableDocumentCommand{\IfClozeTF}{m m}
+  {\bool_if:NTF \g_script_cloze_bool {#1} {#2}}
+\ExplSyntaxOff
+
+% Restrained CD background for short answers, kept light for pencil writing.
+\definecolor{ScriptClozeBackground}{HTML}{E5E4D8}
+\NewDocumentCommand{\Cloze}{m m}{%
+  \IfClozeTF
+    {{\setlength{\fboxsep}{0pt}%
+      \colorbox{ScriptClozeBackground}{\makebox[#1][c]{\strut}}}}
+    {#2}%
+}
+
+% Grid dimensions are specified as numbers of 5 mm squares:
+% \begin{ClozeArea}[<columns>]{<rows>} ... \end{ClozeArea}
+\NewDocumentEnvironment{ClozeArea}{O{34} m +b}{%
+  \par\medskip\noindent
+  \pgfmathsetlengthmacro{\ClozeAreaWidth}{#1*5mm}%
+  \pgfmathsetlengthmacro{\ClozeAreaHeight}{#2*5mm}%
+  \hfill
+  \IfClozeTF{%
+    \begin{tikzpicture}
+      \path[use as bounding box]
+        (0,0) rectangle (\ClozeAreaWidth,\ClozeAreaHeight);
+      \draw[step=5mm,black!14,line width=0.2pt]
+        (0,0) grid (\ClozeAreaWidth,\ClozeAreaHeight);
+      \draw[black!25,line width=0.3pt]
+        (0,0) rectangle (\ClozeAreaWidth,\ClozeAreaHeight);
+    \end{tikzpicture}%
+  }{%
+    \begin{minipage}{\ClozeAreaWidth}#3\end{minipage}%
+  }%
+  \hfill\mbox{}%
+  \par\medskip
+}{}
+
+% Grid that continues a visible equation within the same display.
+% Dimensions again count exact 5 mm squares.
+\NewDocumentEnvironment{ClozeContinuation}{O{12} m +b}{%
+  \pgfmathsetlengthmacro{\InlineClozeAreaWidth}{#1*5mm}%
+  \pgfmathsetlengthmacro{\InlineClozeAreaHeight}{#2*5mm}%
+  \IfClozeTF{%
+    \vcenter{\hbox{%
+      \begin{tikzpicture}
+        \path[use as bounding box]
+          (0,0) rectangle (\InlineClozeAreaWidth,\InlineClozeAreaHeight);
+        \draw[step=5mm,black!14,line width=0.2pt]
+          (0,0) grid (\InlineClozeAreaWidth,\InlineClozeAreaHeight);
+        \draw[black!25,line width=0.3pt]
+          (0,0) rectangle (\InlineClozeAreaWidth,\InlineClozeAreaHeight);
+      \end{tikzpicture}%
+    }}%
+  }{#3}%
+}{}
+

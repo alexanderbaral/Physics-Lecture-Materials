@@ -1,0 +1,32 @@
+\newcommand{\BrandLogoPath}{../_shared/resources/branding/THM_Logo_Fak_M_hochkant_RGB_blau.pdf}
+\newcommand{\BrandDotPath}{../_shared/resources/branding/TH_Mannheim_Favicon.pdf}
+\newcommand{\BrandTitleVisualPath}{../_shared/resources/branding/TH_Mannheim_TitleVisual.pdf}
+
+\newcommand{\BrandPlaceholder}[2]{%
+  \fcolorbox{black!20}{black!2}{%
+    \parbox[c][#2][c]{#1}{\centering\sffamily\footnotesize\color{black!45}\Lang{Platzhalter}{Placeholder}}}%
+}
+\NewDocumentCommand{\BrandLogo}{O{} m m}{%
+  \IfFileExists{\BrandLogoPath}
+    {\includegraphics[width=#2,height=#3,keepaspectratio,#1]{\BrandLogoPath}}
+    {\BrandPlaceholder{#2}{#3}}%
+}
+\newcommand{\BrandDotGraphic}[2]{%
+  \IfFileExists{\BrandDotPath}
+    {\includegraphics[width=#1,height=#1,keepaspectratio]{\BrandDotPath}}
+    {\tikz\fill[THMBlue!55] (0,0) circle[radius=#2];}%
+}
+\newif\ifBrandPageDotVisible
+\newcommand{\PlaceBrandPageDot}[2]{%
+  \begin{tikzpicture}[remember picture,overlay]
+    \node[anchor=north east,inner sep=0pt]
+      at ([xshift=-7.5mm,yshift=-4.5mm]current page.north east)
+      {\BrandDotGraphic{#1}{#2}};
+  \end{tikzpicture}%
+}
+\newcommand{\BrandTitleVisual}{%
+  \IfFileExists{\BrandTitleVisualPath}
+    {\includegraphics[width=6.5cm,keepaspectratio]{\BrandTitleVisualPath}}
+    {}%
+}
+

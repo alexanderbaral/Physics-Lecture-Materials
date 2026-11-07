@@ -1,0 +1,64 @@
+\ExplSyntaxOn
+\NewExpandableDocumentCommand{\IfSolutionsTF}{+m +m}{\bool_if:NTF \g_sheet_solutions_bool {#1}{#2}}
+\NewDocumentEnvironment{Solution}{+b}{\IfSolutionsTF{#1}{}}{}
+\cs_new_protected:Npn \sheet_solution:nnnn #1#2#3#4 {
+  \str_case:nnF {#1} {
+    {pdf}{
+      \IfEnglishTF{\par\smallskip\emph{The~following~solution~is~still~handwritten~in~German.}\par}{}
+      \clearpage
+      \group_begin:
+      \cs_set:Npn \SheetSolutionExercise {\CurrentExerciseLabel\space}
+      \use:x {\exp_not:N\includepdf[
+        noautoscale,width=\exp_not:N\textwidth,height=\exp_not:N\textheight,keepaspectratio,
+        pagecommand={\exp_not:N\thispagestyle{scrheadings}},
+        trim=\SolutionPdfTrim,clip,\exp_not:n{#3}]{\exp_not:n{#2}}}
+      \group_end:
+    }
+    {latex}{
+      \str_if_eq:nnTF {#4}{approved}
+        {\par\medskip\textbf{\Lang{Musterlösung}{Solution}}\par\input{#2}}
+        {\PackageError{solutions}{LaTeX~solution~not~approved}{Keep~the~PDF~source~active.}}
+    }
+    {none}{}
+  }{\PackageError{solutions}{Unknown~solution~type~#1}{Use~pdf,~latex~or~none.}}
+}
+\NewDocumentCommand{\UseExerciseSolution}{m}{
+  \IfSolutionsTF{
+    \prop_get:NnNTF \g_sheet_solution_prop {#1} \l_tmpa_tl
+      {\exp_after:wN \sheet_solution:nnnn \l_tmpa_tl}
+      {\PackageError{solutions}{Missing~solution~registration~#1}{Register~the~source~or~none.}}
+  }{}
+}
+\ExplSyntaxOff
+\input{../_shared/commands/math.tex}
+\input{../_shared/commands/figures.tex}
+
+% Retain the legacy sheets' equation numbering without chapter prefixes.
+\renewcommand{\theequation}{\arabic{equation}}
+\newcommand{\CurrentExerciseLabel}{}
+\newcommand{\CurrentExerciseId}{}
+% Measure once: keep each task intact unless it exceeds a full text page.
+\newbox\ExerciseBodyBox
+\makeatletter
+\NewDocumentEnvironment{ExerciseBlock}{+b}{%
+  \par\addvspace{1.2\baselineskip}%
+  \setbox\ExerciseBodyBox=\vbox{%
+    \hsize=\linewidth\@parboxrestore\@minipagetrue
+    \everypar{\@minipagefalse\everypar{}}#1\par
+    \label{exend:\CurrentExerciseId}}%
+  \typeout{ExerciseSize: \CurrentExerciseId; \the\dimexpr\ht\ExerciseBodyBox+\dp\ExerciseBodyBox\relax; \the\textheight}%
+  \ifdim\dimexpr\ht\ExerciseBodyBox+\dp\ExerciseBodyBox\relax>\textheight
+    \unvbox\ExerciseBodyBox
+  \else
+    \box\ExerciseBodyBox
+  \fi
+  \par
+}{}
+\makeatother
+\NewDocumentCommand{\ExerciseHeading}{m m m}{%
+  \gdef\CurrentExerciseId{#3}%
+  \par\ifinner\else\Needspace{6\baselineskip}\fi%
+  \gdef\CurrentExerciseLabel{\Lang{Aufgabe}{Exercise}\if\relax\detokenize{#1}\relax\else\space#1\fi}%
+  \subsection*{\CurrentExerciseLabel\enspace--\enspace#2}%
+  \phantomsection\label{ex:#3}%
+}

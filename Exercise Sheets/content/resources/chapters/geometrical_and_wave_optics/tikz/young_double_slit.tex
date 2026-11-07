@@ -1,0 +1,27 @@
+\begin{tikzpicture}[>=Latex]
+  \coordinate (A) at (0,1.65);
+  \coordinate (B) at (0,0);
+  \coordinate (S) at (10,3.10);
+  \coordinate (Q) at ($(B)!(A)!(S)$);
+  \fill[black!15] (9.99,-0.97) rectangle (10.27,3.66);
+  \node[above] at (10.13,3.66) {Schirm};
+  \draw[very thick] (0,-0.96) -- (0,-0.10);
+  \draw[very thick] (0,0.10) -- (0,1.55);
+  \draw[very thick] (0,1.75) -- (0,3.52) node[above] {Doppelspalt};
+  \foreach \y in {0,1.65}
+    \draw[THMBlue,thick,->] (-2.2,\y) -- (-0.16,\y);
+  \node[align=center,anchor=east] at (-0.97,0.82) {Einfallende\\ebene Welle};
+  \draw[<->] (-0.38,0) -- (-0.38,1.65) node[midway,left] {$d$};
+  \draw[densely dashed,black!55] (B) -- (3.55,0);
+  \draw[THMBlue,very thick,->] (A) -- (S) node[pos=0.48,sloped,above=2pt,black] {Strahl 1};
+  \draw[THMBlue,very thick,->] (B) -- (S) node[pos=0.48,sloped,below=2pt,black] {Strahl 2};
+  \draw[densely dashed] (A) -- (Q);
+  \draw (2.12,0) arc[start angle=0,end angle=17.22,radius=2.12];
+  \node at (8.6:1.78) {$\alpha$};
+  \begin{scope}[shift={(Q)},rotate=17.22]
+    \draw (0.25,0) arc[start angle=0,end angle=90,radius=0.25];
+    \fill (0.096,0.096) circle (0.65pt);
+  \end{scope}
+  \draw[decorate,decoration={brace,mirror,amplitude=2pt},yshift=-4pt] (B) -- (Q)
+    node[midway,below=3pt] {$\Delta s$};
+\end{tikzpicture}

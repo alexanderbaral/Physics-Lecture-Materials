@@ -1,0 +1,22 @@
+\begin{tikzpicture}[>=Latex]
+  \fill[black!4] (-5.25,0) rectangle (5.25,2.75);
+  \fill[THMBlue!9] (-5.25,0) rectangle (5.25,-2.30);
+  \coordinate (A) at (-3.3,2.08);
+  \coordinate (P) at (0,0);
+  \coordinate (B) at (1.4,-1.90);
+  \draw[->] (-5.25,0) -- (5.65,0) node[right] {$x$};
+  \draw[->] (-4.25,-2.30) -- (-4.25,2.86) node[above] {$y$};
+  \draw[densely dashed] (0,-2.12) -- (0,2.55);
+  \draw[very thick,THMBlue,->] (A) -- (P) node[pos=0.40,below left,inner sep=4pt,black] {$s_{AP}$};
+  \draw[very thick,THMBlue,->] (P) -- (B) node[pos=0.62,right,inner sep=4pt,black] {$s_{PB}$};
+  \foreach \point in {A,P,B} \fill[THMBlue] (\point) circle (1.5pt);
+  \node[above right] at (A) {$A(x_A,y_A)$};
+  \node[above right] at (P) {$P(x_P,0)$};
+  \node[below right] at (B) {$B(x_B,y_B)$};
+  \node[anchor=east] at (5.07,2.46) {Medium 1, $n_1$};
+  \node[anchor=east] at (5.07,-1.26) {Medium 2, $n_2$};
+  \draw (90:1.24) arc[start angle=90,end angle=147.8,radius=1.24];
+  \draw (270:1.61) arc[start angle=270,end angle=306.4,radius=1.61];
+  \node at (118:0.92) {$\vartheta_1$};
+  \node at (289:1.19) {$\vartheta_2$};
+\end{tikzpicture}

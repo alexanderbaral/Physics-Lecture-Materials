@@ -1,0 +1,77 @@
+% Uniform source-page crop: left, bottom, right, top; originals stay untouched.
+\newcommand{\SolutionPdfTrim}{0mm 7mm 0mm 18mm}
+\ExplSyntaxOn
+\str_case:VnF \ShowSolutions {{true}{} {false}{}}
+  {\PackageError{config}{Unknown~ShowSolutions}{Use~true~or~false.}}
+\bool_new:N \g_sheet_solutions_bool
+\str_if_eq:VnT \ShowSolutions {true}{\bool_gset_true:N \g_sheet_solutions_bool}
+
+% Ordered sheet registry: id, chapter, number, DE title, EN title.
+% Entry paths use the same semantic id; additional sheets may share a chapter.
+\prop_new:N \g_sheet_registry_prop
+\NewDocumentCommand{\DeclareSheet}{m m m m m m}{
+  \prop_gput:Nnn \g_sheet_registry_prop {#1}{{#2}{#3}{#4}{#5}{#6}}
+}
+
+\ExplSyntaxOff
+\DeclareSheet{differential_equations}{differential_equations}{1}{Differentialgleichungen in der Mechanik}{Differential equations in mechanics}{differential_equations/_chapter.tex}
+\DeclareSheet{free_oscillations}{free_oscillations}{2}{Freie Schwingungen}{Free oscillations}{free_oscillations/_chapter.tex}
+\DeclareSheet{forced_oscillations}{forced_oscillations}{3}{Erzwungene Schwingungen}{Forced oscillations}{forced_oscillations/_chapter.tex}
+\DeclareSheet{wave_propagation}{wave_propagation}{4}{Mechanische und elektromagnetische Wellen}{Mechanical and electromagnetic waves}{wave_propagation/_chapter.tex}
+\DeclareSheet{doppler_and_interference}{doppler_and_interference}{5}{Doppler-Effekt und Interferenz}{Doppler effect and interference}{doppler_and_interference/_chapter.tex}
+\DeclareSheet{geometrical_and_wave_optics}{geometrical_and_wave_optics}{6}{Geometrische Optik und Wellenoptik}{Geometrical and wave optics}{geometrical_and_wave_optics/_chapter.tex}
+\DeclareSheet{quantum_optics}{quantum_optics}{7}{Quantenoptik und Laser}{Quantum optics and lasers}{quantum_optics/_chapter.tex}
+\DeclareSheet{laboratory_measurements}{laboratory_measurements}{8}{Messunsicherheit und Laborübungen}{Measurement uncertainty and laboratory exercises}{laboratory_measurements/_chapter.tex}
+\ExplSyntaxOn
+\cs_new_protected:Npn \sheet_select:nnnnn #1#2#3#4#5 {
+  \def\SheetChapter{#1}\def\SheetNumber{#2}
+  \def\SheetTitle{\Lang{#3}{#4}}
+  \def\SheetEntry{content/chapters_\ScriptLanguage/#5}
+}
+\prop_get:NVNTF \g_sheet_registry_prop \SheetId \l_tmpa_tl
+  {\exp_after:wN \sheet_select:nnnnn \l_tmpa_tl}
+  {\PackageError{config}{Unknown~sheet~'\SheetId'}{Select~a~registered~sheet.}}
+
+% One active solution per id: type, source, PDF options, approval status.
+\prop_new:N \g_sheet_solution_prop
+\NewDocumentCommand{\DeclareSolution}{m m m m m}{
+  \prop_if_in:NnT \g_sheet_solution_prop {#1}
+    {\PackageError{config}{Duplicate~solution~#1}{Use~one~active~source.}}
+  \prop_gput:Nnn \g_sheet_solution_prop {#1}{{#2}{#3}{#4}{#5}}
+}
+\ExplSyntaxOff
+
+% SOLUTION_REGISTRY
+\DeclareSolution{free_oscillations_displacement_law}{pdf}{content/resources/chapters/free_oscillations/solutions/displacement_law.pdf}{pages=-}{pending}
+\DeclareSolution{free_oscillations_damping_from_amplitudes}{pdf}{content/resources/chapters/free_oscillations/solutions/damping_from_amplitudes.pdf}{pages=-}{pending}
+\DeclareSolution{free_oscillations_damping_from_graph}{pdf}{content/resources/chapters/free_oscillations/solutions/damping_from_graph.pdf}{pages=-}{pending}
+\DeclareSolution{free_oscillations_critical_damping}{pdf}{content/resources/chapters/free_oscillations/solutions/critical_damping.pdf}{pages=-}{pending}
+\DeclareSolution{free_oscillations_oscillating_disk}{pdf}{content/resources/chapters/free_oscillations/solutions/oscillating_disk.pdf}{pages=-}{pending}
+\DeclareSolution{free_oscillations_floating_test_tube}{pdf}{content/resources/chapters/free_oscillations/solutions/floating_test_tube.pdf}{pages=-}{pending}
+\DeclareSolution{free_oscillations_anharmonic_trap}{pdf}{content/resources/chapters/free_oscillations/solutions/anharmonic_trap.pdf}{pages=-}{pending}
+\DeclareSolution{forced_oscillations_driven_spring}{pdf}{content/resources/chapters/forced_oscillations/solutions/driven_spring.pdf}{pages=-}{pending}
+\DeclareSolution{forced_oscillations_phase_response}{pdf}{content/resources/chapters/forced_oscillations/solutions/phase_response.pdf}{pages=-}{pending}
+\DeclareSolution{forced_oscillations_amplitude_response}{pdf}{content/resources/chapters/forced_oscillations/solutions/amplitude_response.pdf}{pages=-}{pending}
+\DeclareSolution{wave_propagation_sound_wavelength}{pdf}{content/resources/chapters/wave_propagation/solutions/sound_wavelength.pdf}{pages=-}{pending}
+\DeclareSolution{wave_propagation_antenna_lengths}{pdf}{content/resources/chapters/wave_propagation/solutions/antenna_lengths.pdf}{pages=-}{pending}
+\DeclareSolution{wave_propagation_harmonic_travelling_wave}{pdf}{content/resources/chapters/wave_propagation/solutions/harmonic_travelling_wave.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{wave_propagation_ultrasound_in_solids}{pdf}{content/resources/chapters/wave_propagation/solutions/ultrasound_in_solids.pdf}{pages=-}{pending}
+\DeclareSolution{wave_propagation_magnetic_wave_equation}{pdf}{content/resources/chapters/wave_propagation/solutions/magnetic_wave_equation.pdf}{pages=-}{pending}
+\DeclareSolution{doppler_and_interference_train_echo}{pdf}{content/resources/chapters/doppler_and_interference/solutions/train_echo.pdf}{pages=-}{pending}
+\DeclareSolution{doppler_and_interference_traffic_light}{pdf}{content/resources/chapters/doppler_and_interference/solutions/traffic_light.pdf}{pages=-,trim=0mm 7mm 0mm 0mm}{pending}
+\DeclareSolution{doppler_and_interference_frequency_doubling}{pdf}{content/resources/chapters/doppler_and_interference/solutions/frequency_doubling.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{doppler_and_interference_speaker_interference}{pdf}{content/resources/chapters/doppler_and_interference/solutions/speaker_interference.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{doppler_and_interference_pan_flute}{pdf}{content/resources/chapters/doppler_and_interference/solutions/pan_flute.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{geometrical_and_wave_optics_water_air_refraction}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/water_air_refraction.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{geometrical_and_wave_optics_fermat_principle}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/fermat_principle.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{geometrical_and_wave_optics_apparent_coin_position}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/apparent_coin_position.pdf}{pages=-}{pending}
+\DeclareSolution{geometrical_and_wave_optics_double_slit}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/double_slit.pdf}{pages=-,trim=0mm 7mm 0mm 5mm}{pending}
+\DeclareSolution{geometrical_and_wave_optics_eye_resolution}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/eye_resolution.pdf}{pages=-}{pending}
+\DeclareSolution{geometrical_and_wave_optics_thin_biconvex_lens}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/thin_biconvex_lens.pdf}{pages=-}{pending}
+\DeclareSolution{geometrical_and_wave_optics_aluminium_absorption}{pdf}{content/resources/chapters/geometrical_and_wave_optics/solutions/aluminium_absorption.pdf}{pages=-}{pending}
+\DeclareSolution{laboratory_measurements_uncertainty_propagation}{pdf}{content/resources/chapters/laboratory_measurements/solutions/uncertainty_propagation.pdf}{pages=-}{pending}
+\DeclareSolution{laboratory_measurements_static_spring_constant}{pdf}{content/resources/chapters/laboratory_measurements/solutions/static_spring_constant.pdf}{pages=-,trim=0mm 0mm 0mm 0mm}{pending}
+\DeclareSolution{laboratory_measurements_dynamic_spring_constant}{pdf}{content/resources/chapters/laboratory_measurements/solutions/dynamic_spring_constant.pdf}{pages=-,trim=0mm 0mm 0mm 0mm}{pending}
+\DeclareSolution{wave_propagation_python_wave_initial_conditions}{none}{}{}{unavailable}
+\DeclareSolution{doppler_and_interference_python_triangle_fourier_series}{none}{}{}{unavailable}
+\DeclareSolution{laboratory_measurements_umbrella_sales_regression}{none}{}{}{unavailable}

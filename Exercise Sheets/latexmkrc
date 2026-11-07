@@ -1,0 +1,12 @@
+do '../_shared/tools/latexmk_common.pl' or die "Cannot load shared latexmk settings: $@ $!\n";
+my $cache_root = lecture_cache_root('sheets');
+# Builds must select an explicit cache directory through the build script.
+die "Use tools/build-all.ps1 to build the exercise sheets.\n"
+  unless grep { /^-outdir=/ } @ARGV;
+$out2_dir = '';
+$emulate_aux = 1;
+# Keep SyncTeX and all other helper files in the auxiliary cache.
+@out2_exts = ('pdf');
+$ENV{'TEXMFVAR'} = "$cache_root/texmf";
+$ENV{'TEXMFCACHE'} = $ENV{'TEXMFVAR'};
+@default_files = ();

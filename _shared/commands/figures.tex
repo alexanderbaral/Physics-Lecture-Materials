@@ -1,0 +1,16 @@
+% Use the verified standalone PDFs when the script cache is configured.
+\makeatletter
+\NewDocumentCommand{\CachedTikzFigure}{m}{%
+  \ifdefined\TikzCacheRoot
+    \begingroup
+      \filename@parse{#1}%
+      \edef\CachedTikzPdf{\TikzCacheRoot/\filename@base.pdf}%
+      \IfFileExists{\CachedTikzPdf}
+        {\includegraphics{\CachedTikzPdf}}
+        {\input{#1}}%
+    \endgroup
+  \else
+    \input{#1}%
+  \fi
+}
+\makeatother

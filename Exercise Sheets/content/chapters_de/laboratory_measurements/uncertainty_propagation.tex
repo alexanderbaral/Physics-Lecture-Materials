@@ -1,0 +1,24 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{04}{Fehlerfortpflanzung}{laboratory_measurements_uncertainty_propagation}
+Verwenden Sie in beiden Fällen die lineare Abschätzung der absoluten Unsicherheit über die Summe der Beträge der einzelnen Beiträge.
+\begin{enumerate}
+\item Das Zylindervolumen ist $V=\pi D^2h/4$. Gemessen wurden $D=\qty{10}{\centi\metre}$ mit einer relativen Unsicherheit von \qty{2}{\percent} und $h=\qty{20}{\centi\metre}$ mit $u(h)=\qty{0.5}{\centi\metre}$. Berechnen Sie $u(V)$ und $u(V)/V$.
+\item Die Größe $y$ ist durch $y=A\,\mathrm e^{kt}+\ln(Bt)$ gegeben. Die Eingangsgrößen lauten:
+\begin{itemize}
+\item $A=5$ mit $u(A)=0{,}2$
+\item $B=\qty{3}{\per\second}$ mit relativer Unsicherheit \qty{5}{\percent}
+\item $k=\qty{0.1}{\per\second}$ mit $u(k)=\qty{0.01}{\per\second}$
+\item $t=\qty{10}{\second}$ mit $u(t)=\qty{0.1}{\second}$
+\end{itemize}
+Berechnen Sie $u(y)$ unter Berücksichtigung aller vier Beiträge.
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\begin{RemarkBox}[title=Korrektur zur handschriftlichen Lösung]
+In a) beträgt die relative Unsicherheit $u(V)/V=2u(D)/D+u(h)/h=6{,}5\,\%$. Die absolute Unsicherheit ist $u(V)\approx\qty{1.02e-4}{\metre\cubed}$.
+
+In b) hängt auch der Exponentialterm von $t$ ab. Mit
+$\partial y/\partial t=Ak\mathrm e^{kt}+1/t$ folgt aus der Summe der vier Beiträge $u(y)\approx2{,}10$.
+\end{RemarkBox}
+\end{Solution}
+\UseExerciseSolution{laboratory_measurements_uncertainty_propagation}

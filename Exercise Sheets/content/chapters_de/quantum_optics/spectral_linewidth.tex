@@ -1,0 +1,26 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{05}{Spektrale Breite diskreter Linien}{quantum_optics_spectral_linewidth}
+Eine Quecksilberdampf-Gasentladungslampe emittiert eine Linie bei $\lambda_0=\qty{546.1}{\nano\metre}$. Die Lebensdauer des oberen Zustands sei $\tau=\qty{2.5e-8}{\second}$, die Gas­temperatur $T=\qty{300}{\kelvin}$ und die Atommasse $m_\mathrm{Hg}=\qty{3.34e-25}{\kilogram}$. Der untere Zustand wird als langlebig angenommen. Vergleichen Sie die volle Breite bei halbem Maximum (FWHM) der natürlichen und der Dopplerverbreiterung.
+\begin{enumerate}
+\item Verwenden Sie $\Delta E_\mathrm{nat}=\hbar/\tau$. Bestimmen Sie $\Delta f_\mathrm{nat}$ in Hertz und die entsprechende Wellenlängenbreite $\Delta\lambda_\mathrm{nat}$.
+\item Berechnen Sie die Standardabweichung $\sigma_{v_\parallel}=\sqrt{k_\mathrm B T/m_\mathrm{Hg}}$ der Geschwindigkeitskomponente in Beobachtungsrichtung. Bestimmen Sie mit der Dopplernäherung für $|v_\parallel|\ll c$ die volle Breite $\Delta\lambda_\mathrm{D}$.
+\item Welcher Effekt dominiert bei Raumtemperatur?
+\item Wie kann ein Laser ein schmaleres Spektrum erzeugen?
+\end{enumerate}
+\end{ExerciseBlock}
+\begin{Solution}
+\par\medskip\noindent\textbf{Musterlösung}\par\nopagebreak[4]
+\begin{enumerate}
+\item Für den exponentiellen Zerfall des oberen Zustands gilt $\Delta f_\mathrm{nat}=\Delta E_\mathrm{nat}/h=1/(2\pi\tau)\approx\qty{6.37}{\mega\hertz}$. Mit $\lambda=c/f$ folgt in linearer Näherung
+\[
+ \Delta\lambda_\mathrm{nat}=\frac{\lambda_0^2}{c}\,\Delta f_\mathrm{nat}\approx\qty{6.33e-6}{\nano\metre}.
+\]
+\item Die thermische Geschwindigkeitsstreuung beträgt $\sigma_{v_\parallel}\approx\qty{111}{\metre\per\second}$. Die lineare Dopplerverschiebung ergibt $\sigma_\lambda=(\lambda_0/c)\sigma_{v_\parallel}$. Für die Gaußkurve gilt
+\[
+ \Delta\lambda_\mathrm{D}=2\sqrt{2\ln 2}\,\sigma_\lambda\approx\qty{4.78e-4}{\nano\metre}.
+\]
+Die Dopplerbreite entspricht der in der \href{https://physics.nist.gov/Pubs/AtSpec/node20.html}{NIST-Übersicht zur Linienverbreiterung} angegebenen FWHM.
+\item Das Verhältnis $\Delta\lambda_\mathrm{D}/\Delta\lambda_\mathrm{nat}\approx75$ zeigt, dass hier die Dopplerverbreiterung dominiert.
+\item Der optische Resonator wählt Frequenzen in der Verstärkungsbande aus. Stimulierte Emission verstärkt das Feld in den ausgewählten Moden. Zusätzliche Frequenzselektion kann den Laser auf eine Mode begrenzen.
+\end{enumerate}
+\end{Solution}

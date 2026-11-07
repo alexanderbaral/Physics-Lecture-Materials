@@ -1,0 +1,704 @@
+{
+  "schema": 1,
+  "package": "physics-lecture-materials",
+  "version": "2026.11.07",
+  "date": "2026-11-07",
+  "source_repository": "https://github.com/alexanderbaral/Mathematics-Lecture-Materials",
+  "source_state": "local working tree, not only last pushed commit",
+  "cache_script": "Physics-Skript-def15e3b6ea5",
+  "cache_sheets": "physics_exercise_sheets_def15e3b6ea5",
+  "source_commit": "34d20693163467e0fb74c756efee0c5c1d3f0b5c",
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 168,
+      "sha256": "1417877af173e1665526e86b8d41647e6e49a035837b665ccdf1a46ddb92f5b8",
+      "source_sha256": "1417877af173e1665526e86b8d41647e6e49a035837b665ccdf1a46ddb92f5b8"
+    },
+    {
+      "path": ".vscode/tasks.json",
+      "bytes": 1186,
+      "sha256": "860f5c293dd65a8c91f376f42a6745431f4ec00afeb2ddd4bd71152f8d8e0c1f",
+      "source_sha256": "8f1d5e6280ab062e107ac1e7d556b2153bf42af51bac0380a660a45dae1f8858"
+    },
+    {
+      "path": "_shared/commands/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "_shared/commands/python-code.lua",
+      "bytes": 3112,
+      "sha256": "4ecff873b4da6d17932a67c1de66b0cd0e4c6a1788f08be60ec696ec95340e9c",
+      "source_sha256": "f635e6570ce024ee1f46b5c94e39850073e89ce5e748d667ae5a72e4d518d6aa"
+    },
+    {
+      "path": "_shared/commands/python-code.tex",
+      "bytes": 4409,
+      "sha256": "02b952a0fa80a4507b89b1f09491550b50ebd645deedde4ee27f57ad37c81cc1",
+      "source_sha256": "dcbe55910c140d901d7f79939eb9c49d886e7c9d7fdcb5f5f50712bb35e252ed"
+    },
+    {
+      "path": "_shared/legacy/README.md",
+      "bytes": 170,
+      "sha256": "92498d72983c22297b4c87e9fbadc74f72822a8185f1c48c737c6b732ca56335"
+    },
+    {
+      "path": "_shared/resources/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "_shared/style/.gitkeep",
+      "bytes": 1,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "_shared/tools/build-cache.ps1",
+      "bytes": 4789,
+      "sha256": "fe0b4c3d4b7406a47bc966886718001de8c8320c8b0a2782d4cffbaa69cbb19b",
+      "source_sha256": "34250ee738bae8019cc331b2b6bc3dca229c11230299821f1eb9b30e067ead6f"
+    },
+    {
+      "path": "_shared/tools/build.ps1",
+      "bytes": 476,
+      "sha256": "3fc7485cd5b139fec6afb2370f12121964e5eb5fc2918d4b3ca8fa2a70943007",
+      "source_sha256": "e23fb695ea3198b9e7b3dfdde528366438d473396b887425393cf4563ecb4e15"
+    },
+    {
+      "path": "_shared/tools/build.py",
+      "bytes": 1818,
+      "sha256": "c47a8b7d77e7c3198a5019c44b40994e089df0241d3057b438f7e2bdefb8ed88",
+      "source_sha256": "c1ba75327a56d1d017f3a006c9064f10c471116d8a28e97fd6f3e85a413773c3"
+    },
+    {
+      "path": "_shared/tools/build_preview.py",
+      "bytes": 16611,
+      "sha256": "a749c36548144f7ee9173c222171440955448dcf57af29d0ed6075671b388ef8",
+      "source_sha256": "965622f3c5915e49d8f51103382eafaf3158e75054d4a89acb1e00612ec72f4a"
+    },
+    {
+      "path": "_shared/tools/build_runtime.py",
+      "bytes": 14192,
+      "sha256": "69b5f67231db80275fa3f2dcb37be0437bc250649fd44f9bf14afd0becae8f9f",
+      "source_sha256": "ded9e2b2e8d685a33ec843aa7c2ded1176677601bbdfd77da2976ce75ea798db"
+    },
+    {
+      "path": "_shared/tools/build_variants.json",
+      "bytes": 98,
+      "sha256": "30fb06b5ca8f55ac6c4a07f14cc5d9a6bb3635d7849c1a29a265799acafc22f0",
+      "source_sha256": "ceeb0d8611bcea153696156852cf3341315d4bc17fb9a174a679e1ab827bda2c"
+    },
+    {
+      "path": "_shared/tools/test_build_preview.py",
+      "bytes": 7765,
+      "sha256": "8aae28470cf84b6ac14dbc3937eddb075a814a635da7dd8bb29999f605f1ffbf",
+      "source_sha256": "bde8dd6a414f50910d5eaa011b509177a6dde717578bd05281528f1c77bf7f55"
+    },
+    {
+      "path": "_shared/tools/test_build_runtime.py",
+      "bytes": 8216,
+      "sha256": "48bf0b7b2d7929c88f55086071ce3d3aca2b7d9cc5972f1040973868b12a9dde",
+      "source_sha256": "ec76b46dc3701c7873254a36497fac432e453d20d6e4def3c2626ff311f33263"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 5642,
+      "sha256": "b92ce5012a8998dbdc3f75f8068dfdc4e459423ff552b3846a97bd35a05eb1ba"
+    },
+    {
+      "path": "build/Vorschau.pdf",
+      "bytes": 224594,
+      "sha256": "720383d9b07ba9575dd007b0ec3e9d23dfeababdebf63cb47658f9c944ee5724"
+    },
+    {
+      "path": "docs/COMMANDS.md",
+      "bytes": 3292,
+      "sha256": "8ae1fe4eb0b3bef3cfc760c509e32f5af2b035f33321b85fcb2207e05bc30076"
+    },
+    {
+      "path": "docs/STYLE_CHANGES.md",
+      "bytes": 357,
+      "sha256": "b28b307b019a93542124a87686208f4269c3b8abb06414dc23ef4d400a9e33ab"
+    },
+    {
+      "path": "Exercise Sheets/.gitignore",
+      "bytes": 229,
+      "sha256": "692e13f43e9c11dd66f3a2584d74b92f3d077b45f6e5d64dd711a2a51e30713d",
+      "source_sha256": "692e13f43e9c11dd66f3a2584d74b92f3d077b45f6e5d64dd711a2a51e30713d"
+    },
+    {
+      "path": "Exercise Sheets/.vscode/settings.json",
+      "bytes": 803,
+      "sha256": "c3dbd7efaba3773de3da5f56a9810bab88733cc3dde5e608c1edfd9bc120742d",
+      "source_sha256": "18e72df4dc1438e17058e1400b29bf9c38456d5fad4faedaa04db54f23f1fc48"
+    },
+    {
+      "path": "Exercise Sheets/.vscode/tasks.json",
+      "bytes": 1715,
+      "sha256": "35e7e9d41558ad0b5ce6b3b299c46978a4b69a2851ef04b19ee1dc8205da32c5",
+      "source_sha256": "35e7e9d41558ad0b5ce6b3b299c46978a4b69a2851ef04b19ee1dc8205da32c5"
+    },
+    {
+      "path": "Exercise Sheets/AGENTS.md",
+      "bytes": 233,
+      "sha256": "fad995f235198c21b0347fd258af8509e4925391124aeb9036efc4669172ef41"
+    },
+    {
+      "path": "Exercise Sheets/build/de/_Übungsblatt Alle.pdf",
+      "bytes": 97233,
+      "sha256": "a95b193e2cf705dbda9b0f1543ec61380e20b0a69c741ffd57a11f47ada18e94"
+    },
+    {
+      "path": "Exercise Sheets/build/de/Übungsblatt 1 - Musterblatt.pdf",
+      "bytes": 96552,
+      "sha256": "ab298449b91d1bc8bcd2c57c0b5bf65b688b1211580f4da895daafa526650fb7"
+    },
+    {
+      "path": "Exercise Sheets/build/de_solutions/_Übungsblatt Alle (mit Lösungen).pdf",
+      "bytes": 127823,
+      "sha256": "8c0bd2e34a7093352b1197bc4c353ea3ff7ee643b32fda7c03d2a48d7f1825af"
+    },
+    {
+      "path": "Exercise Sheets/build/de_solutions/Übungsblatt 1 - Musterblatt (mit Lösungen).pdf",
+      "bytes": 124402,
+      "sha256": "cfd46489b6f11e7b28b05f9509876c3fff418e5255cc602695ea115f4fc934ed"
+    },
+    {
+      "path": "Exercise Sheets/common/commands.tex",
+      "bytes": 3482,
+      "sha256": "8aa0106a9ff06a6fa7a97e8e7e0c3e9c85b385ddd979c11eab5025c4ec156c79",
+      "source_sha256": "0a9bf9a477ff910e822d25e3bc7d53dc84284605ad7c5d14030aea11b202ba87"
+    },
+    {
+      "path": "Exercise Sheets/common/config.tex",
+      "bytes": 2309,
+      "sha256": "d107b0b95ba54847fed57db3af5332be931bfa30f282a71da65b2c636a860fba",
+      "source_sha256": "e5e4e49d0084d907b87eec0dfa474bd58f6d8d55df983489d1ae10bb28ea7d43"
+    },
+    {
+      "path": "Exercise Sheets/common/layout.tex",
+      "bytes": 4028,
+      "sha256": "9a97474f2b39e8d4bbead5a6e12f01200e0e28bc7b2cebf50224dcb8ea84d2b8",
+      "source_sha256": "723b233292042005d0260e5f2bd1a5afbdfacb2b839bb0793ea2a4bd0c674b86"
+    },
+    {
+      "path": "Exercise Sheets/common/preamble.tex",
+      "bytes": 1130,
+      "sha256": "39ba1e03811386eca0e29c70aba6ef69cc23942fb0ce113278d13acda1a09cd4",
+      "source_sha256": "8afb5b56162f280449ce6a81421cedf42926483ca4acb6026e4ab6b1b11fa1cd"
+    },
+    {
+      "path": "Exercise Sheets/content/chapters_de/sample/_chapter.tex",
+      "bytes": 47,
+      "sha256": "d111d97aee7c0cfef057554a498f039973252affe6eb769c731010bd00f4d456"
+    },
+    {
+      "path": "Exercise Sheets/content/chapters_de/sample/motion.tex",
+      "bytes": 417,
+      "sha256": "47f0bb56d71312ca9f5b9339878177d702f6b785b79b3d747f61e3a080ee145b"
+    },
+    {
+      "path": "Exercise Sheets/content/chapters_de/sample/motion_solution.tex",
+      "bytes": 307,
+      "sha256": "eb681fc161cafe5933bc2954e850caf5cd58c203466d2fcc72dcf0268d24bc87"
+    },
+    {
+      "path": "Exercise Sheets/content/chapters_en/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Exercise Sheets/content/resources/chapters/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Exercise Sheets/content/resources/chapters/sample/code/velocity.ipynb",
+      "bytes": 786,
+      "sha256": "acf48bd362f888b099584e7ec48e966c3a81fca8649cb57a07cba0e5d871cfbe"
+    },
+    {
+      "path": "Exercise Sheets/content/resources/chapters/sample/code/velocity.py",
+      "bytes": 85,
+      "sha256": "f25681c538185bf16b6bf6aa72ae9815f34674392d80a4fc4684a29f11af2796"
+    },
+    {
+      "path": "Exercise Sheets/content/resources/shared/TH_Mannheim_Favicon.png",
+      "bytes": 32475,
+      "sha256": "8e63dc4f89159851940d6c7581efdd6079c74982eae3adb920ea7c0fa9f748a4",
+      "source_sha256": "8e63dc4f89159851940d6c7581efdd6079c74982eae3adb920ea7c0fa9f748a4"
+    },
+    {
+      "path": "Exercise Sheets/content/resources/shared/THM_Logo_Fak_M_hochkant_RGB_blau.png",
+      "bytes": 91586,
+      "sha256": "f1fb822a64d3544429ec6806ed943c28bed0eda40923f1ff4780771734d0ceea",
+      "source_sha256": "f1fb822a64d3544429ec6806ed943c28bed0eda40923f1ff4780771734d0ceea"
+    },
+    {
+      "path": "Exercise Sheets/docs/AGENTS.md",
+      "bytes": 3817,
+      "sha256": "d68a05aa4c0c7bf66d6e5b07f81c4dbadf4ca23c11b7dda90c0ffa8ee58c1089"
+    },
+    {
+      "path": "Exercise Sheets/docs/BUILD_CONTROL.md",
+      "bytes": 316,
+      "sha256": "b74e52e44c3b9985f31aa2afb7b14097012cdf6b0cee4fbce227d60c5a41f751",
+      "source_sha256": "527bfd8e041ffbb4dd02cd525e18e0c2acdcb798bd3014b8c832622649a40235"
+    },
+    {
+      "path": "Exercise Sheets/latexmkrc",
+      "bytes": 730,
+      "sha256": "565d55954a691ffb126e55ecd5582c9efa4d3d1bf1f8a3810df97dd67610ed6f",
+      "source_sha256": "42f6b65b2eea47414a8c496b8a2d4b28e34903ad82c5bf417bf7cefb87f111ee"
+    },
+    {
+      "path": "Exercise Sheets/main.tex",
+      "bytes": 648,
+      "sha256": "e358bb44f2486673934996bd6cf460a378203bc760d9d6736648a0cbd69c6d36",
+      "source_sha256": "618dafeb8fd507866204de706f9ba8c100f6dda7d0d72296577bf8e28a770e43"
+    },
+    {
+      "path": "Exercise Sheets/README.md",
+      "bytes": 173,
+      "sha256": "9dfa047390a9020d536344e1b1ae1f41d8791f55f0314252fc45c45451f15cb2"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-all.ps1",
+      "bytes": 799,
+      "sha256": "b98dd36d04e56f47106cb47af5290ed72d783199b4614da4057d8c2c3370418f",
+      "source_sha256": "b98dd36d04e56f47106cb47af5290ed72d783199b4614da4057d8c2c3370418f"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-cache.ps1",
+      "bytes": 175,
+      "sha256": "e78d7b636a342f082c92067263279adf41641e97aa1e88a28bb7a5f4eceda36c",
+      "source_sha256": "7aaeeab8522dfae7dc83f982fbbda2421808a8d1313ae6629a06fcd5280dfd40"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-de-solutions.tex",
+      "bytes": 69,
+      "sha256": "0c0f6ffb54ba4ce0066f39882d6eb88208e246674281fe0b344e290ca56a606a",
+      "source_sha256": "8ef93b218aee402820015140689fdf1678aa9eb7aa013b55082d4ac652a75834"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-de.tex",
+      "bytes": 70,
+      "sha256": "07da57668af15cf243ca9b2c364f36bc6745defa2ab7efbb1192e280fe25319e",
+      "source_sha256": "4e4c4637b66c0989bcce9c821e8f6e3fb35ad7f458a1f52369b22e66dd930867"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-en-solutions.tex",
+      "bytes": 69,
+      "sha256": "555553204c95c7b66e35f4422b2d03022d9f7d61eaae6498b8567b49e7255323",
+      "source_sha256": "897c9d7c5ebfb1dcc5dc4bb77e1b5d67ee2acf30194df3dc22dcb43bac1c17e0"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-en.tex",
+      "bytes": 70,
+      "sha256": "fa46017aa13e56a151b78de610783c8f1eeabbfc1bc2ef51c971fa941db835e2",
+      "source_sha256": "6424c9c956fb0bececcb2899e74119d40d984ff6b05bda43e7df90506dca9eb6"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-engine.ps1",
+      "bytes": 12760,
+      "sha256": "65980f66f94a87570166166a0e44a1c38ed688dc54ed7c5af1fe2b76eac5f47f",
+      "source_sha256": "0e01c6b60d7d432be4d4b06208c36e2d2a05ab60a7b094e024960e0d25a98777"
+    },
+    {
+      "path": "Exercise Sheets/tools/build-update.ps1",
+      "bytes": 293,
+      "sha256": "fa4868af91cd30d696d71611551c85c71480df39ebf59a522383c1302919e87c",
+      "source_sha256": "6dddf097e7380969d844da76ac75b5a58362b5d77aa30f8f92983bd36bb16140"
+    },
+    {
+      "path": "Exercise Sheets/tools/build_coordinator.py",
+      "bytes": 11814,
+      "sha256": "178e449a2191172872a138ba6a977afc3ce1fbedeaa8a4c7184a477ea54d7818",
+      "source_sha256": "a7df285d048968f5a441f2ca1b7dc44e2c708296d865691ba2a17e75e094bea2"
+    },
+    {
+      "path": "Exercise Sheets/tools/build_sheet.ps1",
+      "bytes": 4169,
+      "sha256": "803e2a8f07d8add1f89bb2fa6425d75c10765ccf744493c13382b06ada27ccf9",
+      "source_sha256": "83a7f51a83184f8808b91c1a99c4e8e35b9e72bcbe186b0e7b5d2c833c8ad0ad"
+    },
+    {
+      "path": "Exercise Sheets/tools/cache_paths.py",
+      "bytes": 414,
+      "sha256": "db7b0af9e2df96aa7e8a7d828b0e4063957f6ee6e829eab560868077cf48487a",
+      "source_sha256": "97e109ce35d6a35be2696db67a31978723e7764b10df338018f2e239d6fa6b48"
+    },
+    {
+      "path": "Exercise Sheets/tools/combine_pdfs.py",
+      "bytes": 3104,
+      "sha256": "f2cd7b503a6090c2a80d42f9cbe0b594da5e41b0ffc1d37b67af47ddb421a6b0",
+      "source_sha256": "6eeb4c5b41e2367449672bb4bbe7d646eb60c6b76f409f885cf8ddc1bfc302b0"
+    },
+    {
+      "path": "Exercise Sheets/tools/develop.ps1",
+      "bytes": 991,
+      "sha256": "5376be0ae62af3d73a0a0c0931e5bbafaa1ef46c39f86d593488d56d1c53f78c",
+      "source_sha256": "dc5839265be81049ac9b156ba5c1e9d935652fdd95772a9c71a6ee007057e036"
+    },
+    {
+      "path": "Exercise Sheets/tools/incremental_build.py",
+      "bytes": 7627,
+      "sha256": "b060665830bd2a1055e70e5c00edbc8673c74ecd3907a25c87cba4946b6f2494",
+      "source_sha256": "cc5af80852ff6f585a7924463c46478e9971aaad407b0d2e5ce3cae9a35ef647"
+    },
+    {
+      "path": "Exercise Sheets/tools/inventory.py",
+      "bytes": 3604,
+      "sha256": "f1518862f6f96868b50fb2571df6feafa09b919c4c49f7cb641b6e15189d6f6b",
+      "source_sha256": "11a683bbd7abe0398abe87be4c78f483eb592bbf878a884f352c74b607500e5f"
+    },
+    {
+      "path": "Exercise Sheets/tools/render_review.py",
+      "bytes": 2475,
+      "sha256": "7672c8831f4c97253109b64f9fbadfd9a32edf390b1e17206a86e42bba38a45c",
+      "source_sha256": "1c7920ae36f9fd45e8a223da8e412bebe182268484e5c8b2fa22b229f5a053be"
+    },
+    {
+      "path": "Exercise Sheets/tools/requirements.txt",
+      "bytes": 20,
+      "sha256": "e4468726b1d529e9258794b8adf0cfab9b6a6bb3142307649aca12f573f6d8bb",
+      "source_sha256": "e4468726b1d529e9258794b8adf0cfab9b6a6bb3142307649aca12f573f6d8bb"
+    },
+    {
+      "path": "Exercise Sheets/tools/test_development.py",
+      "bytes": 5251,
+      "sha256": "37aa3efa778084e7564edad80a6b5c7fcf7ca1480687b2a579c5c488b46423f2",
+      "source_sha256": "d5c481cd345ef7c94cb125d55d7a7edc9968076abc17d29da42a47fd6a2ca290"
+    },
+    {
+      "path": "Exercise Sheets/tools/watch_build.py",
+      "bytes": 3109,
+      "sha256": "7decc291a2dd110cd00273c3bfeb88030e28dec1a7cefd14ed3c0a9075c0fb44",
+      "source_sha256": "d34edae59e9980515b61b32e34b12d13c17ea063a830fef67384e5e3d0ef9ca4"
+    },
+    {
+      "path": "EXPORT_GUIDE.md",
+      "bytes": 1362,
+      "sha256": "10d7a4e34e0c450da7f4200ad61e684be60b8927552e5659ad807963e30659c6"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3678,
+      "sha256": "739c97f0aaa7687fc8583da9ab2fbcc2dce756f45251f2f6261d08527c51849a"
+    },
+    {
+      "path": "Skript/.gitignore",
+      "bytes": 327,
+      "sha256": "43f35e272d0fcf507b013af42e38ebfbd11ff4ec16d6922cc2a799ba18548267",
+      "source_sha256": "43f35e272d0fcf507b013af42e38ebfbd11ff4ec16d6922cc2a799ba18548267"
+    },
+    {
+      "path": "Skript/.vscode/settings.json",
+      "bytes": 647,
+      "sha256": "97993c159dbeed37ef47893ad5f8a0f88f9230eb891622017969486eecb109c6",
+      "source_sha256": "87a13d6157f69f7a1895b9bfa4a3f6cd9eb591819753375c60d7d26b4d0f96f4"
+    },
+    {
+      "path": "Skript/.vscode/tasks.json",
+      "bytes": 1196,
+      "sha256": "7d257e300d057bbcb8ffe1a547477c45f18e10b5a1fcc489b5a2e22adb6f760e",
+      "source_sha256": "8ab41cf2d6a1da75722d0d49722c2aa9d577957f24a237f9552dcd6430c47bf7"
+    },
+    {
+      "path": "Skript/AGENTS.md",
+      "bytes": 27213,
+      "sha256": "b4a6142d3ba904e257d9caf5a58629d532235432e8afb16c818e1e037f343db2"
+    },
+    {
+      "path": "Skript/build/build-de-cloze.pdf",
+      "bytes": 94230,
+      "sha256": "210c8dff31e75f875902dd40a84faaa82f2f5650de7f0664859113b7dc2822bb"
+    },
+    {
+      "path": "Skript/build/build-de.pdf",
+      "bytes": 95206,
+      "sha256": "a3037897f26eea6670d28d797ad217186eb336e21409096c4dcc39bdd9887908"
+    },
+    {
+      "path": "Skript/common/commands.tex",
+      "bytes": 9434,
+      "sha256": "85a16d3ba2f21cd1c257b155a3e7dc9cd3fc62ec3535c60560b6628969cb2349",
+      "source_sha256": "62742535a57d6ec351145b4f6897c6de4f8b4af57f9b7d0dca6955c69ed86088"
+    },
+    {
+      "path": "Skript/common/config.tex",
+      "bytes": 1343,
+      "sha256": "8a65918160d7d69b2d57146036aa5eae1523d7697d60c71fad3ecd98a4791e8d",
+      "source_sha256": "71873044af24433e73fb505fca77d0032728ae7c4995347a97fb881f4cd75bf2"
+    },
+    {
+      "path": "Skript/common/layout.tex",
+      "bytes": 6453,
+      "sha256": "ad57773c8aef291f5c172aab3470d90986406df9da1bf3412a06e76299e07ceb",
+      "source_sha256": "595b19df74184c7b49aa7bd1f975f562a2594906b2424c2d59189f3923723e72"
+    },
+    {
+      "path": "Skript/common/preamble.tex",
+      "bytes": 1649,
+      "sha256": "425df1983689ddcc3ae4a5d93eb52c1282c97a609ac30768a52f8d48755d3b59",
+      "source_sha256": "28fb3b4ee8a211aff7f06feb1d8c2d5de984f1c7a5c9d7c167ee75bc5c10254a"
+    },
+    {
+      "path": "Skript/content/chapters_de/sample/_chapter.tex",
+      "bytes": 166,
+      "sha256": "2bbe88dad654f924bd12d32cf24b226dfac23fbae5f76e2448afc241314a5ada"
+    },
+    {
+      "path": "Skript/content/chapters_de/sample/code/_section.tex",
+      "bytes": 355,
+      "sha256": "2787600603ff682d83944b396765fd997929a1065f86b0dc8d4c603fde739741"
+    },
+    {
+      "path": "Skript/content/chapters_de/sample/motion/_section.tex",
+      "bytes": 1098,
+      "sha256": "dba296fc64d3c5b24482695f2b94ee668f03e6455bbc69d75c5dd09e28d70e95"
+    },
+    {
+      "path": "Skript/content/chapters_en/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Skript/content/front_matter/greek_alphabet.tex",
+      "bytes": 1619,
+      "sha256": "7f9603b20a73bfa2975156e6c501c234efb1e21456eb72dc0a09e605bd139990",
+      "source_sha256": "cec0924c1c80bab30bea09493b29eca10f8187dadc4abb29a789d3254e25c401"
+    },
+    {
+      "path": "Skript/content/front_matter/usage_notes.tex",
+      "bytes": 1514,
+      "sha256": "f784f88a2366a178672f0b11b8d5d6b2ae71acb736571f8a932ed2b3e7a7b224",
+      "source_sha256": "d22b0455f265e2b7b2bc9131933a3dd4cc76e0f43151d41ad01b243704cd9618"
+    },
+    {
+      "path": "Skript/content/resources/chapters/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "Skript/content/resources/chapters/sample/code/velocity.ipynb",
+      "bytes": 786,
+      "sha256": "acf48bd362f888b099584e7ec48e966c3a81fca8649cb57a07cba0e5d871cfbe"
+    },
+    {
+      "path": "Skript/content/resources/chapters/sample/code/velocity.py",
+      "bytes": 85,
+      "sha256": "f25681c538185bf16b6bf6aa72ae9815f34674392d80a4fc4684a29f11af2796"
+    },
+    {
+      "path": "Skript/content/resources/chapters/sample/tikz/motion.tex",
+      "bytes": 472,
+      "sha256": "b32e6e2012915911690d4397804cb5809fe2e97877ed368441aaaad870e8e428"
+    },
+    {
+      "path": "Skript/content/resources/shared/fonts/plus_jakarta_sans/OFL.txt",
+      "bytes": 4496,
+      "sha256": "e305459e0dab960db8295955f5abc813efb09d4fea89138572b593bee53d015c",
+      "source_sha256": "e305459e0dab960db8295955f5abc813efb09d4fea89138572b593bee53d015c"
+    },
+    {
+      "path": "Skript/content/resources/shared/fonts/plus_jakarta_sans/PlusJakartaSans-Bold.ttf",
+      "bytes": 94784,
+      "sha256": "3e08701b69e94031d861fa7535630815b18bc5c5382e364d17107b532fcd2995",
+      "source_sha256": "3e08701b69e94031d861fa7535630815b18bc5c5382e364d17107b532fcd2995"
+    },
+    {
+      "path": "Skript/content/resources/shared/fonts/plus_jakarta_sans/PlusJakartaSans-BoldItalic.ttf",
+      "bytes": 97008,
+      "sha256": "4486ec3d48135bf96127cc94b273d648d380f50f0ff37b3939dbcc5ec8d8635a",
+      "source_sha256": "4486ec3d48135bf96127cc94b273d648d380f50f0ff37b3939dbcc5ec8d8635a"
+    },
+    {
+      "path": "Skript/content/resources/shared/fonts/plus_jakarta_sans/PlusJakartaSans-Italic.ttf",
+      "bytes": 96928,
+      "sha256": "b15bc27e88f93f1dd3058ed137b799b5355cc96d58827fe3b505f77114fb1cd0",
+      "source_sha256": "b15bc27e88f93f1dd3058ed137b799b5355cc96d58827fe3b505f77114fb1cd0"
+    },
+    {
+      "path": "Skript/content/resources/shared/fonts/plus_jakarta_sans/PlusJakartaSans-Regular.ttf",
+      "bytes": 94764,
+      "sha256": "f7e7cebd26ac8ad800783dbc41e661dbe14ee8bc58e53c532995b13274276933",
+      "source_sha256": "f7e7cebd26ac8ad800783dbc41e661dbe14ee8bc58e53c532995b13274276933"
+    },
+    {
+      "path": "Skript/content/resources/shared/TH_Mannheim_Favicon.pdf",
+      "bytes": 927,
+      "sha256": "5845ca6a08ca0633d81d0207061cdd22ef33125f3f54d44aa583f8ea5ba73a92",
+      "source_sha256": "5845ca6a08ca0633d81d0207061cdd22ef33125f3f54d44aa583f8ea5ba73a92"
+    },
+    {
+      "path": "Skript/content/resources/shared/TH_Mannheim_Favicon.png",
+      "bytes": 32475,
+      "sha256": "8e63dc4f89159851940d6c7581efdd6079c74982eae3adb920ea7c0fa9f748a4",
+      "source_sha256": "8e63dc4f89159851940d6c7581efdd6079c74982eae3adb920ea7c0fa9f748a4"
+    },
+    {
+      "path": "Skript/content/resources/shared/TH_Mannheim_Favicon.svg",
+      "bytes": 398,
+      "sha256": "d0e0bc9640dc76e775f6180e41185ae8b6ab28910bc805d6863083dacf02651f",
+      "source_sha256": "d0e0bc9640dc76e775f6180e41185ae8b6ab28910bc805d6863083dacf02651f"
+    },
+    {
+      "path": "Skript/content/resources/shared/TH_Mannheim_Logo_RGB_blau.png",
+      "bytes": 17144,
+      "sha256": "86be78adc60fbc6e2b1666782627d9d551248f9cdf734e15a60da12ca4b7205d",
+      "source_sha256": "86be78adc60fbc6e2b1666782627d9d551248f9cdf734e15a60da12ca4b7205d"
+    },
+    {
+      "path": "Skript/content/resources/shared/TH_Mannheim_TitleVisual.pdf",
+      "bytes": 2940,
+      "sha256": "3cbde725d69af8e37f24cc26ff0b218172d2dc3547420328a31c034aefaf5ede",
+      "source_sha256": "3cbde725d69af8e37f24cc26ff0b218172d2dc3547420328a31c034aefaf5ede"
+    },
+    {
+      "path": "Skript/content/resources/shared/THM_Logo_Fak_M_hochkant_RGB_blau.pdf",
+      "bytes": 14120,
+      "sha256": "59b49ed807ad551fbb4ddf81a780c3967a4dc8b07689b49b8859bccca9e17993",
+      "source_sha256": "59b49ed807ad551fbb4ddf81a780c3967a4dc8b07689b49b8859bccca9e17993"
+    },
+    {
+      "path": "Skript/content/resources/shared/THM_Logo_Fak_M_hochkant_RGB_blau.png",
+      "bytes": 91586,
+      "sha256": "f1fb822a64d3544429ec6806ed943c28bed0eda40923f1ff4780771734d0ceea",
+      "source_sha256": "f1fb822a64d3544429ec6806ed943c28bed0eda40923f1ff4780771734d0ceea"
+    },
+    {
+      "path": "Skript/content/resources/shared/THM_Logo_Fak_M_hochkant_RGB_blau.svg",
+      "bytes": 18046,
+      "sha256": "1af93f23cb8c57f55f8aed057cf50a747fc8f24bddeba381d327cc112b80cc3d",
+      "source_sha256": "1af93f23cb8c57f55f8aed057cf50a747fc8f24bddeba381d327cc112b80cc3d"
+    },
+    {
+      "path": "Skript/content/resources/shared/THM_Logo_Fak_M_quer_RGB_blau.png",
+      "bytes": 94817,
+      "sha256": "8ca91829ed504f93c17666abd1a22debf75d496729851827e0a1933c182f6538",
+      "source_sha256": "8ca91829ed504f93c17666abd1a22debf75d496729851827e0a1933c182f6538"
+    },
+    {
+      "path": "Skript/content/resources/shared/tikz/.gitkeep",
+      "bytes": 2,
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "source_sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "path": "Skript/content/resources/shared/tikz/smiley_happy.tex",
+      "bytes": 476,
+      "sha256": "0b1d742e31ee40602dbdccb5515072913db53ec2a562c61f6f4eb97cb9bbf0f1",
+      "source_sha256": "e457bf3e55c609169031ea056d727e108f0354dea08ddf5f178e60cae78fecec"
+    },
+    {
+      "path": "Skript/content/resources/shared/tikz/smiley_sad.tex",
+      "bytes": 479,
+      "sha256": "52509fe8cd8a2a7153ba57d04dc3f6ba5c5e8c662647a9ae528b793fec40070c",
+      "source_sha256": "767681dbff1f5e468a7099d358f89193ed8707736185a7e33c0a340a8a2fc5a3"
+    },
+    {
+      "path": "Skript/docs/BUILD_CONTROL.md",
+      "bytes": 316,
+      "sha256": "b74e52e44c3b9985f31aa2afb7b14097012cdf6b0cee4fbce227d60c5a41f751",
+      "source_sha256": "527bfd8e041ffbb4dd02cd525e18e0c2acdcb798bd3014b8c832622649a40235"
+    },
+    {
+      "path": "Skript/latexmkrc",
+      "bytes": 675,
+      "sha256": "b8e07adf8203cb6dc421c095a3296931386e3cce30d92b20093c1b24110ddba4",
+      "source_sha256": "b71401acf079734d8d5baaf70e3cfcc7789efcfbd553a2d9d755c6d20f08b435"
+    },
+    {
+      "path": "Skript/main.tex",
+      "bytes": 1052,
+      "sha256": "826b5f3c2688edefe7d54b6f4fe6515b343cf08778e80c9ac64022391c1106e6",
+      "source_sha256": "8a73f6ad41ad769c821ea47f776fc2f081c409b548e3057466d302dcc8940d3c"
+    },
+    {
+      "path": "Skript/README.md",
+      "bytes": 164,
+      "sha256": "ae0b6540bf48a715a50ac95d6616dc276e0760d0e7ca0f35f0dc0f58b362b03d"
+    },
+    {
+      "path": "Skript/tools/build-all.ps1",
+      "bytes": 399,
+      "sha256": "20fba22866e1f0758796369d1afd5f0a59d9283e05b8552d25dcab0cf9212122",
+      "source_sha256": "994a7f8e030e4f0353f385807b013d0ec3b5cf8d657e0a67ac3868449c0e558d"
+    },
+    {
+      "path": "Skript/tools/build-cache.ps1",
+      "bytes": 183,
+      "sha256": "7678b4e32d80a73d01413524933cf264899a6de4975123ec37299c969fbd9a6a",
+      "source_sha256": "6e8717db48ff8a8425a26837b91519bd362ffdc0ae407904ac167adae2b6680e"
+    },
+    {
+      "path": "Skript/tools/build-de-cloze.tex",
+      "bytes": 104,
+      "sha256": "e20c531dac455abd6d54b2cb391ec004dcb9ead63469654bf92fa0f56a85f096",
+      "source_sha256": "b4d3203b395714792c3149abfe3ce1ea9110f51270ed7b71ad1bb3a848b1a730"
+    },
+    {
+      "path": "Skript/tools/build-de.tex",
+      "bytes": 99,
+      "sha256": "dbd7879298f36d39c6b97dcb0f8f628acfbe21e4106051209940f6ad554ae98a",
+      "source_sha256": "800d259d35a4dd5d720cbb98f6f50413a1e1635871dc584e7828f3ad0895ef8f"
+    },
+    {
+      "path": "Skript/tools/build-en-cloze.tex",
+      "bytes": 104,
+      "sha256": "a9c4cb208e36f2170de856c7df7ab2f99b750064610d4c026bd96c6492d0d409",
+      "source_sha256": "43488da1bab48f6b432e83c4bb68833ac9a925369edaf25c33ed6d53ff521546"
+    },
+    {
+      "path": "Skript/tools/build-en.tex",
+      "bytes": 99,
+      "sha256": "1795850b4386603cc067d208c42f2d1ae64f441929e0c4d4890d0b33beb21819",
+      "source_sha256": "3d99342d190dd372e36617bf80496f4fd2b4739f372e7e85981ca4c7410dfdfa"
+    },
+    {
+      "path": "Skript/tools/build-engine.ps1",
+      "bytes": 18333,
+      "sha256": "f6411fbffae321218c656265a97fecf88b655dafd884775eceec567805d69266",
+      "source_sha256": "eea1c4a1bb04160a5678982b7d30df4de0045446d28ebff761306967d3c525d7"
+    },
+    {
+      "path": "Skript/tools/build-tikz.tex",
+      "bytes": 511,
+      "sha256": "3a600efd31ffb5897d6479177a360fd573da135f9a2d53cdde80514d999721cf",
+      "source_sha256": "f7f9ce282bee313a2225b42c148b21da7b37b5a6117ea5ccecf5d305d4cae305"
+    },
+    {
+      "path": "Skript/tools/build-update.ps1",
+      "bytes": 291,
+      "sha256": "39ee745d2a1fbbfeb16befd5e647315fddecb3ca89557be1bdbc52b2aba86acd",
+      "source_sha256": "dd48c739951dce21751521e88da04f1446699d7d13cebbcf59c92358ca9fa334"
+    },
+    {
+      "path": "Skript/tools/build_coordinator.py",
+      "bytes": 25442,
+      "sha256": "fa149057420432853d5093652ddad5b889d54444971d278988261cecd7e9ac84",
+      "source_sha256": "2b6135089a7242903c6f2866ae8ad53aa90c34df3f1b59cb2a3767605c179c75"
+    },
+    {
+      "path": "Skript/tools/test_build_coordinator.py",
+      "bytes": 15215,
+      "sha256": "52ecd2eae767f15d3ee93f19b36edc68f448b7cb2aabf91c643fee482a0ee9bf",
+      "source_sha256": "0c860765a9ee08e5b6a54020232a1527888e1f164a4943f814ded92a0eb39c11"
+    },
+    {
+      "path": "STARTPROMPT.md",
+      "bytes": 2798,
+      "sha256": "3761a369cfb88cfaa18a16dc2c6d48bc30ac0999d49739b5a28a609453b28ef4"
+    },
+    {
+      "path": "VALIDATION.md",
+      "bytes": 2155,
+      "sha256": "a721e3bf540ad15acc675984a3989b0c748bda24dbde052c0631720a5cc55363"
+    }
+  ]
+}

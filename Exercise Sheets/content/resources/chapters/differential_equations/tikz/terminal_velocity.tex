@@ -1,0 +1,11 @@
+\begin{tikzpicture}[>=Latex,x=1.65cm,y=1.05cm]
+  \draw[->] (0,-2.3) -- (0,1.5) node[above] {$v$};
+  \draw[->] (0,0) -- (4.6,0) node[right] {$t$};
+  \draw[THMBlue,densely dashed] (0,-1.2) -- (4.35,-1.2)
+    node[right,black] {$v_\mathrm{stat}$};
+  \draw[very thick,THMBlue,domain=0:4.35,samples=71] plot (\x,{-1.2+2*exp(-\x)});
+  \draw[very thick,THMBlue,domain=0:4.35,samples=71] plot (\x,{-1.2-0.85*exp(-\x)});
+  \node[left] at (0,0.8) {$v_0>v_\mathrm{stat}$};
+  \node[left] at (0,-1.2) {$v_0=v_\mathrm{stat}$};
+  \node[left] at (0,-2.05) {$v_0<v_\mathrm{stat}$};
+\end{tikzpicture}

@@ -1,0 +1,8 @@
+% Build-mode validation and booleans. Entrypoints may define both values first.
+\ExplSyntaxOn
+\str_case:VnF \ClozeMode
+  { {true}{} {false}{} }
+  { \PackageError{config}{Unknown ClozeMode '\ClozeMode'}{Use true or false.} }
+\bool_new:N \g_script_cloze_bool
+\str_if_eq:VnT \ClozeMode {true} { \bool_gset_true:N \g_script_cloze_bool }
+\ExplSyntaxOff

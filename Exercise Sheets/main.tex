@@ -1,0 +1,17 @@
+% !TeX program = lualatex
+\providecommand{\ScriptLanguage}{de}
+\providecommand{\ShowSolutions}{false}
+\providecommand{\SheetId}{differential_equations}
+\input{../_shared/style/document.tex}
+\input{common/commands.tex}
+\input{../_shared/lecture_metadata.tex}
+\input{common/layout.tex}
+\input{../_shared/commands/python-code.tex}
+\IfFileExists{\SheetEntry}{}{%
+  \PackageError{main}{Missing content: \SheetEntry}{No fallback language is allowed.}%
+}
+\begin{document}
+\setcounter{chapter}{\SheetNumber}
+\MakeSheetHeader
+\input{\SheetEntry}
+\end{document}

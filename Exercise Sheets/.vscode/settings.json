@@ -1,0 +1,33 @@
+{
+  "latex-workshop.latex.autoBuild.run": "never",
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.watch.pdf.delay": 500,
+  "latex-workshop.view.pdf.reload.transition": "none",
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "Geänderte Übungsblätter (beide Varianten)",
+      "tools": [
+        "exercise_sheets"
+      ]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "exercise_sheets",
+      "command": "powershell",
+      "args": [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "%DIR%/tools/build-all.ps1",
+        "-Language",
+        "de",
+        "-Solutions",
+        "both",
+        "-Incremental"
+      ]
+    }
+  ],
+  "latex-workshop.latex.recipe.default": "first"
+}

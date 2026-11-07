@@ -1,0 +1,61 @@
+\begin{ExerciseBlock}
+\ExerciseHeading{06}{Federkonstante aus dynamischer Mehrfachmessung}{laboratory_measurements_dynamic_spring_constant}
+Am unteren Ende einer Feder mit Federkonstante $D$ hängt eine Schale der Masse $m_0$. Für die mit einer Masse $m$ belastete Schale erwartet man die Periodendauer
+\begin{equation}\label{eq:laboratory_measurements_period}
+ T=2\pi\sqrt{\frac{m_0+m}{D}}.
+\end{equation}
+Um den Einfluss der Zeitmessung zu verringern, wird jeweils die Dauer von fünf Schwingungen gemessen. Jede Messung wird für dieselbe Masse dreimal wiederholt. Aus den Mittelwerten für verschiedene Massen bestimmen wir $D$ per linearer Regression.
+\begin{center}
+\begin{tabular}{rrrr}
+\toprule
+$m$ in \unit{\kilogram} & $5T_1$ in \unit{\second} & $5T_2$ in \unit{\second} & $5T_3$ in \unit{\second}\\
+\midrule
+0,050 & 1,64 & 1,58 & 1,48\\
+0,100 & 2,11 & 2,00 & 2,01\\
+0,150 & 2,30 & 2,43 & 2,19\\
+0,200 & 2,67 & 2,76 & 2,84\\
+\bottomrule
+\end{tabular}
+\end{center}
+\begin{enumerate}
+\item Bestimmen Sie aus jeder Messung die einfache Periodendauer $T_j$. Geben Sie für jede Masse den Mittelwert $\overline T$ und seine statistische Unsicherheit $u(\overline T)$ an.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{r|p{12mm}|p{12mm}|p{12mm}|p{12mm}|p{19mm}}
+\toprule
+$m/\unit{\kilogram}$ & $T_1/\unit{\second}$ & $T_2/\unit{\second}$ & $T_3/\unit{\second}$ & $\overline T/\unit{\second}$ & $u(\overline T)/\unit{\second}$\\
+\midrule
+0,050 & & & & & \\\hline
+0,100 & & & & & \\\hline
+0,150 & & & & & \\\hline
+0,200 & & & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\item Bringen Sie Gleichung~\eqref{eq:laboratory_measurements_period} in die Geradenform $y=ax+b$ mit $x=m$ und $y=\overline T^2$. Kennzeichnen Sie Steigung und Achsenabschnitt.
+\item Tragen Sie die quadrierten Mittelwerte $\overline T^2$ für die vier Massen ein. Liegen die Punkte näherungsweise auf einer Geraden?
+\begin{center}
+\CachedTikzFigure{content/resources/chapters/laboratory_measurements/tikz/regression_axes.tex}
+\end{center}
+\item Führen Sie eine lineare Regression durch. Tragen Sie die nötigen Hilfsgrößen in die Tabelle ein und bestimmen Sie Steigung und Achsenabschnitt.
+\begin{center}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{r|p{18mm}|p{15mm}|p{25mm}|p{18mm}}
+\toprule
+$x_i$ & $y_i$ & $x_i^2$ & $x_iy_i$ & $y_i^2$\\
+$m_i/\unit{\kilogram}$ & $\overline T_i^2/\unit{\second\squared}$ & $m_i^2/\unit{\kilogram\squared}$ & $m_i\overline T_i^2/\unit{\kilogram\second\squared}$ & $\overline T_i^4/\unit{\second\tothe{4}}$\\
+\midrule
+0,050 & & & & \\\hline
+0,100 & & & & \\\hline
+0,150 & & & & \\\hline
+0,200 & & & & \\\hline
+Summe & & & & \\
+\bottomrule
+\end{tabular}
+\end{center}
+\item Setzen Sie die Daten in den über Moodle bereitgestellten Python-Code ein und überprüfen Sie damit das Ergebnis der Regression.
+\item Berechnen Sie aus der Regressionsgeraden $D$, $m_0$ und die absoluten Unsicherheiten $u(D)$ und $u(m_0)$. Runden Sie das Ergebnis passend zu den Unsicherheiten.
+\item Vergleichen Sie $D$ mit dem Ergebnis der statischen Einzelmessung.
+\end{enumerate}
+\end{ExerciseBlock}
+\UseExerciseSolution{laboratory_measurements_dynamic_spring_constant}

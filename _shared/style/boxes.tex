@@ -1,0 +1,51 @@
+\tcbset{
+  scriptbox/.style={
+    enhanced,
+    breakable=false,
+    colback=LectureBoxBackground,
+    colbacktitle=LectureBoxBackground,
+    colframe=LectureBoxBackground,
+    boxrule=0pt,
+    borderline west={1.2pt}{0pt}{THMBlue},
+    sharp corners,
+    left=2.5mm,right=2mm,top=1.5mm,bottom=1.5mm,
+    before skip=1.0\baselineskip,
+    after skip=1.0\baselineskip,
+    fonttitle=\bfseries,
+    coltitle=black
+  }
+}
+
+%---------
+%--Boxes--
+%---------
+
+% Definition
+\newtcbtheorem[number within=chapter]{DefinitionBox}{\LectureDefinitionLabel}
+  {scriptbox,breakable=false}{def}
+
+% Function properties are numbered chronologically across the script.
+\newtcbtheorem{FunctionPropertyBox}{\Lang{Funktionseigenschaft}{Function property}}
+  {scriptbox,breakable=false}{def}
+
+% Merke
+\newtcbtheorem[number within=chapter]{KeyPointBox}{\Lang{Merke}{Key Point}}
+  {scriptbox,borderline west={2pt}{0pt}{THMBlue}}{key}
+
+% Beispiel
+\newtcbtheorem[number within=chapter]{ExampleBox}{\LectureExampleLabel}
+  {scriptbox,breakable=false,borderline west={1.2pt}{0pt}{THMBlack}}{ex}
+
+% Theorem
+\newtcbtheorem[number within=chapter]{TheoremBox}{\LectureTheoremLabel}
+  {scriptbox,borderline west={1.8pt}{0pt}{THMBlue}}{thm}
+
+% Remarks have their own chapter counter, including individually titled remarks.
+\tcbset{
+  remark title/.style={title={\Lang{Hinweis}{Remark}~\thetcbcounter: #1}}
+}
+\newtcolorbox[auto counter,number within=chapter]{RemarkBox}[1][]{
+  scriptbox,
+  borderline west={1.2pt}{0pt}{THMBlack},
+  title={\Lang{Hinweis}{Remark}~\thetcbcounter},#1
+}

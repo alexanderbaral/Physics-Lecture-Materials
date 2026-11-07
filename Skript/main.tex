@@ -1,0 +1,37 @@
+\providecommand{\ScriptLanguage}{de}
+\providecommand{\ClozeMode}{false}
+\providecommand{\TikzCacheVariant}{main}
+\providecommand{\TikzCacheRoot}{build/tikz/\TikzCacheVariant}
+
+\input{../_shared/style/document.tex}
+
+\InputIfFileExists{build/tikz-cache-path.tex}{}{}
+
+% Cancellation marks are document-only; standalone figure caches stay unchanged.
+\usepackage{cancel}
+\input{common/commands.tex}
+\input{../_shared/lecture_metadata.tex}
+\input{common/layout.tex}
+\input{../_shared/commands/python-code.tex}
+\ifdefined\BuildContextFile\input{\BuildContextFile}\fi
+
+\begin{document}
+\ifdefined\ScriptPreviewBody
+  \input{\ScriptPreviewBody}
+\else
+\UseUnnumberedFrontMatter
+\MakeScriptTitle
+\input{content/front_matter/usage_notes.tex}
+\begingroup
+  \pagestyle{plain.scrheadings}
+  \tableofcontents
+  \clearpage
+\endgroup
+
+\input{content/front_matter/greek_alphabet.tex}
+
+\StartMainMatter
+\input{content/chapters_\ScriptLanguage/sample/_chapter.tex}
+
+\fi
+\end{document}

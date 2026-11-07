@@ -1,0 +1,19 @@
+\begin{tikzpicture}[>=Latex]
+  \fill[THMBlue!9] (-3.55,0) rectangle (2.0,-2.85);
+  \draw[thick] (-3.55,0) -- (-3.55,-2.85) -- (2.0,-2.85) -- (2.0,0);
+  \draw[THMBlue!65] (-3.55,0) -- (2.0,0);
+  \draw[densely dashed] (0,-2.85) -- (0,2.2);
+  \draw[very thick,THMBlue,->] (-1.79,-2.85) -- (0,0);
+  \draw[very thick,THMBlue,->] (0,0) -- (2.2,2.2) node[above right,black] {Auge};
+  \draw[THMBlue,dashed] (0,0) -- (-2.85,-2.85);
+  \fill (-1.79,-2.80) ellipse (0.16 and 0.049);
+  \draw[fill=white] (-2.85,-2.80) ellipse (0.16 and 0.049);
+  \draw (45:1.0) arc[start angle=45,end angle=90,radius=1.0];
+  \node at (67:0.69) {$\alpha$};
+  \draw (238:1.10) arc[start angle=238,end angle=270,radius=1.10];
+  \node at (252:0.77) {$\beta$};
+  \draw[<->] (1.72,0) -- (1.72,-2.85) node[midway,left] {$h$};
+  \foreach \x in {-2.85,-1.79,0} \draw[black!50] (\x,-2.85) -- (\x,-3.50);
+  \draw[<->] (-2.85,-3.25) -- (-1.79,-3.25) node[midway,below] {$x$};
+  \draw[<->] (-1.79,-3.25) -- (0,-3.25) node[midway,below] {$y$};
+\end{tikzpicture}
